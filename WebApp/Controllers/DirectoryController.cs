@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http.HttpResults;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
@@ -6,6 +7,8 @@ using WebApp.Classes;
 
 namespace WebApp.Controllers;
 
+[ApiController]
+[Route("api/[controller]")]
 public class DirectoryController
 {
     private readonly string _rootDir;
@@ -18,7 +21,7 @@ public class DirectoryController
     }
 
     // Creates a new folder
-    [HttpPost]
+    [NonAction]
     public IActionResult CreateFolder(string name)
     {
         var dirPath = Path.Combine(_rootDir, name);
@@ -27,22 +30,28 @@ public class DirectoryController
     }
     
     // Overload to create additional child folders
-    [HttpPost]
+    [HttpPost("createfolder/{name}")]
+
     public IActionResult CreateFolder(string name, string[] childFolders)
     {
+        if (childFolders.Length == 0)
+        {
+            return CreateFolder(name);
+        }
+        
         var dirPath = Path.Combine(_rootDir, name);
-        Directory.CreateDirectory(dirPath);
+        CreateFolder(dirPath);
     
         foreach (var childFolder in childFolders)
         {
-            Directory.CreateDirectory(Path.Combine(dirPath, childFolder));
+            CreateFolder(Path.Combine(dirPath, childFolder));
         }
 
         return new OkResult();
     }
 
     // Deletes a folder
-    [HttpDelete]
+    [HttpDelete("deletefolder/{name}")]
     public IActionResult DeleteFolder(string name)
     {
         var dirPath = Path.Combine(_rootDir, name);
@@ -51,7 +60,7 @@ public class DirectoryController
     }
 
     // Lists all folders
-    [HttpGet]
+    [HttpGet("getfolders")]
     public string ListFolders()
     {
         var dirs = Directory.GetDirectories(_rootDir);
@@ -60,7 +69,7 @@ public class DirectoryController
     }
 
     // Lists all files in a folder
-    [HttpGet]
+    [HttpGet("getfiles/{name}")]
     public string ListFiles(string name)
     {
         var dirPath = Path.Combine(_rootDir, name);
@@ -73,6 +82,7 @@ public class DirectoryController
         return JsonConvert.SerializeObject(fileList);
     }
     
+    [HttpDelete("deletefile")]
     public IActionResult DeleteFile(string folderName, params string[] fileNames)
     {
         var dirPath = Path.Combine(_rootDir, folderName, "Uploads");
@@ -93,7 +103,7 @@ public class DirectoryController
     }
     
     // Uploads a file to a specified folder
-    [HttpPost]
+    [HttpPost("uploadfile")]
     public async Task<IActionResult> UploadFile(IFormFile file, string folderName)
     {
         var dirPath = Path.Combine(_rootDir, folderName, "Uploads");
@@ -116,23 +126,29 @@ public class DirectoryController
     }
     
     // Checks if the file type is allowed based on application settings
+    [NonAction]
     public bool AllowedFileType(string fileName, string folderName)
     {
         var extension = Path.GetExtension(fileName).TrimStart('.').ToLower();
-        var folder = _settings.Value.AllowedFileTypes.FirstOrDefault(f => f.FolderName == folderName);
+        if (_settings.Value.AllowedFileTypes != null)
+        {
+            var folder = _settings.Value.AllowedFileTypes.FirstOrDefault(f => f.FolderName == folderName);
     
-        // If folder not found in settings, or no specific types are allowed, return false
-        if (folder == null || folder.AllowedTypes == null || !folder.AllowedTypes.Any())
-        {
-            return false;
+            // If folder not found in settings, or no specific types are allowed, return false
+            if (folder == null || folder.AllowedTypes == null || !folder.AllowedTypes.Any())
+            {
+                return false;
+            }
+
+            // If allowed types contains "*.*", all types are allowed
+            if (folder.AllowedTypes.Contains("*.*"))
+            {
+                return true;
+            }
+
+            return folder.AllowedTypes.Contains($".{extension}");
         }
 
-        // If allowed types contains "*.*", all types are allowed
-        if (folder.AllowedTypes.Contains("*.*"))
-        {
-            return true;
-        }
-
-        return folder.AllowedTypes.Contains($".{extension}");
+        return false;
     }
 }

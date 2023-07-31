@@ -8,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.Configure<InAppSettings>(builder.Configuration.GetSection("InAppSettings"));
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddControllersWithViews();
+builder.Services.AddWebApiServices();
 
 var app = builder.Build();
 
@@ -18,10 +19,17 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.UseHealthChecks("/health");
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-app.UseRouting();
 
+app.UseOpenApi();
+app.UseSwaggerUi3(settings =>
+{
+    settings.Path = "/swagger";
+});
+
+app.UseRouting();
 
 app.MapControllerRoute(
     name: "default",
