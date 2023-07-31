@@ -1,0 +1,11 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=3a78dccf_002Dee43_002D40a8_002Dbabc_002D6779eb3c22a3/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="TestCreateFolder" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Or&gt;&#xD;
+    &lt;TestAncestor&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::20714363-AA94-4663-BD67-72BDAFDBAC5F::net7.0::WebAppTests.AppSettingsTests.TestKeyExistsInConfiguration&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::20714363-AA94-4663-BD67-72BDAFDBAC5F::net7.0::WebAppTests.FolderControllerTests.TestListFiles&lt;/TestId&gt;&#xD;
+    &lt;/TestAncestor&gt;&#xD;
+    &lt;ProjectFile&gt;20714363-AA94-4663-BD67-72BDAFDBAC5F/f:PageControllerTests.cs&lt;/ProjectFile&gt;&#xD;
+    &lt;ProjectFile&gt;20714363-AA94-4663-BD67-72BDAFDBAC5F/f:AutoMapperTests.cs&lt;/ProjectFile&gt;&#xD;
+  &lt;/Or&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
