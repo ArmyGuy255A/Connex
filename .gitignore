@@ -34,6 +34,7 @@ msbuild.wrn
 #!**/[Pp]ackages/repositories.config
 
 # Angular
+.angular/
 /node_modules/
 /dist/
 /tmp/

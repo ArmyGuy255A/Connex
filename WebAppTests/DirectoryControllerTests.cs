@@ -13,8 +13,7 @@ namespace WebAppTests;
 
 public class DirectoryControllerTests
 {
-    private IConfiguration _config;
-    private ServiceProvider _serviceProvider;
+    private ServiceProvider _serviceProvider = null!;
 
     [SetUp]
     public void Setup()
@@ -31,7 +30,7 @@ public class DirectoryControllerTests
         serviceCollection.AddTransient<DirectoryController>();
 
         _serviceProvider = serviceCollection.BuildServiceProvider();
-        
+
         // var projectDir = Directory.GetCurrentDirectory();
         // var configPath = Path.Combine(projectDir, "appsettings.json");
         //
@@ -84,7 +83,7 @@ public class DirectoryControllerTests
 
         // Assert that the correct number of files were returned
         Assert.That(result, Is.Not.Null);
-        Assert.That(result.Count, Is.EqualTo(2));
+        Assert.That(result!.Count, Is.EqualTo(2));
 
         // Assert that the names and sizes of the files are correct
         Assert.That(result[0].Name, Is.EqualTo("file1.txt"));
