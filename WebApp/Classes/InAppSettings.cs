@@ -8,6 +8,7 @@ public class Folder
 
 public class InAppSettings
 {
+    
     private List<Folder>? _allowedFileTypes;
 
     public InAppSettings(string pageRootDirectory)
@@ -22,6 +23,9 @@ public class InAppSettings
         get => _allowedFileTypes;
         set => _allowedFileTypes = value;
     }
+    
+    public string? MongoDbConnectionString { get; set; }
+    
 }
 
 public class AppSettings

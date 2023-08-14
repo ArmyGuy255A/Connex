@@ -1,14 +1,30 @@
 using WebApp.Classes;
 using AutoMapper;
+using Serilog;
+using WebApp;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+var inAppSettings = builder.Configuration.GetSection("InAppSettings").Get<InAppSettings>();
+if (inAppSettings == null) throw new Exception("The InAppSettings section is empty. Please check your appsettings.json file.");
 
+// Add services to the container.
+// Setup InAppSettings for Dependency Injection
 builder.Services.Configure<InAppSettings>(builder.Configuration.GetSection("InAppSettings"));
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddControllersWithViews();
+
+// Add custom services to the container
+builder.Services.AddEntityFrameworkMongoDb(inAppSettings);
 builder.Services.AddWebApiServices();
+
+// Add logging
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Verbose()
+    .WriteTo.Console()
+    .WriteTo.File("Logs/log.txt", rollingInterval: RollingInterval.Day)
+    .CreateLogger();
+builder.Logging.AddSerilog();
 
 var app = builder.Build();
 
@@ -38,3 +54,5 @@ app.MapControllerRoute(
 app.MapFallbackToFile("index.html");
 
 app.Run();
+
+Log.CloseAndFlush();

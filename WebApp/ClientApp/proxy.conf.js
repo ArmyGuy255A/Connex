@@ -6,7 +6,27 @@ const target = env.ASPNETCORE_HTTPS_PORT ? `https://localhost:${env.ASPNETCORE_H
 const PROXY_CONFIG = [
   {
     context: [
-      "/api/*"
+      "/api/**"     // To include all sub-routes under /api
+    ],
+    target: target,
+    secure: false,
+    headers: {
+      Connection: 'Keep-Alive'
+    }
+  },
+  {
+    context: [
+      "/health"
+    ],
+    target: target,
+    secure: false,
+    headers: {
+      Connection: 'Keep-Alive'
+    }
+  },
+  {
+    context: [
+      "/swagger/**"
     ],
     target: target,
     secure: false,
