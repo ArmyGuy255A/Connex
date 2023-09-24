@@ -1,0 +1,239 @@
+2023-09-24 13:21:11.666 -07:00 [DBG] Initializing Razor view compiler with compiled view: '/Pages/Error.cshtml'.
+2023-09-24 13:21:11.713 -07:00 [DBG] Initializing Razor view compiler with compiled view: '/Pages/_ViewImports.cshtml'.
+2023-09-24 13:21:11.729 -07:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2023-09-24 13:21:11.771 -07:00 [INF] User profile is available. Using 'C:\Users\mrdie\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-09-24 13:21:11.899 -07:00 [DBG] Hosting starting
+2023-09-24 13:21:11.907 -07:00 [DBG] Reading data from file 'C:\Users\mrdie\AppData\Local\ASP.NET\DataProtection-Keys\key-4a6009ff-35b2-4bc7-8724-6b99e2d8bb93.xml'.
+2023-09-24 13:21:11.929 -07:00 [DBG] Found key {4a6009ff-35b2-4bc7-8724-6b99e2d8bb93}.
+2023-09-24 13:21:11.944 -07:00 [DBG] Considering key {4a6009ff-35b2-4bc7-8724-6b99e2d8bb93} with expiration date 2023-11-11 21:32:41Z as default key.
+2023-09-24 13:21:11.952 -07:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-09-24 13:21:11.961 -07:00 [DBG] Decrypting secret element using Windows DPAPI.
+2023-09-24 13:21:11.966 -07:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-09-24 13:21:11.973 -07:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2023-09-24 13:21:11.978 -07:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2023-09-24 13:21:11.980 -07:00 [DBG] Using key {4a6009ff-35b2-4bc7-8724-6b99e2d8bb93} as the default key.
+2023-09-24 13:21:11.983 -07:00 [DBG] Key ring with default key {4a6009ff-35b2-4bc7-8724-6b99e2d8bb93} was loaded during application startup.
+2023-09-24 13:21:12.089 -07:00 [INF] Now listening on: https://localhost:7143
+2023-09-24 13:21:12.091 -07:00 [INF] Now listening on: http://localhost:5173
+2023-09-24 13:21:12.093 -07:00 [DBG] Loaded hosting startup assembly WebApp
+2023-09-24 13:21:12.094 -07:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.SpaProxy
+2023-09-24 13:21:12.099 -07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-09-24 13:21:12.101 -07:00 [INF] Hosting environment: Development
+2023-09-24 13:21:12.102 -07:00 [INF] Content root path: C:\Users\mrdie\repos\Connex\WebApp
+2023-09-24 13:21:12.104 -07:00 [DBG] Hosting started
+2023-09-24 13:21:12.554 -07:00 [DBG] Connection id "0HMTT7F5V7R08" received FIN.
+2023-09-24 13:21:12.567 -07:00 [DBG] Connection id "0HMTT7F5V7R08" accepted.
+2023-09-24 13:21:12.570 -07:00 [DBG] Connection id "0HMTT7F5V7R08" started.
+2023-09-24 13:21:12.587 -07:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2023-09-24 13:21:12.617 -07:00 [DBG] Connection id "0HMTT7F5V7R08" stopped.
+2023-09-24 13:21:12.625 -07:00 [DBG] Connection id "0HMTT7F5V7R08" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-09-24 13:21:12.780 -07:00 [DBG] Connection id "0HMTT7F5V7R09" accepted.
+2023-09-24 13:21:12.786 -07:00 [DBG] Connection id "0HMTT7F5V7R09" started.
+2023-09-24 13:21:12.857 -07:00 [DBG] Connection 0HMTT7F5V7R09 established using the following protocol: "Tls13"
+2023-09-24 13:21:12.915 -07:00 [VRB] Connection id "0HMTT7F5V7R09" sending "SETTINGS" frame for stream ID 0 with length 24 and flags "NONE".
+2023-09-24 13:21:12.927 -07:00 [VRB] Connection id "0HMTT7F5V7R09" sending "WINDOW_UPDATE" frame for stream ID 0 with length 4 and flags 0x0.
+2023-09-24 13:21:12.930 -07:00 [VRB] Connection id "0HMTT7F5V7R09" received "SETTINGS" frame for stream ID 0 with length 24 and flags "NONE".
+2023-09-24 13:21:12.935 -07:00 [VRB] Connection id "0HMTT7F5V7R09" sending "SETTINGS" frame for stream ID 0 with length 0 and flags "ACK".
+2023-09-24 13:21:12.938 -07:00 [VRB] Connection id "0HMTT7F5V7R09" received "WINDOW_UPDATE" frame for stream ID 0 with length 4 and flags 0x0.
+2023-09-24 13:21:12.941 -07:00 [VRB] Connection id "0HMTT7F5V7R09" received "HEADERS" frame for stream ID 1 with length 440 and flags "END_STREAM, END_HEADERS, PRIORITY".
+2023-09-24 13:21:12.962 -07:00 [VRB] Connection id "0HMTT7F5V7R09" received "SETTINGS" frame for stream ID 0 with length 0 and flags "ACK".
+2023-09-24 13:21:12.976 -07:00 [INF] Request starting HTTP/2 GET https://localhost:7143/ - -
+2023-09-24 13:21:17.160 -07:00 [DBG] Failed to connect to the SPA Development proxy.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:44401)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|281_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.HttpConnectionWaiter`1.WaitForConnectionAsync(Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at Microsoft.AspNetCore.SpaProxy.SpaProxyLaunchManager.IsSpaProxyRunning(CancellationToken cancellationToken)
+2023-09-24 13:21:17.181 -07:00 [INF] No SPA development server running at https://localhost:44401 found.
+2023-09-24 13:21:17.319 -07:00 [DBG] Watch process 'System.Diagnostics.Process (powershell)' started.
+2023-09-24 13:21:17.328 -07:00 [INF] SPA proxy is not ready. Returning temporary landing page.
+2023-09-24 13:21:17.337 -07:00 [VRB] Connection id "0HMTT7F5V7R09" sending "HEADERS" frame for stream ID 1 with length 100 and flags "END_HEADERS".
+2023-09-24 13:21:17.338 -07:00 [INF] Request finished HTTP/2 GET https://localhost:7143/ - - - 200 - text/html 4363.8315ms
+2023-09-24 13:21:17.341 -07:00 [VRB] Connection id "0HMTT7F5V7R09" sending "DATA" frame for stream ID 1 with length 505 and flags "NONE".
+2023-09-24 13:21:17.346 -07:00 [VRB] Connection id "0HMTT7F5V7R09" sending "DATA" frame for stream ID 1 with length 0 and flags "END_STREAM".
+2023-09-24 13:21:20.641 -07:00 [VRB] Connection id "0HMTT7F5V7R09" received "HEADERS" frame for stream ID 3 with length 58 and flags "END_STREAM, END_HEADERS, PRIORITY".
+2023-09-24 13:21:20.659 -07:00 [INF] Request starting HTTP/2 GET https://localhost:7143/ - -
+2023-09-24 13:21:21.397 -07:00 [DBG] Failed to connect to the SPA Development proxy.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:44401)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|281_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.HttpConnectionWaiter`1.WaitForConnectionAsync(Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at Microsoft.AspNetCore.SpaProxy.SpaProxyLaunchManager.ProbeSpaDevelopmentServerUrl(HttpClient httpClient, CancellationToken cancellationToken)
+2023-09-24 13:21:24.758 -07:00 [DBG] Failed to connect to the SPA Development proxy.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:44401)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|281_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.HttpConnectionWaiter`1.WaitForConnectionAsync(Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at Microsoft.AspNetCore.SpaProxy.SpaProxyLaunchManager.IsSpaProxyRunning(CancellationToken cancellationToken)
+2023-09-24 13:21:24.769 -07:00 [INF] SPA proxy is not ready. Returning temporary landing page.
+2023-09-24 13:21:24.775 -07:00 [VRB] Connection id "0HMTT7F5V7R09" sending "HEADERS" frame for stream ID 3 with length 35 and flags "END_HEADERS".
+2023-09-24 13:21:24.776 -07:00 [INF] Request finished HTTP/2 GET https://localhost:7143/ - - - 200 - text/html 4117.7420ms
+2023-09-24 13:21:24.778 -07:00 [VRB] Connection id "0HMTT7F5V7R09" sending "DATA" frame for stream ID 3 with length 505 and flags "END_STREAM".
+2023-09-24 13:21:24.784 -07:00 [VRB] Connection id "0HMTT7F5V7R09" received "WINDOW_UPDATE" frame for stream ID 0 with length 4 and flags 0x0.
+2023-09-24 13:21:26.474 -07:00 [DBG] Failed to connect to the SPA Development proxy.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:44401)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|281_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.HttpConnectionWaiter`1.WaitForConnectionAsync(Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at Microsoft.AspNetCore.SpaProxy.SpaProxyLaunchManager.ProbeSpaDevelopmentServerUrl(HttpClient httpClient, CancellationToken cancellationToken)
+2023-09-24 13:21:27.885 -07:00 [VRB] Connection id "0HMTT7F5V7R09" received "HEADERS" frame for stream ID 5 with length 22 and flags "END_STREAM, END_HEADERS, PRIORITY".
+2023-09-24 13:21:27.894 -07:00 [INF] Request starting HTTP/2 GET https://localhost:7143/ - -
+2023-09-24 13:21:28.844 -07:00 [INF] SPA proxy is ready. Redirecting to https://localhost:44401.
+2023-09-24 13:21:28.844 -07:00 [INF] SPA development server running at 'https://localhost:44401'
+2023-09-24 13:21:28.847 -07:00 [INF] Request finished HTTP/2 GET https://localhost:7143/ - - - 302 0 - 952.1934ms
+2023-09-24 13:21:28.847 -07:00 [VRB] Connection id "0HMTT7F5V7R09" sending "HEADERS" frame for stream ID 5 with length 67 and flags "END_STREAM, END_HEADERS".
+2023-09-24 13:21:32.063 -07:00 [DBG] Connection id "0HMTT7F5V7R0A" accepted.
+2023-09-24 13:21:32.066 -07:00 [DBG] Connection id "0HMTT7F5V7R0A" started.
+2023-09-24 13:21:32.071 -07:00 [DBG] Connection 0HMTT7F5V7R0A established using the following protocol: "Tls13"
+2023-09-24 13:21:32.081 -07:00 [INF] Request starting HTTP/1.1 GET https://localhost:44401/swagger - -
+2023-09-24 13:21:32.084 -07:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2023-09-24 13:21:32.086 -07:00 [VRB] All hosts are allowed.
+2023-09-24 13:21:32.093 -07:00 [DBG] The request path /swagger does not match a supported file type
+2023-09-24 13:21:32.104 -07:00 [DBG] Connection id "0HMTT7F5V7R0A" completed keep alive response.
+2023-09-24 13:21:32.106 -07:00 [INF] Request finished HTTP/1.1 GET https://localhost:44401/swagger - - - 302 0 - 24.9190ms
+2023-09-24 13:21:32.107 -07:00 [DBG] Connection id "0HMTT7F5V7R0A" received FIN.
+2023-09-24 13:21:32.109 -07:00 [DBG] Connection id "0HMTT7F5V7R0A" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-09-24 13:21:32.113 -07:00 [DBG] Connection id "0HMTT7F5V7R0A" disconnecting.
+2023-09-24 13:21:32.117 -07:00 [DBG] Connection id "0HMTT7F5V7R0A" stopped.
+2023-09-24 13:21:32.118 -07:00 [DBG] Connection id "0HMTT7F5V7R0B" accepted.
+2023-09-24 13:21:32.124 -07:00 [DBG] Connection id "0HMTT7F5V7R0B" started.
+2023-09-24 13:21:32.132 -07:00 [DBG] Connection 0HMTT7F5V7R0B established using the following protocol: "Tls13"
+2023-09-24 13:21:32.136 -07:00 [INF] Request starting HTTP/1.1 GET https://localhost:44401/swagger/index.html - -
+2023-09-24 13:21:32.138 -07:00 [VRB] All hosts are allowed.
+2023-09-24 13:21:32.141 -07:00 [DBG] The request path /swagger/index.html does not match an existing file
+2023-09-24 13:21:32.385 -07:00 [DBG] Connection id "0HMTT7F5V7R0B" completed keep alive response.
+2023-09-24 13:21:32.388 -07:00 [DBG] Connection id "0HMTT7F5V7R0B" received FIN.
+2023-09-24 13:21:32.388 -07:00 [INF] Request finished HTTP/1.1 GET https://localhost:44401/swagger/index.html - - - 200 - text/html;+charset=utf-8 252.7158ms
+2023-09-24 13:21:32.392 -07:00 [DBG] Connection id "0HMTT7F5V7R0B" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-09-24 13:21:32.395 -07:00 [DBG] Connection id "0HMTT7F5V7R0B" disconnecting.
+2023-09-24 13:21:32.402 -07:00 [DBG] Connection id "0HMTT7F5V7R0B" stopped.
+2023-09-24 13:21:32.562 -07:00 [DBG] Connection id "0HMTT7F5V7R0C" accepted.
+2023-09-24 13:21:32.563 -07:00 [DBG] Connection id "0HMTT7F5V7R0C" started.
+2023-09-24 13:21:32.568 -07:00 [DBG] Connection 0HMTT7F5V7R0C established using the following protocol: "Tls13"
+2023-09-24 13:21:32.570 -07:00 [INF] Request starting HTTP/1.1 GET https://localhost:44401/swagger/v1/swagger.json - -
+2023-09-24 13:21:32.574 -07:00 [VRB] All hosts are allowed.
+2023-09-24 13:21:32.578 -07:00 [DBG] The request path /swagger/v1/swagger.json does not match an existing file
+2023-09-24 13:21:33.171 -07:00 [DBG] Connection id "0HMTT7F5V7R0C" completed keep alive response.
+2023-09-24 13:21:33.174 -07:00 [INF] Request finished HTTP/1.1 GET https://localhost:44401/swagger/v1/swagger.json - - - 200 - application/json;+charset=utf-8 603.3800ms
+2023-09-24 13:21:33.174 -07:00 [DBG] Connection id "0HMTT7F5V7R0C" received FIN.
+2023-09-24 13:21:33.177 -07:00 [DBG] Connection id "0HMTT7F5V7R0C" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-09-24 13:21:33.179 -07:00 [DBG] Connection id "0HMTT7F5V7R0C" disconnecting.
+2023-09-24 13:21:33.182 -07:00 [DBG] Connection id "0HMTT7F5V7R0C" stopped.
+2023-09-24 13:21:40.525 -07:00 [DBG] Connection id "0HMTT7F5V7R0D" accepted.
+2023-09-24 13:21:40.529 -07:00 [DBG] Connection id "0HMTT7F5V7R0D" started.
+2023-09-24 13:21:40.534 -07:00 [DBG] Connection 0HMTT7F5V7R0D established using the following protocol: "Tls13"
+2023-09-24 13:21:40.536 -07:00 [INF] Request starting HTTP/1.1 GET https://localhost:44401/api/Directory/getfolders - -
+2023-09-24 13:21:40.538 -07:00 [VRB] All hosts are allowed.
+2023-09-24 13:21:40.540 -07:00 [DBG] The request path /api/Directory/getfolders does not match a supported file type
+2023-09-24 13:21:40.541 -07:00 [DBG] The request path  does not match the path filter
+2023-09-24 13:21:40.586 -07:00 [DBG] 2 candidate(s) found for the request path '/api/Directory/getfolders'
+2023-09-24 13:21:40.594 -07:00 [DBG] Endpoint 'Application.Directories.DirectoryController.ListFolders (Application)' with route pattern 'api/Directory/getfolders' is valid for the request path '/api/Directory/getfolders'
+2023-09-24 13:21:40.599 -07:00 [DBG] Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' is valid for the request path '/api/Directory/getfolders'
+2023-09-24 13:21:40.601 -07:00 [DBG] Request matched endpoint 'Application.Directories.DirectoryController.ListFolders (Application)'
+2023-09-24 13:21:40.604 -07:00 [INF] Executing endpoint 'Application.Directories.DirectoryController.ListFolders (Application)'
+2023-09-24 13:21:40.617 -07:00 [INF] Route matched with {action = "ListFolders", controller = "Directory", page = ""}. Executing controller action with signature System.String ListFolders() on controller Application.Directories.DirectoryController (Application).
+2023-09-24 13:21:40.620 -07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-09-24 13:21:40.627 -07:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2023-09-24 13:21:40.630 -07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2023-09-24 13:21:40.632 -07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-09-24 13:21:40.634 -07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter","Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-09-24 13:21:40.640 -07:00 [VRB] Resource Filter: Before executing OnResourceExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter.
+2023-09-24 13:21:40.642 -07:00 [VRB] Resource Filter: After executing OnResourceExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter.
+2023-09-24 13:21:40.646 -07:00 [DBG] Executing controller factory for controller Application.Directories.DirectoryController (Application)
+2023-09-24 13:21:40.650 -07:00 [DBG] Executed controller factory for controller Application.Directories.DirectoryController (Application)
+2023-09-24 13:21:40.652 -07:00 [VRB] Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2023-09-24 13:21:40.658 -07:00 [VRB] Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2023-09-24 13:21:40.664 -07:00 [INF] Executing action method Application.Directories.DirectoryController.ListFolders (Application) - Validation state: "Valid"
+2023-09-24 13:21:40.674 -07:00 [INF] Executed action method Application.Directories.DirectoryController.ListFolders (Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.7068ms.
+2023-09-24 13:21:40.678 -07:00 [VRB] Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2023-09-24 13:21:40.680 -07:00 [VRB] Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2023-09-24 13:21:40.682 -07:00 [VRB] Result Filter: Before executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter.
+2023-09-24 13:21:40.683 -07:00 [VRB] Result Filter: After executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter.
+2023-09-24 13:21:40.689 -07:00 [VRB] Result Filter: Before executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter.
+2023-09-24 13:21:40.691 -07:00 [VRB] Result Filter: After executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter.
+2023-09-24 13:21:40.695 -07:00 [VRB] Before executing action result Microsoft.AspNetCore.Mvc.ObjectResult.
+2023-09-24 13:21:40.697 -07:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2023-09-24 13:21:40.708 -07:00 [DBG] Attempting to select an output formatter based on Accept header '["application/json"]'.
+2023-09-24 13:21:40.712 -07:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2023-09-24 13:21:40.714 -07:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2023-09-24 13:21:40.736 -07:00 [VRB] After executing action result Microsoft.AspNetCore.Mvc.ObjectResult.
+2023-09-24 13:21:40.738 -07:00 [VRB] Result Filter: Before executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter.
+2023-09-24 13:21:40.741 -07:00 [VRB] Result Filter: After executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter.
+2023-09-24 13:21:40.743 -07:00 [VRB] Result Filter: Before executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter.
+2023-09-24 13:21:40.745 -07:00 [VRB] Result Filter: After executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter.
+2023-09-24 13:21:40.750 -07:00 [VRB] Resource Filter: Before executing OnResourceExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter.
+2023-09-24 13:21:40.752 -07:00 [VRB] Resource Filter: After executing OnResourceExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter.
+2023-09-24 13:21:40.759 -07:00 [INF] Executed action Application.Directories.DirectoryController.ListFolders (Application) in 114.0997ms
+2023-09-24 13:21:40.763 -07:00 [INF] Executed endpoint 'Application.Directories.DirectoryController.ListFolders (Application)'
+2023-09-24 13:21:40.766 -07:00 [DBG] Connection id "0HMTT7F5V7R0D" completed keep alive response.
+2023-09-24 13:21:40.767 -07:00 [DBG] Connection id "0HMTT7F5V7R0D" received FIN.
+2023-09-24 13:21:40.768 -07:00 [INF] Request finished HTTP/1.1 GET https://localhost:44401/api/Directory/getfolders - - - 200 - application/json;+charset=utf-8 231.7146ms
+2023-09-24 13:21:40.770 -07:00 [DBG] Connection id "0HMTT7F5V7R0D" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-09-24 13:21:40.775 -07:00 [DBG] Connection id "0HMTT7F5V7R0D" disconnecting.
+2023-09-24 13:21:40.777 -07:00 [DBG] Connection id "0HMTT7F5V7R0D" stopped.
+2023-09-24 13:21:43.913 -07:00 [DBG] Hosting stopping
+2023-09-24 13:21:43.999 -07:00 [INF] Application is shutting down...
+2023-09-24 13:21:44.010 -07:00 [DBG] Connection id "0HMTT7F5V7R09" is closing.
+2023-09-24 13:21:44.017 -07:00 [DBG] Connection id "0HMTT7F5V7R09" is closed. The last processed stream ID was 5.
+2023-09-24 13:21:44.020 -07:00 [VRB] Connection id "0HMTT7F5V7R09" sending "GOAWAY" frame for stream ID 0 with length 8 and flags 0x0.
+2023-09-24 13:21:44.027 -07:00 [DBG] Connection id "0HMTT7F5V7R09" received FIN.
+2023-09-24 13:21:44.030 -07:00 [DBG] The connection queue processing loop for 0HMTT7F5V7R09 completed.
+2023-09-24 13:21:44.030 -07:00 [DBG] Connection id "0HMTT7F5V7R09" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-09-24 13:21:44.040 -07:00 [DBG] Connection id "0HMTT7F5V7R09" stopped.
+2023-09-24 13:21:44.051 -07:00 [DBG] Hosting stopped

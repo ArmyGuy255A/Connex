@@ -1,45 +1,44 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http.HttpResults;
+﻿using Domain.Common;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
-using WebApp.Classes;
 
-namespace WebApp.Controllers;
+namespace Application.Directories;
 
 [ApiController]
 [Route("api/[controller]")]
 public class DirectoryController
 {
     private readonly string _rootDir;
-    private readonly IOptions<InAppSettings> _settings;
+    private readonly IOptionsMonitor<InAppSettings> _settings;
 
-    public DirectoryController(IOptions<InAppSettings> settings)
+    public DirectoryController(IOptionsMonitor<InAppSettings> settings)
     {
         _settings = settings;
-        _rootDir = settings.Value.PageRootDirectory;
+        _rootDir = settings.CurrentValue.PageRootDirectory;
     }
 
     // Creates a new folder
     [NonAction]
     public IActionResult CreateFolder(string name)
     {
-        var dirPath = Path.Combine(_rootDir, name);
-        Directory.CreateDirectory(dirPath);
+        Directory.CreateDirectory(name);
         return new OkResult();
     }
     
     // Overload to create additional child folders
     [HttpPost("createfolder/{name}")]
 
-    public IActionResult CreateFolder(string name, string[] childFolders)
+    public IActionResult CreateFolder(string name, string[]? childFolders)
     {
-        if (childFolders.Length == 0)
-        {
-            return CreateFolder(name);
-        }
-        
         var dirPath = Path.Combine(_rootDir, name);
+        
+        if (null == childFolders?.Length || childFolders.Length == 0)
+        {
+            return CreateFolder(dirPath);
+        }
+
         CreateFolder(dirPath);
     
         foreach (var childFolder in childFolders)
@@ -124,15 +123,15 @@ public class DirectoryController
 
         return new OkResult();
     }
-    
+
     // Checks if the file type is allowed based on application settings
     [NonAction]
     public bool AllowedFileType(string fileName, string folderName)
     {
         var extension = Path.GetExtension(fileName).TrimStart('.').ToLower();
-        if (_settings.Value.AllowedFileTypes != null)
+        if (_settings.CurrentValue.AllowedFileTypes != null)
         {
-            var folder = _settings.Value.AllowedFileTypes.FirstOrDefault(f => f.FolderName == folderName);
+            var folder = _settings.CurrentValue.AllowedFileTypes.FirstOrDefault(f => f.FolderName == folderName);
     
             // If folder not found in settings, or no specific types are allowed, return false
             if (folder == null || folder.AllowedTypes == null || !folder.AllowedTypes.Any())

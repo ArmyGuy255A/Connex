@@ -1,10 +1,10 @@
-﻿
-using FluentValidation.AspNetCore;
+﻿using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
 using NSwag;
 using NSwag.Generation.Processors.Security;
 
-namespace Microsoft.Extensions.DependencyInjection;
+namespace Infrastructure.Services;
 
 public static class ConfigureServices
 {

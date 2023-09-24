@@ -1,7 +1,6 @@
-using WebApp.Classes;
-using AutoMapper;
+using Domain.Common;
+using Infrastructure.Services;
 using Serilog;
-using WebApp;
 
 var builder = WebApplication.CreateBuilder(args);
 

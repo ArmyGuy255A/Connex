@@ -1,4 +1,4 @@
-namespace WebApp;
+namespace Domain.Common;
 
 public class WeatherForecast
 {

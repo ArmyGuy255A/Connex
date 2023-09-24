@@ -1,13 +1,13 @@
+using Application.Directories;
+using Domain.Common;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
-using Moq;
 using Newtonsoft.Json;
+using Moq;
 using WebApp.AutoMapper;
-using WebApp.Classes;
-using WebApp.Controllers;
 
 namespace WebAppTests;
 
@@ -43,7 +43,7 @@ public class DirectoryControllerTests
     public void TestCreateFolder()
     {
         var controller = _serviceProvider.GetRequiredService<DirectoryController>();
-        var result = controller.CreateFolder("TestFolder");
+        var result = controller.CreateFolder("TestFolder", null);
 
         var rootDir = _serviceProvider.GetRequiredService<IOptions<InAppSettings>>().Value.PageRootDirectory;
         Assert.IsTrue(Directory.Exists(Path.Combine(rootDir, "TestFolder")));
@@ -77,9 +77,8 @@ public class DirectoryControllerTests
         var controller = _serviceProvider.GetRequiredService<DirectoryController>();
 
         // Call the method and deserialize the result
-        var resultJson = controller.ListFiles(testDir);
+        var resultJson = controller.ListFiles(testDir);        
         var result = JsonConvert.DeserializeObject<List<FileInformation>>(resultJson);
-
 
         // Assert that the correct number of files were returned
         Assert.That(result, Is.Not.Null);

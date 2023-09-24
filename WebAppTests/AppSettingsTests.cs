@@ -1,11 +1,4 @@
-﻿using WebApp.Controllers;
-using Moq;
-using NUnit.Framework;
-using Microsoft.Extensions.Configuration;
-using Microsoft.AspNetCore.Mvc;
-using System.IO;
-using Newtonsoft.Json;
-using System.Collections.Generic;
+﻿using Microsoft.Extensions.Configuration;
 
 namespace WebAppTests;
 

@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Domain.Common;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
-namespace WebApp.Controllers;
+namespace Application.WeatherForecasts;
 
 [ApiController]
 [Route("api/[controller]")]

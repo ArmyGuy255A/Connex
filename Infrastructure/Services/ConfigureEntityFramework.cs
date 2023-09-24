@@ -1,8 +1,9 @@
-﻿using Microsoft.Extensions.Options;
+﻿using Domain.Common;
+using Domain.Entities;
+using Microsoft.Extensions.DependencyInjection;
 using MongoDB.Driver;
-using WebApp.Classes;
 
-namespace WebApp;
+namespace Infrastructure.Services;
 
 public static class ConfigureEntityFramework
 {

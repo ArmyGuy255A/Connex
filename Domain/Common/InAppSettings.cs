@@ -1,4 +1,4 @@
-﻿namespace WebApp.Classes;
+﻿namespace Domain.Common;
 
 public class Folder
 {
@@ -10,8 +10,12 @@ public class InAppSettings
 {
     
     private List<Folder>? _allowedFileTypes;
+    
+    public InAppSettings()
+    {
+    }
 
-    public InAppSettings(string pageRootDirectory)
+    public InAppSettings(string pageRootDirectory) : this()
     {
         PageRootDirectory = pageRootDirectory;
     }
