@@ -8,14 +8,13 @@ namespace WebAppTests;
 public class AutoMapperTests
 {
     private readonly IMapper _mapper;
-    private readonly ServiceProvider _serviceProvider;
 
     public AutoMapperTests()
     {
         var serviceCollection = new ServiceCollection();
         serviceCollection.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-        _serviceProvider = serviceCollection.BuildServiceProvider();
-        _mapper = _serviceProvider.GetRequiredService<IMapper>();
+        var serviceProvider = serviceCollection.BuildServiceProvider();
+        _mapper = serviceProvider.GetRequiredService<IMapper>();
     }
 
     [Test]

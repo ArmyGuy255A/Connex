@@ -6,6 +6,11 @@ public class AppSettingsTests
 {
     private IConfiguration _config;
 
+    public AppSettingsTests(IConfiguration config)
+    {
+        _config = config;
+    }
+
     [SetUp]
     public void Setup()
     {

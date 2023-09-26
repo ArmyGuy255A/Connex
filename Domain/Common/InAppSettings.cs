@@ -28,7 +28,9 @@ public class InAppSettings
         set => _allowedFileTypes = value;
     }
     
-    public string? MongoDbConnectionString { get; set; }
+    public string? SqlConnectionString { get; set; }
+    public string? SqliteConnectionString { get; set; }
+    public bool UseSqlite { get; set; }
     
 }
 

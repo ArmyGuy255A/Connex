@@ -1,4 +1,6 @@
 using Domain.Common;
+using Infrastructure.Persistence;
+using Infrastructure.Persistence.Contexts;
 using Infrastructure.Services;
 using Serilog;
 
@@ -14,7 +16,8 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddControllersWithViews();
 
 // Add custom services to the container
-builder.Services.AddEntityFrameworkMongoDb(inAppSettings);
+// builder.Services.AddDbContext<ApplicationDbContext>();
+builder.Services.AddEntityFrameworkSql(inAppSettings);
 builder.Services.AddWebApiServices();
 
 // Add logging
@@ -26,6 +29,9 @@ Log.Logger = new LoggerConfiguration()
 builder.Logging.AddSerilog();
 
 var app = builder.Build();
+
+// Seed the Database
+//await ConfigureEntityFramework.SeedDatabase(app);
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -55,3 +61,4 @@ app.MapFallbackToFile("index.html");
 app.Run();
 
 Log.CloseAndFlush();
+

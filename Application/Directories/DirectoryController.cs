@@ -90,12 +90,12 @@ public class DirectoryController
         {
             var filePath = Path.Combine(dirPath, fileName);
 
-            if (!System.IO.File.Exists(filePath))
+            if (!File.Exists(filePath))
             {
                 return new NotFoundResult();
             }
 
-            System.IO.File.Delete(filePath);
+            File.Delete(filePath);
         }
 
         return new OkResult();
