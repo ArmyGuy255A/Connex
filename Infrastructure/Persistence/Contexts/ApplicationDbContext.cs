@@ -14,39 +14,39 @@ namespace Infrastructure.Persistence.Contexts;
 // public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
 public class ApplicationDbContext : DbContext
 {
-    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
-    {
-        
-    }
-    
-    protected override void OnConfiguring(DbContextOptionsBuilder options)
-    {
-        options.UseSqlite("Data Source=ConnexDb.sqlite");
-    }
-    // private readonly IOptionsMonitor<InAppSettings> _settings;
-    //
-    // public ApplicationDbContext(IOptionsMonitor<InAppSettings> settings)
+    // public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
     // {
-    //     _settings = settings;
+    //     
     // }
     //
     // protected override void OnConfiguring(DbContextOptionsBuilder options)
     // {
-    //     if (_settings.CurrentValue.UseSqlite)
-    //     {
-    //         // connect to sqlite database
-    //         options.UseSqlite(_settings.CurrentValue.SqliteConnectionString, o => o
-    //             .MigrationsAssembly("Infrastructure")
-    //         );
-    //     }
-    //     else
-    //     {
-    //         // connect to sql server database
-    //         options.UseSqlServer(_settings.CurrentValue.SqlConnectionString, o => o
-    //             .MigrationsAssembly("Infrastructure")
-    //         );
-    //     }
+    //     options.UseSqlite("Data Source=ConnexDb.sqlite");
     // }
+    private readonly IOptionsMonitor<InAppSettings> _settings;
+    
+    public ApplicationDbContext(IOptionsMonitor<InAppSettings> settings)
+    {
+        _settings = settings;
+    }
+    
+    protected override void OnConfiguring(DbContextOptionsBuilder options)
+    {
+        if (_settings.CurrentValue.UseSqlite)
+        {
+            // connect to sqlite database
+            options.UseSqlite(_settings.CurrentValue.SqliteConnectionString, o => o
+                .MigrationsAssembly("Infrastructure")
+            );
+        }
+        else
+        {
+            // connect to sql server database
+            options.UseSqlServer(_settings.CurrentValue.SqlConnectionString, o => o
+                .MigrationsAssembly("Infrastructure")
+            );
+        }
+    }
 
     public DbSet<Page> Pages { get; set; }
 }
