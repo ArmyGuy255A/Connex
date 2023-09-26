@@ -58,7 +58,7 @@ public static class ConfigureEntityFramework
         {
             var context = services.GetRequiredService<ApplicationDbContext>();
 
-            //await DbInitializer.InitializeAsync(context, services);
+            await DbInitializer.InitializeAsync(context, services);
         }
         catch (Exception ex)
         {

@@ -31,7 +31,7 @@ builder.Logging.AddSerilog();
 var app = builder.Build();
 
 // Seed the Database
-//await ConfigureEntityFramework.SeedDatabase(app);
+await ConfigureEntityFramework.SeedDatabase(app);
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
