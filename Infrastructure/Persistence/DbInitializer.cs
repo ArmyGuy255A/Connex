@@ -1,4 +1,5 @@
 ﻿using Domain.Entities;
+using Infrastructure.Identity;
 using Infrastructure.Persistence.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,33 +18,33 @@ public class DbInitializer
         await context.Database.MigrateAsync();
 
         //If there are any roles, the database has already been seeded.
-        // if (context.Roles.Any())
-        // {
-        //     logger.LogInformation("The database already has roles seeded");
-        // }
-        // else
-        // {
-        //     logger.LogInformation("Seeding roles");
-        //     string[] roleNames = new string[]
-        //     {
-        //         "Administrator",
-        //         "Contributor",
-        //         "Reader"
-        //     };
-        //
-        //     // Create and seed the new roles
-        //     ApplicationRole[] roles = new ApplicationRole[roleNames.Length];
-        //
-        //     for (int i = 0; i < roles.Length; i++)
-        //     {
-        //         context.Roles.Add(new ApplicationRole
-        //         {
-        //             Id = Guid.NewGuid().ToString(), Name = roleNames[i], NormalizedName = roleNames[i].ToUpper()
-        //         });
-        //     }
-        //
-        //     await context.SaveChangesAsync();
-        // }
+        if (context.Roles.Any())
+        {
+            logger.LogInformation("The database already has roles seeded");
+        }
+        else
+        {
+            logger.LogInformation("Seeding roles");
+            string[] roleNames = new string[]
+            {
+                "Administrator",
+                "Contributor",
+                "Reader"
+            };
+        
+            // Create and seed the new roles
+            ApplicationRole[] roles = new ApplicationRole[roleNames.Length];
+        
+            for (int i = 0; i < roles.Length; i++)
+            {
+                context.Roles.Add(new ApplicationRole
+                {
+                    Id = Guid.NewGuid().ToString(), Name = roleNames[i], NormalizedName = roleNames[i].ToUpper()
+                });
+            }
+        
+            await context.SaveChangesAsync();
+        }
 
         if (context.Pages.Any())
         {
@@ -66,7 +67,7 @@ public class DbInitializer
         for (int i = 0; i < 4; i++)
         {
             var email = $"{firstNames[i]}@sample.com";
-            // context.Users.Add(new ApplicationUser(userName: email, givenName: firstNames[i], surname: lastNames[i], displayName: $"{firstNames[i]} {lastNames[i]}"));
+            context.Users.Add(new ApplicationUser(userName: email, givenName: firstNames[i], surname: lastNames[i], displayName: $"{firstNames[i]} {lastNames[i]}"));
         }
 
         await context.SaveChangesAsync();

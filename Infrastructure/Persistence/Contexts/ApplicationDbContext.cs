@@ -11,21 +11,11 @@ namespace Infrastructure.Persistence.Contexts;
 /// <summary>
 /// Entity Framework DB Context.
 /// </summary>
-// public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
-public class ApplicationDbContext : DbContext
+public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
 {
-    // public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
-    // {
-    //     
-    // }
-    //
-    // protected override void OnConfiguring(DbContextOptionsBuilder options)
-    // {
-    //     options.UseSqlite("Data Source=ConnexDb.sqlite");
-    // }
     private readonly IOptionsMonitor<InAppSettings> _settings;
     
-    public ApplicationDbContext(IOptionsMonitor<InAppSettings> settings)
+    public ApplicationDbContext(IOptionsMonitor<InAppSettings> settings, DbContextOptions options) : base(options)
     {
         _settings = settings;
     }

@@ -16,7 +16,6 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddControllersWithViews();
 
 // Add custom services to the container
-// builder.Services.AddDbContext<ApplicationDbContext>();
 builder.Services.AddEntityFrameworkSql(inAppSettings);
 builder.Services.AddWebApiServices();
 

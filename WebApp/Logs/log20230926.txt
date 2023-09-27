@@ -1275,3 +1275,390 @@ System.Net.Http.HttpRequestException: No connection could be made because the ta
 2023-09-26 18:40:37.765 -07:00 [INF] SPA development server running at 'https://localhost:44401'
 2023-09-26 18:40:37.767 -07:00 [INF] Request finished HTTP/2 GET https://localhost:7143/ - - - 302 0 - 1619.5522ms
 2023-09-26 18:40:37.767 -07:00 [VRB] Connection id "0HMTUVAR1QFG1" sending "HEADERS" frame for stream ID 5 with length 67 and flags "END_STREAM, END_HEADERS".
+2023-09-26 18:50:15.682 -07:00 [DBG] An additional 'IServiceProvider' was created for internal use by Entity Framework. An existing service provider was not used due to the following configuration changes: configuration changed for 'Core:ConfigureWarnings', configuration added for 'Sqlite'.
+2023-09-26 18:50:15.975 -07:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserRole<string>' as the properties are already covered by the index {'UserId', 'RoleId'}.
+2023-09-26 18:50:15.980 -07:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserToken<string>' as the properties are already covered by the index {'UserId', 'LoginProvider', 'Name'}.
+2023-09-26 18:50:16.170 -07:00 [DBG] Entity Framework Core 7.0.11 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:7.0.11' with options: MigrationsAssembly=Infrastructure 
+2023-09-26 18:50:16.179 -07:00 [DBG] Creating DbConnection.
+2023-09-26 18:50:16.194 -07:00 [DBG] Created DbConnection. (14ms).
+2023-09-26 18:50:16.204 -07:00 [DBG] Creating DbConnection.
+2023-09-26 18:50:16.207 -07:00 [DBG] Created DbConnection. (2ms).
+2023-09-26 18:50:16.211 -07:00 [DBG] Opening connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-26 18:50:16.221 -07:00 [DBG] Opened connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-26 18:50:16.227 -07:00 [DBG] Disposing connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-26 18:50:16.235 -07:00 [DBG] Disposed connection to database 'main' on server 'ConnexDb.sqlite' (4ms).
+2023-09-26 18:50:16.238 -07:00 [DBG] Opening connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-26 18:50:16.241 -07:00 [DBG] Opened connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-26 18:50:16.244 -07:00 [DBG] Closing connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-26 18:50:16.248 -07:00 [DBG] Closed connection to database 'main' on server 'ConnexDb.sqlite' (4ms).
+2023-09-26 18:50:16.253 -07:00 [DBG] 'ApplicationDbContext' disposed.
+2023-09-26 18:50:16.254 -07:00 [DBG] Disposing connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-26 18:50:16.256 -07:00 [DBG] Disposed connection to database 'main' on server 'ConnexDb.sqlite' (1ms).
+2023-09-26 18:50:22.537 -07:00 [DBG] An additional 'IServiceProvider' was created for internal use by Entity Framework. An existing service provider was not used due to the following configuration changes: configuration changed for 'Core:ConfigureWarnings', configuration added for 'Sqlite'.
+2023-09-26 18:50:22.808 -07:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserRole<string>' as the properties are already covered by the index {'UserId', 'RoleId'}.
+2023-09-26 18:50:22.813 -07:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserToken<string>' as the properties are already covered by the index {'UserId', 'LoginProvider', 'Name'}.
+2023-09-26 18:50:22.995 -07:00 [DBG] Entity Framework Core 7.0.11 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:7.0.11' with options: MigrationsAssembly=Infrastructure 
+2023-09-26 18:50:23.031 -07:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserRole<string>' as the properties are already covered by the index {'UserId', 'RoleId'}.
+2023-09-26 18:50:23.036 -07:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserToken<string>' as the properties are already covered by the index {'UserId', 'LoginProvider', 'Name'}.
+2023-09-26 18:50:23.095 -07:00 [DBG] Creating DbConnection.
+2023-09-26 18:50:23.106 -07:00 [DBG] Created DbConnection. (9ms).
+2023-09-26 18:50:23.113 -07:00 [DBG] Opening connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-26 18:50:23.125 -07:00 [DBG] An error occurred using the connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-26 18:50:23.130 -07:00 [DBG] Disposing connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-26 18:50:23.135 -07:00 [DBG] Disposed connection to database 'main' on server 'ConnexDb.sqlite' (1ms).
+2023-09-26 18:50:23.142 -07:00 [DBG] 'ApplicationDbContext' disposed.
+2023-09-26 18:50:29.121 -07:00 [DBG] An additional 'IServiceProvider' was created for internal use by Entity Framework. An existing service provider was not used due to the following configuration changes: configuration changed for 'Core:ConfigureWarnings', configuration added for 'Sqlite'.
+2023-09-26 18:50:29.402 -07:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserRole<string>' as the properties are already covered by the index {'UserId', 'RoleId'}.
+2023-09-26 18:50:29.409 -07:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserToken<string>' as the properties are already covered by the index {'UserId', 'LoginProvider', 'Name'}.
+2023-09-26 18:50:29.566 -07:00 [DBG] Entity Framework Core 7.0.11 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:7.0.11' with options: MigrationsAssembly=Infrastructure 
+2023-09-26 18:50:29.609 -07:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserRole<string>' as the properties are already covered by the index {'UserId', 'RoleId'}.
+2023-09-26 18:50:29.615 -07:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserToken<string>' as the properties are already covered by the index {'UserId', 'LoginProvider', 'Name'}.
+2023-09-26 18:50:29.739 -07:00 [DBG] 'ApplicationDbContext' disposed.
+2023-09-26 18:50:35.596 -07:00 [DBG] An additional 'IServiceProvider' was created for internal use by Entity Framework. An existing service provider was not used due to the following configuration changes: configuration changed for 'Core:ConfigureWarnings', configuration added for 'Sqlite'.
+2023-09-26 18:50:35.857 -07:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserRole<string>' as the properties are already covered by the index {'UserId', 'RoleId'}.
+2023-09-26 18:50:35.863 -07:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserToken<string>' as the properties are already covered by the index {'UserId', 'LoginProvider', 'Name'}.
+2023-09-26 18:50:36.024 -07:00 [DBG] Entity Framework Core 7.0.11 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:7.0.11' with options: MigrationsAssembly=Infrastructure 
+2023-09-26 18:50:36.042 -07:00 [DBG] Creating DbConnection.
+2023-09-26 18:50:36.053 -07:00 [DBG] Created DbConnection. (10ms).
+2023-09-26 18:50:36.059 -07:00 [DBG] Migrating using database 'main' on server 'ConnexDb.sqlite'.
+2023-09-26 18:50:36.065 -07:00 [DBG] Creating DbConnection.
+2023-09-26 18:50:36.067 -07:00 [DBG] Created DbConnection. (1ms).
+2023-09-26 18:50:36.069 -07:00 [DBG] Opening connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-26 18:50:36.078 -07:00 [DBG] An error occurred using the connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-26 18:50:36.081 -07:00 [DBG] Disposing connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-26 18:50:36.086 -07:00 [DBG] Disposed connection to database 'main' on server 'ConnexDb.sqlite' (1ms).
+2023-09-26 18:50:36.089 -07:00 [DBG] Creating DbConnection.
+2023-09-26 18:50:36.090 -07:00 [DBG] Created DbConnection. (0ms).
+2023-09-26 18:50:36.090 -07:00 [DBG] Opening connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-26 18:50:36.092 -07:00 [DBG] An error occurred using the connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-26 18:50:36.093 -07:00 [DBG] Disposing connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-26 18:50:36.095 -07:00 [DBG] Disposed connection to database 'main' on server 'ConnexDb.sqlite' (1ms).
+2023-09-26 18:50:36.097 -07:00 [DBG] Opening connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-26 18:50:36.103 -07:00 [DBG] Opened connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-26 18:50:36.109 -07:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-09-26 18:50:36.115 -07:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (3ms).
+2023-09-26 18:50:36.119 -07:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (9ms).
+2023-09-26 18:50:36.125 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA journal_mode = 'wal';
+2023-09-26 18:50:36.146 -07:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA journal_mode = 'wal';
+2023-09-26 18:50:36.150 -07:00 [DBG] Closing connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-26 18:50:36.152 -07:00 [DBG] Closed connection to database 'main' on server 'ConnexDb.sqlite' (2ms).
+2023-09-26 18:50:36.198 -07:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-09-26 18:50:36.201 -07:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (2ms).
+2023-09-26 18:50:36.202 -07:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (3ms).
+2023-09-26 18:50:36.203 -07:00 [DBG] Opening connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-26 18:50:36.205 -07:00 [DBG] Opened connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-26 18:50:36.206 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "__EFMigrationsHistory" (
+    "MigrationId" TEXT NOT NULL CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY,
+    "ProductVersion" TEXT NOT NULL
+);
+2023-09-26 18:50:36.214 -07:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "__EFMigrationsHistory" (
+    "MigrationId" TEXT NOT NULL CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY,
+    "ProductVersion" TEXT NOT NULL
+);
+2023-09-26 18:50:36.217 -07:00 [DBG] Closing connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-26 18:50:36.218 -07:00 [DBG] Closed connection to database 'main' on server 'ConnexDb.sqlite' (1ms).
+2023-09-26 18:50:36.220 -07:00 [DBG] Creating DbConnection.
+2023-09-26 18:50:36.221 -07:00 [DBG] Created DbConnection. (0ms).
+2023-09-26 18:50:36.222 -07:00 [DBG] Opening connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-26 18:50:36.224 -07:00 [DBG] Opened connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-26 18:50:36.229 -07:00 [DBG] Disposing connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-26 18:50:36.231 -07:00 [DBG] Disposed connection to database 'main' on server 'ConnexDb.sqlite' (1ms).
+2023-09-26 18:50:36.234 -07:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2023-09-26 18:50:36.235 -07:00 [DBG] Created DbCommand for 'ExecuteScalar' (0ms).
+2023-09-26 18:50:36.236 -07:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (2ms).
+2023-09-26 18:50:36.237 -07:00 [DBG] Opening connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-26 18:50:36.238 -07:00 [DBG] Opened connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-26 18:50:36.241 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-09-26 18:50:36.245 -07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-09-26 18:50:36.247 -07:00 [DBG] Closing connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-26 18:50:36.249 -07:00 [DBG] Closed connection to database 'main' on server 'ConnexDb.sqlite' (1ms).
+2023-09-26 18:50:36.251 -07:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-09-26 18:50:36.252 -07:00 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2023-09-26 18:50:36.253 -07:00 [DBG] Initialized DbCommand for 'ExecuteReader' (2ms).
+2023-09-26 18:50:36.258 -07:00 [DBG] Opening connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-26 18:50:36.259 -07:00 [DBG] Opened connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-26 18:50:36.261 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-09-26 18:50:36.264 -07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-09-26 18:50:36.267 -07:00 [DBG] Closing data reader to 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-26 18:50:36.269 -07:00 [DBG] A data reader for 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite' is being disposed after spending 2ms reading results.
+2023-09-26 18:50:36.272 -07:00 [DBG] Closing connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-26 18:50:36.273 -07:00 [DBG] Closed connection to database 'main' on server 'ConnexDb.sqlite' (1ms).
+2023-09-26 18:50:36.282 -07:00 [INF] Applying migration '20230927015029_InitialMigration'.
+2023-09-26 18:50:36.314 -07:00 [DBG] Opening connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-26 18:50:36.322 -07:00 [DBG] Opened connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-26 18:50:36.328 -07:00 [DBG] Beginning transaction with isolation level 'Unspecified'.
+2023-09-26 18:50:36.332 -07:00 [DBG] Began transaction with isolation level 'Serializable'.
+2023-09-26 18:50:36.336 -07:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-09-26 18:50:36.337 -07:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (1ms).
+2023-09-26 18:50:36.339 -07:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (2ms).
+2023-09-26 18:50:36.340 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetRoles" (
+    "Id" TEXT NOT NULL CONSTRAINT "PK_AspNetRoles" PRIMARY KEY,
+    "Name" TEXT NULL,
+    "NormalizedName" TEXT NULL,
+    "ConcurrencyStamp" TEXT NULL
+);
+2023-09-26 18:50:36.342 -07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetRoles" (
+    "Id" TEXT NOT NULL CONSTRAINT "PK_AspNetRoles" PRIMARY KEY,
+    "Name" TEXT NULL,
+    "NormalizedName" TEXT NULL,
+    "ConcurrencyStamp" TEXT NULL
+);
+2023-09-26 18:50:36.344 -07:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-09-26 18:50:36.346 -07:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (1ms).
+2023-09-26 18:50:36.347 -07:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (2ms).
+2023-09-26 18:50:36.352 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetUsers" (
+    "Id" TEXT NOT NULL CONSTRAINT "PK_AspNetUsers" PRIMARY KEY,
+    "GivenName" TEXT NOT NULL,
+    "Surname" TEXT NOT NULL,
+    "DisplayName" TEXT NOT NULL,
+    "LastLoginDate" TEXT NOT NULL,
+    "LoginCount" INTEGER NOT NULL,
+    "UserName" TEXT NULL,
+    "NormalizedUserName" TEXT NULL,
+    "Email" TEXT NULL,
+    "NormalizedEmail" TEXT NULL,
+    "EmailConfirmed" INTEGER NOT NULL,
+    "PasswordHash" TEXT NULL,
+    "SecurityStamp" TEXT NULL,
+    "ConcurrencyStamp" TEXT NULL,
+    "PhoneNumber" TEXT NULL,
+    "PhoneNumberConfirmed" INTEGER NOT NULL,
+    "TwoFactorEnabled" INTEGER NOT NULL,
+    "LockoutEnd" TEXT NULL,
+    "LockoutEnabled" INTEGER NOT NULL,
+    "AccessFailedCount" INTEGER NOT NULL
+);
+2023-09-26 18:50:36.354 -07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetUsers" (
+    "Id" TEXT NOT NULL CONSTRAINT "PK_AspNetUsers" PRIMARY KEY,
+    "GivenName" TEXT NOT NULL,
+    "Surname" TEXT NOT NULL,
+    "DisplayName" TEXT NOT NULL,
+    "LastLoginDate" TEXT NOT NULL,
+    "LoginCount" INTEGER NOT NULL,
+    "UserName" TEXT NULL,
+    "NormalizedUserName" TEXT NULL,
+    "Email" TEXT NULL,
+    "NormalizedEmail" TEXT NULL,
+    "EmailConfirmed" INTEGER NOT NULL,
+    "PasswordHash" TEXT NULL,
+    "SecurityStamp" TEXT NULL,
+    "ConcurrencyStamp" TEXT NULL,
+    "PhoneNumber" TEXT NULL,
+    "PhoneNumberConfirmed" INTEGER NOT NULL,
+    "TwoFactorEnabled" INTEGER NOT NULL,
+    "LockoutEnd" TEXT NULL,
+    "LockoutEnabled" INTEGER NOT NULL,
+    "AccessFailedCount" INTEGER NOT NULL
+);
+2023-09-26 18:50:36.357 -07:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-09-26 18:50:36.358 -07:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (1ms).
+2023-09-26 18:50:36.359 -07:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (2ms).
+2023-09-26 18:50:36.360 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Pages" (
+    "Id" TEXT NOT NULL CONSTRAINT "PK_Pages" PRIMARY KEY,
+    "Title" TEXT NULL,
+    "Author" TEXT NULL,
+    "Editors" TEXT NULL,
+    "ParentId" TEXT NULL,
+    "Tags" TEXT NULL,
+    "ContentDirectory" TEXT NULL,
+    "CreatedDate" TEXT NOT NULL,
+    "LastModifiedDate" TEXT NOT NULL,
+    "CreatedBy" TEXT NULL,
+    "LastModifiedBy" TEXT NULL
+);
+2023-09-26 18:50:36.363 -07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Pages" (
+    "Id" TEXT NOT NULL CONSTRAINT "PK_Pages" PRIMARY KEY,
+    "Title" TEXT NULL,
+    "Author" TEXT NULL,
+    "Editors" TEXT NULL,
+    "ParentId" TEXT NULL,
+    "Tags" TEXT NULL,
+    "ContentDirectory" TEXT NULL,
+    "CreatedDate" TEXT NOT NULL,
+    "LastModifiedDate" TEXT NOT NULL,
+    "CreatedBy" TEXT NULL,
+    "LastModifiedBy" TEXT NULL
+);
+2023-09-26 18:50:36.366 -07:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-09-26 18:50:36.367 -07:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (1ms).
+2023-09-26 18:50:36.368 -07:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (2ms).
+2023-09-26 18:50:36.369 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetRoleClaims" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_AspNetRoleClaims" PRIMARY KEY AUTOINCREMENT,
+    "RoleId" TEXT NOT NULL,
+    "ClaimType" TEXT NULL,
+    "ClaimValue" TEXT NULL,
+    CONSTRAINT "FK_AspNetRoleClaims_AspNetRoles_RoleId" FOREIGN KEY ("RoleId") REFERENCES "AspNetRoles" ("Id") ON DELETE CASCADE
+);
+2023-09-26 18:50:36.372 -07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetRoleClaims" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_AspNetRoleClaims" PRIMARY KEY AUTOINCREMENT,
+    "RoleId" TEXT NOT NULL,
+    "ClaimType" TEXT NULL,
+    "ClaimValue" TEXT NULL,
+    CONSTRAINT "FK_AspNetRoleClaims_AspNetRoles_RoleId" FOREIGN KEY ("RoleId") REFERENCES "AspNetRoles" ("Id") ON DELETE CASCADE
+);
+2023-09-26 18:50:36.374 -07:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-09-26 18:50:36.375 -07:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (1ms).
+2023-09-26 18:50:36.376 -07:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (2ms).
+2023-09-26 18:50:36.378 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetUserClaims" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_AspNetUserClaims" PRIMARY KEY AUTOINCREMENT,
+    "UserId" TEXT NOT NULL,
+    "ClaimType" TEXT NULL,
+    "ClaimValue" TEXT NULL,
+    CONSTRAINT "FK_AspNetUserClaims_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+);
+2023-09-26 18:50:36.385 -07:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetUserClaims" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_AspNetUserClaims" PRIMARY KEY AUTOINCREMENT,
+    "UserId" TEXT NOT NULL,
+    "ClaimType" TEXT NULL,
+    "ClaimValue" TEXT NULL,
+    CONSTRAINT "FK_AspNetUserClaims_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+);
+2023-09-26 18:50:36.387 -07:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-09-26 18:50:36.388 -07:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (1ms).
+2023-09-26 18:50:36.389 -07:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (2ms).
+2023-09-26 18:50:36.391 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetUserLogins" (
+    "LoginProvider" TEXT NOT NULL,
+    "ProviderKey" TEXT NOT NULL,
+    "ProviderDisplayName" TEXT NULL,
+    "UserId" TEXT NOT NULL,
+    CONSTRAINT "PK_AspNetUserLogins" PRIMARY KEY ("LoginProvider", "ProviderKey"),
+    CONSTRAINT "FK_AspNetUserLogins_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+);
+2023-09-26 18:50:36.393 -07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetUserLogins" (
+    "LoginProvider" TEXT NOT NULL,
+    "ProviderKey" TEXT NOT NULL,
+    "ProviderDisplayName" TEXT NULL,
+    "UserId" TEXT NOT NULL,
+    CONSTRAINT "PK_AspNetUserLogins" PRIMARY KEY ("LoginProvider", "ProviderKey"),
+    CONSTRAINT "FK_AspNetUserLogins_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+);
+2023-09-26 18:50:36.397 -07:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-09-26 18:50:36.398 -07:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (1ms).
+2023-09-26 18:50:36.399 -07:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (2ms).
+2023-09-26 18:50:36.400 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetUserRoles" (
+    "UserId" TEXT NOT NULL,
+    "RoleId" TEXT NOT NULL,
+    CONSTRAINT "PK_AspNetUserRoles" PRIMARY KEY ("UserId", "RoleId"),
+    CONSTRAINT "FK_AspNetUserRoles_AspNetRoles_RoleId" FOREIGN KEY ("RoleId") REFERENCES "AspNetRoles" ("Id") ON DELETE CASCADE,
+    CONSTRAINT "FK_AspNetUserRoles_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+);
+2023-09-26 18:50:36.402 -07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetUserRoles" (
+    "UserId" TEXT NOT NULL,
+    "RoleId" TEXT NOT NULL,
+    CONSTRAINT "PK_AspNetUserRoles" PRIMARY KEY ("UserId", "RoleId"),
+    CONSTRAINT "FK_AspNetUserRoles_AspNetRoles_RoleId" FOREIGN KEY ("RoleId") REFERENCES "AspNetRoles" ("Id") ON DELETE CASCADE,
+    CONSTRAINT "FK_AspNetUserRoles_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+);
+2023-09-26 18:50:36.404 -07:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-09-26 18:50:36.405 -07:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (1ms).
+2023-09-26 18:50:36.406 -07:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (2ms).
+2023-09-26 18:50:36.407 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetUserTokens" (
+    "UserId" TEXT NOT NULL,
+    "LoginProvider" TEXT NOT NULL,
+    "Name" TEXT NOT NULL,
+    "Value" TEXT NULL,
+    CONSTRAINT "PK_AspNetUserTokens" PRIMARY KEY ("UserId", "LoginProvider", "Name"),
+    CONSTRAINT "FK_AspNetUserTokens_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+);
+2023-09-26 18:50:36.409 -07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetUserTokens" (
+    "UserId" TEXT NOT NULL,
+    "LoginProvider" TEXT NOT NULL,
+    "Name" TEXT NOT NULL,
+    "Value" TEXT NULL,
+    CONSTRAINT "PK_AspNetUserTokens" PRIMARY KEY ("UserId", "LoginProvider", "Name"),
+    CONSTRAINT "FK_AspNetUserTokens_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+);
+2023-09-26 18:50:36.411 -07:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-09-26 18:50:36.417 -07:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (6ms).
+2023-09-26 18:50:36.418 -07:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (7ms).
+2023-09-26 18:50:36.420 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_AspNetRoleClaims_RoleId" ON "AspNetRoleClaims" ("RoleId");
+2023-09-26 18:50:36.421 -07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_AspNetRoleClaims_RoleId" ON "AspNetRoleClaims" ("RoleId");
+2023-09-26 18:50:36.423 -07:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-09-26 18:50:36.424 -07:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2023-09-26 18:50:36.425 -07:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (2ms).
+2023-09-26 18:50:36.428 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX "RoleNameIndex" ON "AspNetRoles" ("NormalizedName");
+2023-09-26 18:50:36.430 -07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX "RoleNameIndex" ON "AspNetRoles" ("NormalizedName");
+2023-09-26 18:50:36.432 -07:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-09-26 18:50:36.433 -07:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (1ms).
+2023-09-26 18:50:36.434 -07:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (2ms).
+2023-09-26 18:50:36.435 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_AspNetUserClaims_UserId" ON "AspNetUserClaims" ("UserId");
+2023-09-26 18:50:36.437 -07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_AspNetUserClaims_UserId" ON "AspNetUserClaims" ("UserId");
+2023-09-26 18:50:36.439 -07:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-09-26 18:50:36.439 -07:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2023-09-26 18:50:36.441 -07:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (2ms).
+2023-09-26 18:50:36.443 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_AspNetUserLogins_UserId" ON "AspNetUserLogins" ("UserId");
+2023-09-26 18:50:36.449 -07:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_AspNetUserLogins_UserId" ON "AspNetUserLogins" ("UserId");
+2023-09-26 18:50:36.450 -07:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-09-26 18:50:36.451 -07:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2023-09-26 18:50:36.452 -07:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (1ms).
+2023-09-26 18:50:36.455 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_AspNetUserRoles_RoleId" ON "AspNetUserRoles" ("RoleId");
+2023-09-26 18:50:36.457 -07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_AspNetUserRoles_RoleId" ON "AspNetUserRoles" ("RoleId");
+2023-09-26 18:50:36.460 -07:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-09-26 18:50:36.461 -07:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (1ms).
+2023-09-26 18:50:36.462 -07:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (2ms).
+2023-09-26 18:50:36.464 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "EmailIndex" ON "AspNetUsers" ("NormalizedEmail");
+2023-09-26 18:50:36.466 -07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "EmailIndex" ON "AspNetUsers" ("NormalizedEmail");
+2023-09-26 18:50:36.468 -07:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-09-26 18:50:36.469 -07:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (1ms).
+2023-09-26 18:50:36.470 -07:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (2ms).
+2023-09-26 18:50:36.471 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX "UserNameIndex" ON "AspNetUsers" ("NormalizedUserName");
+2023-09-26 18:50:36.477 -07:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX "UserNameIndex" ON "AspNetUsers" ("NormalizedUserName");
+2023-09-26 18:50:36.479 -07:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-09-26 18:50:36.480 -07:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2023-09-26 18:50:36.481 -07:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (2ms).
+2023-09-26 18:50:36.482 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20230927015029_InitialMigration', '7.0.11');
+2023-09-26 18:50:36.484 -07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20230927015029_InitialMigration', '7.0.11');
+2023-09-26 18:50:36.487 -07:00 [DBG] Committing transaction.
+2023-09-26 18:50:36.495 -07:00 [DBG] Committed transaction.
+2023-09-26 18:50:36.497 -07:00 [DBG] Disposing transaction.
+2023-09-26 18:50:36.498 -07:00 [DBG] Closing connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-26 18:50:36.499 -07:00 [DBG] Closed connection to database 'main' on server 'ConnexDb.sqlite' (1ms).
+2023-09-26 18:50:36.501 -07:00 [DBG] 'ApplicationDbContext' disposed.
+2023-09-26 18:50:36.502 -07:00 [DBG] Disposing connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-26 18:50:36.504 -07:00 [DBG] Disposed connection to database 'main' on server 'ConnexDb.sqlite' (1ms).
