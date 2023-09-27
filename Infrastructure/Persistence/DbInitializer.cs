@@ -1,5 +1,4 @@
 ﻿using Domain.Entities;
-using Infrastructure.Identity;
 using Infrastructure.Persistence.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -70,7 +69,6 @@ public class DbInitializer
             // context.Users.Add(new ApplicationUser(userName: email, givenName: firstNames[i], surname: lastNames[i], displayName: $"{firstNames[i]} {lastNames[i]}"));
         }
 
-        //TODO: Figure out why this is not saving
         await context.SaveChangesAsync();
 
         logger.LogInformation("Finished Seeding");
