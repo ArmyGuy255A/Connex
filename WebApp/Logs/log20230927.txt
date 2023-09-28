@@ -1,0 +1,683 @@
+2023-09-27 08:19:53.906 -07:00 [DBG] An additional 'IServiceProvider' was created for internal use by Entity Framework. An existing service provider was not used due to the following configuration changes: configuration changed for 'Core:ConfigureWarnings', configuration added for 'Sqlite'.
+2023-09-27 08:19:54.578 -07:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserRole<string>' as the properties are already covered by the index {'UserId', 'RoleId'}.
+2023-09-27 08:19:54.582 -07:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserToken<string>' as the properties are already covered by the index {'UserId', 'LoginProvider', 'Name'}.
+2023-09-27 08:19:54.892 -07:00 [DBG] Entity Framework Core 7.0.11 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:7.0.11' with options: MigrationsAssembly=Infrastructure 
+2023-09-27 08:19:54.907 -07:00 [DBG] Creating DbConnection.
+2023-09-27 08:19:54.925 -07:00 [DBG] Created DbConnection. (15ms).
+2023-09-27 08:19:54.935 -07:00 [DBG] Migrating using database 'main' on server 'ConnexDb.sqlite'.
+2023-09-27 08:19:54.944 -07:00 [DBG] Creating DbConnection.
+2023-09-27 08:19:54.946 -07:00 [DBG] Created DbConnection. (1ms).
+2023-09-27 08:19:54.949 -07:00 [DBG] Opening connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-27 08:19:54.962 -07:00 [DBG] Opened connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:19:54.973 -07:00 [DBG] Disposing connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-27 08:19:54.982 -07:00 [DBG] Disposed connection to database 'main' on server 'ConnexDb.sqlite' (4ms).
+2023-09-27 08:19:54.995 -07:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2023-09-27 08:19:55.006 -07:00 [DBG] Created DbCommand for 'ExecuteScalar' (6ms).
+2023-09-27 08:19:55.012 -07:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (16ms).
+2023-09-27 08:19:55.016 -07:00 [DBG] Opening connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-27 08:19:55.021 -07:00 [DBG] Opened connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:19:55.033 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-09-27 08:19:55.059 -07:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-09-27 08:19:55.070 -07:00 [DBG] Closing connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:19:55.074 -07:00 [DBG] Closed connection to database 'main' on server 'ConnexDb.sqlite' (4ms).
+2023-09-27 08:19:55.078 -07:00 [DBG] Creating DbConnection.
+2023-09-27 08:19:55.079 -07:00 [DBG] Created DbConnection. (0ms).
+2023-09-27 08:19:55.080 -07:00 [DBG] Opening connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-27 08:19:55.082 -07:00 [DBG] Opened connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:19:55.083 -07:00 [DBG] Disposing connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-27 08:19:55.086 -07:00 [DBG] Disposed connection to database 'main' on server 'ConnexDb.sqlite' (2ms).
+2023-09-27 08:19:55.087 -07:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2023-09-27 08:19:55.089 -07:00 [DBG] Created DbCommand for 'ExecuteScalar' (1ms).
+2023-09-27 08:19:55.090 -07:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (2ms).
+2023-09-27 08:19:55.092 -07:00 [DBG] Opening connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-27 08:19:55.093 -07:00 [DBG] Opened connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:19:55.094 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-09-27 08:19:55.097 -07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-09-27 08:19:55.101 -07:00 [DBG] Closing connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:19:55.102 -07:00 [DBG] Closed connection to database 'main' on server 'ConnexDb.sqlite' (1ms).
+2023-09-27 08:19:55.113 -07:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-09-27 08:19:55.117 -07:00 [DBG] Created DbCommand for 'ExecuteReader' (3ms).
+2023-09-27 08:19:55.118 -07:00 [DBG] Initialized DbCommand for 'ExecuteReader' (4ms).
+2023-09-27 08:19:55.120 -07:00 [DBG] Opening connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-27 08:19:55.121 -07:00 [DBG] Opened connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:19:55.123 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-09-27 08:19:55.127 -07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-09-27 08:19:55.135 -07:00 [DBG] Closing data reader to 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:19:55.137 -07:00 [DBG] A data reader for 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite' is being disposed after spending 6ms reading results.
+2023-09-27 08:19:55.142 -07:00 [DBG] Closing connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:19:55.143 -07:00 [DBG] Closed connection to database 'main' on server 'ConnexDb.sqlite' (1ms).
+2023-09-27 08:19:55.159 -07:00 [INF] No migrations were applied. The database is already up to date.
+2023-09-27 08:19:55.187 -07:00 [DBG] Compiling query expression: 
+'DbSet<ApplicationRole>()
+    .Any()'
+2023-09-27 08:19:55.345 -07:00 [DBG] Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<bool>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> 0
+        SELECT EXISTS (
+            SELECT 1
+            FROM AspNetRoles AS a)), 
+    null, 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, bool>, 
+    Infrastructure.Persistence.Contexts.ApplicationDbContext, 
+    False, 
+    False, 
+    True
+)
+    .Single()'
+2023-09-27 08:19:55.375 -07:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-09-27 08:19:55.379 -07:00 [DBG] Created DbCommand for 'ExecuteReader' (4ms).
+2023-09-27 08:19:55.382 -07:00 [DBG] Initialized DbCommand for 'ExecuteReader' (6ms).
+2023-09-27 08:19:55.383 -07:00 [DBG] Opening connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-27 08:19:55.384 -07:00 [DBG] Opened connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:19:55.386 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetRoles" AS "a")
+2023-09-27 08:19:55.389 -07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetRoles" AS "a")
+2023-09-27 08:19:55.395 -07:00 [DBG] Closing data reader to 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:19:55.397 -07:00 [DBG] A data reader for 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite' is being disposed after spending 5ms reading results.
+2023-09-27 08:19:55.400 -07:00 [DBG] Closing connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:19:55.401 -07:00 [DBG] Closed connection to database 'main' on server 'ConnexDb.sqlite' (1ms).
+2023-09-27 08:19:55.415 -07:00 [INF] Seeding roles
+2023-09-27 08:19:55.486 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'ApplicationRole' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-09-27 08:19:55.496 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'ApplicationRole' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-09-27 08:19:55.499 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'ApplicationRole' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-09-27 08:19:55.503 -07:00 [DBG] SaveChanges starting for 'ApplicationDbContext'.
+2023-09-27 08:19:55.507 -07:00 [DBG] DetectChanges starting for 'ApplicationDbContext'.
+2023-09-27 08:19:55.515 -07:00 [DBG] DetectChanges completed for 'ApplicationDbContext'.
+2023-09-27 08:19:55.584 -07:00 [DBG] Opening connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-27 08:19:55.587 -07:00 [DBG] Opened connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:19:55.591 -07:00 [DBG] Beginning transaction with isolation level 'Unspecified'.
+2023-09-27 08:19:55.596 -07:00 [DBG] Began transaction with isolation level 'Serializable'.
+2023-09-27 08:19:55.599 -07:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-09-27 08:19:55.608 -07:00 [DBG] Created DbCommand for 'ExecuteReader' (8ms).
+2023-09-27 08:19:55.613 -07:00 [DBG] Initialized DbCommand for 'ExecuteReader' (13ms).
+2023-09-27 08:19:55.617 -07:00 [DBG] Executing DbCommand [Parameters=[@p0='?' (Size = 36), @p1='?', @p2='?' (Size = 6), @p3='?' (Size = 6)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetRoles" ("Id", "ConcurrencyStamp", "Name", "NormalizedName")
+VALUES (@p0, @p1, @p2, @p3);
+2023-09-27 08:19:55.624 -07:00 [INF] Executed DbCommand (10ms) [Parameters=[@p0='?' (Size = 36), @p1='?', @p2='?' (Size = 6), @p3='?' (Size = 6)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetRoles" ("Id", "ConcurrencyStamp", "Name", "NormalizedName")
+VALUES (@p0, @p1, @p2, @p3);
+2023-09-27 08:19:55.628 -07:00 [DBG] Closing data reader to 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:19:55.630 -07:00 [DBG] A data reader for 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite' is being disposed after spending 3ms reading results.
+2023-09-27 08:19:55.632 -07:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-09-27 08:19:55.633 -07:00 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2023-09-27 08:19:55.635 -07:00 [DBG] Initialized DbCommand for 'ExecuteReader' (2ms).
+2023-09-27 08:19:55.636 -07:00 [DBG] Executing DbCommand [Parameters=[@p0='?' (Size = 36), @p1='?', @p2='?' (Size = 11), @p3='?' (Size = 11)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetRoles" ("Id", "ConcurrencyStamp", "Name", "NormalizedName")
+VALUES (@p0, @p1, @p2, @p3);
+2023-09-27 08:19:55.639 -07:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 36), @p1='?', @p2='?' (Size = 11), @p3='?' (Size = 11)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetRoles" ("Id", "ConcurrencyStamp", "Name", "NormalizedName")
+VALUES (@p0, @p1, @p2, @p3);
+2023-09-27 08:19:55.642 -07:00 [DBG] Closing data reader to 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:19:55.644 -07:00 [DBG] A data reader for 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite' is being disposed after spending 2ms reading results.
+2023-09-27 08:19:55.659 -07:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-09-27 08:19:55.661 -07:00 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2023-09-27 08:19:55.665 -07:00 [DBG] Initialized DbCommand for 'ExecuteReader' (6ms).
+2023-09-27 08:19:55.667 -07:00 [DBG] Executing DbCommand [Parameters=[@p0='?' (Size = 36), @p1='?', @p2='?' (Size = 13), @p3='?' (Size = 13)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetRoles" ("Id", "ConcurrencyStamp", "Name", "NormalizedName")
+VALUES (@p0, @p1, @p2, @p3);
+2023-09-27 08:19:55.669 -07:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 36), @p1='?', @p2='?' (Size = 13), @p3='?' (Size = 13)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetRoles" ("Id", "ConcurrencyStamp", "Name", "NormalizedName")
+VALUES (@p0, @p1, @p2, @p3);
+2023-09-27 08:19:55.671 -07:00 [DBG] Closing data reader to 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:19:55.672 -07:00 [DBG] A data reader for 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite' is being disposed after spending 1ms reading results.
+2023-09-27 08:19:55.677 -07:00 [DBG] Committing transaction.
+2023-09-27 08:19:55.688 -07:00 [DBG] Committed transaction.
+2023-09-27 08:19:55.691 -07:00 [DBG] Closing connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:19:55.693 -07:00 [DBG] Closed connection to database 'main' on server 'ConnexDb.sqlite' (1ms).
+2023-09-27 08:19:55.698 -07:00 [DBG] Disposing transaction.
+2023-09-27 08:19:55.706 -07:00 [DBG] An entity of type 'ApplicationRole' tracked by 'ApplicationDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-09-27 08:19:55.708 -07:00 [DBG] An entity of type 'ApplicationRole' tracked by 'ApplicationDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-09-27 08:19:55.712 -07:00 [DBG] An entity of type 'ApplicationRole' tracked by 'ApplicationDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-09-27 08:19:55.714 -07:00 [DBG] SaveChanges completed for 'ApplicationDbContext' with 3 entities written to the database.
+2023-09-27 08:19:55.716 -07:00 [DBG] Compiling query expression: 
+'DbSet<Page>()
+    .Any()'
+2023-09-27 08:19:55.720 -07:00 [DBG] Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<bool>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> 0
+        SELECT EXISTS (
+            SELECT 1
+            FROM Pages AS p)), 
+    null, 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, bool>, 
+    Infrastructure.Persistence.Contexts.ApplicationDbContext, 
+    False, 
+    False, 
+    True
+)
+    .Single()'
+2023-09-27 08:19:55.723 -07:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-09-27 08:19:55.724 -07:00 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2023-09-27 08:19:55.726 -07:00 [DBG] Initialized DbCommand for 'ExecuteReader' (3ms).
+2023-09-27 08:19:55.728 -07:00 [DBG] Opening connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-27 08:19:55.729 -07:00 [DBG] Opened connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:19:55.730 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Pages" AS "p")
+2023-09-27 08:19:55.732 -07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Pages" AS "p")
+2023-09-27 08:19:55.734 -07:00 [DBG] Closing data reader to 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:19:55.736 -07:00 [DBG] A data reader for 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite' is being disposed after spending 1ms reading results.
+2023-09-27 08:19:55.737 -07:00 [DBG] Closing connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:19:55.738 -07:00 [DBG] Closed connection to database 'main' on server 'ConnexDb.sqlite' (1ms).
+2023-09-27 08:19:55.747 -07:00 [INF] Seeding a default page
+2023-09-27 08:19:55.770 -07:00 [DBG] 'ApplicationDbContext' generated a value for the property 'Id.Page'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-09-27 08:19:55.803 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'Page' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-09-27 08:19:55.810 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'Page' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-09-27 08:19:55.813 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'Page' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-09-27 08:19:55.814 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'Page' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-09-27 08:19:55.848 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'ApplicationUser' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-09-27 08:19:55.852 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'ApplicationUser' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-09-27 08:19:55.853 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'ApplicationUser' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-09-27 08:19:55.855 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'ApplicationUser' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-09-27 08:19:55.858 -07:00 [DBG] SaveChanges starting for 'ApplicationDbContext'.
+2023-09-27 08:19:55.860 -07:00 [DBG] DetectChanges starting for 'ApplicationDbContext'.
+2023-09-27 08:19:55.881 -07:00 [DBG] DetectChanges completed for 'ApplicationDbContext'.
+2023-09-27 08:19:55.891 -07:00 [DBG] Opening connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-27 08:19:55.893 -07:00 [DBG] Opened connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:19:55.894 -07:00 [DBG] Beginning transaction with isolation level 'Unspecified'.
+2023-09-27 08:19:55.895 -07:00 [DBG] Began transaction with isolation level 'Serializable'.
+2023-09-27 08:19:55.896 -07:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-09-27 08:19:55.898 -07:00 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2023-09-27 08:19:55.901 -07:00 [DBG] Initialized DbCommand for 'ExecuteReader' (5ms).
+2023-09-27 08:19:55.903 -07:00 [DBG] Executing DbCommand [Parameters=[@p0='?' (Size = 36), @p1='?' (DbType = Int32), @p2='?' (Size = 36), @p3='?' (Size = 10), @p4='?', @p5='?' (DbType = Boolean), @p6='?' (Size = 4), @p7='?' (DbType = DateTime), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (DbType = Int32), @p11='?', @p12='?', @p13='?', @p14='?', @p15='?' (DbType = Boolean), @p16='?' (Size = 36), @p17='?' (Size = 5), @p18='?' (DbType = Boolean), @p19='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "ConcurrencyStamp", "DisplayName", "Email", "EmailConfirmed", "GivenName", "LastLoginDate", "LockoutEnabled", "LockoutEnd", "LoginCount", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "Surname", "TwoFactorEnabled", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19);
+2023-09-27 08:19:55.907 -07:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (DbType = Int32), @p2='?' (Size = 36), @p3='?' (Size = 10), @p4='?', @p5='?' (DbType = Boolean), @p6='?' (Size = 4), @p7='?' (DbType = DateTime), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (DbType = Int32), @p11='?', @p12='?', @p13='?', @p14='?', @p15='?' (DbType = Boolean), @p16='?' (Size = 36), @p17='?' (Size = 5), @p18='?' (DbType = Boolean), @p19='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "ConcurrencyStamp", "DisplayName", "Email", "EmailConfirmed", "GivenName", "LastLoginDate", "LockoutEnabled", "LockoutEnd", "LoginCount", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "Surname", "TwoFactorEnabled", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19);
+2023-09-27 08:19:55.910 -07:00 [DBG] Closing data reader to 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:19:55.911 -07:00 [DBG] A data reader for 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite' is being disposed after spending 1ms reading results.
+2023-09-27 08:19:55.913 -07:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-09-27 08:19:55.916 -07:00 [DBG] Created DbCommand for 'ExecuteReader' (2ms).
+2023-09-27 08:19:55.917 -07:00 [DBG] Initialized DbCommand for 'ExecuteReader' (3ms).
+2023-09-27 08:19:55.918 -07:00 [DBG] Executing DbCommand [Parameters=[@p0='?' (Size = 36), @p1='?' (DbType = Int32), @p2='?' (Size = 36), @p3='?' (Size = 10), @p4='?', @p5='?' (DbType = Boolean), @p6='?' (Size = 5), @p7='?' (DbType = DateTime), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (DbType = Int32), @p11='?', @p12='?', @p13='?', @p14='?', @p15='?' (DbType = Boolean), @p16='?' (Size = 36), @p17='?' (Size = 4), @p18='?' (DbType = Boolean), @p19='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "ConcurrencyStamp", "DisplayName", "Email", "EmailConfirmed", "GivenName", "LastLoginDate", "LockoutEnabled", "LockoutEnd", "LoginCount", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "Surname", "TwoFactorEnabled", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19);
+2023-09-27 08:19:55.920 -07:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (DbType = Int32), @p2='?' (Size = 36), @p3='?' (Size = 10), @p4='?', @p5='?' (DbType = Boolean), @p6='?' (Size = 5), @p7='?' (DbType = DateTime), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (DbType = Int32), @p11='?', @p12='?', @p13='?', @p14='?', @p15='?' (DbType = Boolean), @p16='?' (Size = 36), @p17='?' (Size = 4), @p18='?' (DbType = Boolean), @p19='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "ConcurrencyStamp", "DisplayName", "Email", "EmailConfirmed", "GivenName", "LastLoginDate", "LockoutEnabled", "LockoutEnd", "LoginCount", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "Surname", "TwoFactorEnabled", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19);
+2023-09-27 08:19:55.925 -07:00 [DBG] Closing data reader to 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:19:55.926 -07:00 [DBG] A data reader for 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite' is being disposed after spending 1ms reading results.
+2023-09-27 08:19:55.928 -07:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-09-27 08:19:55.932 -07:00 [DBG] Created DbCommand for 'ExecuteReader' (3ms).
+2023-09-27 08:19:55.933 -07:00 [DBG] Initialized DbCommand for 'ExecuteReader' (5ms).
+2023-09-27 08:19:55.934 -07:00 [DBG] Executing DbCommand [Parameters=[@p0='?' (Size = 36), @p1='?' (DbType = Int32), @p2='?' (Size = 36), @p3='?' (Size = 9), @p4='?', @p5='?' (DbType = Boolean), @p6='?' (Size = 3), @p7='?' (DbType = DateTime), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (DbType = Int32), @p11='?', @p12='?', @p13='?', @p14='?', @p15='?' (DbType = Boolean), @p16='?' (Size = 36), @p17='?' (Size = 5), @p18='?' (DbType = Boolean), @p19='?' (Size = 14)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "ConcurrencyStamp", "DisplayName", "Email", "EmailConfirmed", "GivenName", "LastLoginDate", "LockoutEnabled", "LockoutEnd", "LoginCount", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "Surname", "TwoFactorEnabled", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19);
+2023-09-27 08:19:55.937 -07:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (DbType = Int32), @p2='?' (Size = 36), @p3='?' (Size = 9), @p4='?', @p5='?' (DbType = Boolean), @p6='?' (Size = 3), @p7='?' (DbType = DateTime), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (DbType = Int32), @p11='?', @p12='?', @p13='?', @p14='?', @p15='?' (DbType = Boolean), @p16='?' (Size = 36), @p17='?' (Size = 5), @p18='?' (DbType = Boolean), @p19='?' (Size = 14)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "ConcurrencyStamp", "DisplayName", "Email", "EmailConfirmed", "GivenName", "LastLoginDate", "LockoutEnabled", "LockoutEnd", "LoginCount", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "Surname", "TwoFactorEnabled", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19);
+2023-09-27 08:19:55.941 -07:00 [DBG] Closing data reader to 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:19:55.942 -07:00 [DBG] A data reader for 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite' is being disposed after spending 1ms reading results.
+2023-09-27 08:19:55.945 -07:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-09-27 08:19:55.946 -07:00 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2023-09-27 08:19:55.948 -07:00 [DBG] Initialized DbCommand for 'ExecuteReader' (2ms).
+2023-09-27 08:19:55.949 -07:00 [DBG] Executing DbCommand [Parameters=[@p0='?' (Size = 36), @p1='?' (DbType = Int32), @p2='?' (Size = 36), @p3='?' (Size = 15), @p4='?', @p5='?' (DbType = Boolean), @p6='?' (Size = 4), @p7='?' (DbType = DateTime), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (DbType = Int32), @p11='?', @p12='?', @p13='?', @p14='?', @p15='?' (DbType = Boolean), @p16='?' (Size = 36), @p17='?' (Size = 10), @p18='?' (DbType = Boolean), @p19='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "ConcurrencyStamp", "DisplayName", "Email", "EmailConfirmed", "GivenName", "LastLoginDate", "LockoutEnabled", "LockoutEnd", "LoginCount", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "Surname", "TwoFactorEnabled", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19);
+2023-09-27 08:19:55.952 -07:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (DbType = Int32), @p2='?' (Size = 36), @p3='?' (Size = 15), @p4='?', @p5='?' (DbType = Boolean), @p6='?' (Size = 4), @p7='?' (DbType = DateTime), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (DbType = Int32), @p11='?', @p12='?', @p13='?', @p14='?', @p15='?' (DbType = Boolean), @p16='?' (Size = 36), @p17='?' (Size = 10), @p18='?' (DbType = Boolean), @p19='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "ConcurrencyStamp", "DisplayName", "Email", "EmailConfirmed", "GivenName", "LastLoginDate", "LockoutEnabled", "LockoutEnd", "LoginCount", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "Surname", "TwoFactorEnabled", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19);
+2023-09-27 08:19:55.954 -07:00 [DBG] Closing data reader to 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:19:55.956 -07:00 [DBG] A data reader for 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite' is being disposed after spending 1ms reading results.
+2023-09-27 08:19:55.958 -07:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-09-27 08:19:55.961 -07:00 [DBG] Created DbCommand for 'ExecuteReader' (2ms).
+2023-09-27 08:19:55.964 -07:00 [DBG] Initialized DbCommand for 'ExecuteReader' (5ms).
+2023-09-27 08:19:55.965 -07:00 [DBG] Executing DbCommand [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 13), @p2='?' (Size = 5), @p3='?', @p4='?' (DbType = DateTime), @p5='?', @p6='?', @p7='?' (DbType = DateTime), @p8='?' (DbType = Guid), @p9='?' (Size = 10), @p10='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Pages" ("Id", "Author", "ContentDirectory", "CreatedBy", "CreatedDate", "Editors", "LastModifiedBy", "LastModifiedDate", "ParentId", "Tags", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2023-09-27 08:19:55.968 -07:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 13), @p2='?' (Size = 5), @p3='?', @p4='?' (DbType = DateTime), @p5='?', @p6='?', @p7='?' (DbType = DateTime), @p8='?' (DbType = Guid), @p9='?' (Size = 10), @p10='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Pages" ("Id", "Author", "ContentDirectory", "CreatedBy", "CreatedDate", "Editors", "LastModifiedBy", "LastModifiedDate", "ParentId", "Tags", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2023-09-27 08:19:55.971 -07:00 [DBG] Closing data reader to 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:19:55.973 -07:00 [DBG] A data reader for 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite' is being disposed after spending 1ms reading results.
+2023-09-27 08:19:55.977 -07:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-09-27 08:19:55.978 -07:00 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2023-09-27 08:19:55.980 -07:00 [DBG] Initialized DbCommand for 'ExecuteReader' (3ms).
+2023-09-27 08:19:55.981 -07:00 [DBG] Executing DbCommand [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 13), @p2='?' (Size = 5), @p3='?', @p4='?' (DbType = DateTime), @p5='?', @p6='?', @p7='?' (DbType = DateTime), @p8='?' (DbType = Guid), @p9='?' (Size = 10), @p10='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Pages" ("Id", "Author", "ContentDirectory", "CreatedBy", "CreatedDate", "Editors", "LastModifiedBy", "LastModifiedDate", "ParentId", "Tags", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2023-09-27 08:19:55.984 -07:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 13), @p2='?' (Size = 5), @p3='?', @p4='?' (DbType = DateTime), @p5='?', @p6='?', @p7='?' (DbType = DateTime), @p8='?' (DbType = Guid), @p9='?' (Size = 10), @p10='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Pages" ("Id", "Author", "ContentDirectory", "CreatedBy", "CreatedDate", "Editors", "LastModifiedBy", "LastModifiedDate", "ParentId", "Tags", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2023-09-27 08:19:55.987 -07:00 [DBG] Closing data reader to 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:19:55.988 -07:00 [DBG] A data reader for 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite' is being disposed after spending 1ms reading results.
+2023-09-27 08:19:55.992 -07:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-09-27 08:19:55.993 -07:00 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2023-09-27 08:19:55.994 -07:00 [DBG] Initialized DbCommand for 'ExecuteReader' (2ms).
+2023-09-27 08:19:55.996 -07:00 [DBG] Executing DbCommand [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 13), @p2='?' (Size = 5), @p3='?', @p4='?' (DbType = DateTime), @p5='?', @p6='?', @p7='?' (DbType = DateTime), @p8='?' (DbType = Guid), @p9='?' (Size = 10), @p10='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Pages" ("Id", "Author", "ContentDirectory", "CreatedBy", "CreatedDate", "Editors", "LastModifiedBy", "LastModifiedDate", "ParentId", "Tags", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2023-09-27 08:19:55.998 -07:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 13), @p2='?' (Size = 5), @p3='?', @p4='?' (DbType = DateTime), @p5='?', @p6='?', @p7='?' (DbType = DateTime), @p8='?' (DbType = Guid), @p9='?' (Size = 10), @p10='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Pages" ("Id", "Author", "ContentDirectory", "CreatedBy", "CreatedDate", "Editors", "LastModifiedBy", "LastModifiedDate", "ParentId", "Tags", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2023-09-27 08:19:56.001 -07:00 [DBG] Closing data reader to 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:19:56.002 -07:00 [DBG] A data reader for 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite' is being disposed after spending 1ms reading results.
+2023-09-27 08:19:56.004 -07:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-09-27 08:19:56.007 -07:00 [DBG] Created DbCommand for 'ExecuteReader' (3ms).
+2023-09-27 08:19:56.011 -07:00 [DBG] Initialized DbCommand for 'ExecuteReader' (6ms).
+2023-09-27 08:19:56.012 -07:00 [DBG] Executing DbCommand [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 13), @p2='?' (Size = 4), @p3='?', @p4='?' (DbType = DateTime), @p5='?', @p6='?', @p7='?' (DbType = DateTime), @p8='?' (DbType = Guid), @p9='?' (Size = 10), @p10='?' (Size = 4)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Pages" ("Id", "Author", "ContentDirectory", "CreatedBy", "CreatedDate", "Editors", "LastModifiedBy", "LastModifiedDate", "ParentId", "Tags", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2023-09-27 08:19:56.014 -07:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 13), @p2='?' (Size = 4), @p3='?', @p4='?' (DbType = DateTime), @p5='?', @p6='?', @p7='?' (DbType = DateTime), @p8='?' (DbType = Guid), @p9='?' (Size = 10), @p10='?' (Size = 4)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Pages" ("Id", "Author", "ContentDirectory", "CreatedBy", "CreatedDate", "Editors", "LastModifiedBy", "LastModifiedDate", "ParentId", "Tags", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2023-09-27 08:19:56.017 -07:00 [DBG] Closing data reader to 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:19:56.018 -07:00 [DBG] A data reader for 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite' is being disposed after spending 1ms reading results.
+2023-09-27 08:19:56.020 -07:00 [DBG] Committing transaction.
+2023-09-27 08:19:56.027 -07:00 [DBG] Committed transaction.
+2023-09-27 08:19:56.028 -07:00 [DBG] Closing connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:19:56.029 -07:00 [DBG] Closed connection to database 'main' on server 'ConnexDb.sqlite' (1ms).
+2023-09-27 08:19:56.031 -07:00 [DBG] Disposing transaction.
+2023-09-27 08:19:56.033 -07:00 [DBG] An entity of type 'Page' tracked by 'ApplicationDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-09-27 08:19:56.035 -07:00 [DBG] An entity of type 'Page' tracked by 'ApplicationDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-09-27 08:19:56.038 -07:00 [DBG] An entity of type 'Page' tracked by 'ApplicationDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-09-27 08:19:56.041 -07:00 [DBG] An entity of type 'Page' tracked by 'ApplicationDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-09-27 08:19:56.044 -07:00 [DBG] An entity of type 'ApplicationUser' tracked by 'ApplicationDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-09-27 08:19:56.046 -07:00 [DBG] An entity of type 'ApplicationUser' tracked by 'ApplicationDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-09-27 08:19:56.048 -07:00 [DBG] An entity of type 'ApplicationUser' tracked by 'ApplicationDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-09-27 08:19:56.050 -07:00 [DBG] An entity of type 'ApplicationUser' tracked by 'ApplicationDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-09-27 08:19:56.051 -07:00 [DBG] SaveChanges completed for 'ApplicationDbContext' with 8 entities written to the database.
+2023-09-27 08:19:56.058 -07:00 [INF] Finished Seeding
+2023-09-27 08:19:56.061 -07:00 [DBG] 'ApplicationDbContext' disposed.
+2023-09-27 08:19:56.063 -07:00 [DBG] Disposing connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-27 08:19:56.064 -07:00 [DBG] Disposed connection to database 'main' on server 'ConnexDb.sqlite' (1ms).
+2023-09-27 08:19:56.217 -07:00 [DBG] Initializing Razor view compiler with compiled view: '/Pages/Error.cshtml'.
+2023-09-27 08:19:56.218 -07:00 [DBG] Initializing Razor view compiler with compiled view: '/Pages/_ViewImports.cshtml'.
+2023-09-27 08:19:56.231 -07:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2023-09-27 08:19:56.257 -07:00 [INF] User profile is available. Using 'C:\Users\mrdie\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-09-27 08:19:56.379 -07:00 [DBG] Hosting starting
+2023-09-27 08:19:56.385 -07:00 [DBG] Reading data from file 'C:\Users\mrdie\AppData\Local\ASP.NET\DataProtection-Keys\key-4a6009ff-35b2-4bc7-8724-6b99e2d8bb93.xml'.
+2023-09-27 08:19:56.408 -07:00 [DBG] Found key {4a6009ff-35b2-4bc7-8724-6b99e2d8bb93}.
+2023-09-27 08:19:56.421 -07:00 [DBG] Considering key {4a6009ff-35b2-4bc7-8724-6b99e2d8bb93} with expiration date 2023-11-11 21:32:41Z as default key.
+2023-09-27 08:19:56.427 -07:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-09-27 08:19:56.429 -07:00 [DBG] Decrypting secret element using Windows DPAPI.
+2023-09-27 08:19:56.432 -07:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-09-27 08:19:56.434 -07:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2023-09-27 08:19:56.436 -07:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2023-09-27 08:19:56.439 -07:00 [DBG] Using key {4a6009ff-35b2-4bc7-8724-6b99e2d8bb93} as the default key.
+2023-09-27 08:19:56.442 -07:00 [DBG] Key ring with default key {4a6009ff-35b2-4bc7-8724-6b99e2d8bb93} was loaded during application startup.
+2023-09-27 08:19:56.638 -07:00 [INF] Now listening on: https://localhost:7143
+2023-09-27 08:19:56.644 -07:00 [INF] Now listening on: http://localhost:5173
+2023-09-27 08:19:56.646 -07:00 [DBG] Loaded hosting startup assembly WebApp
+2023-09-27 08:19:56.647 -07:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.SpaProxy
+2023-09-27 08:19:56.651 -07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-09-27 08:19:56.655 -07:00 [INF] Hosting environment: Development
+2023-09-27 08:19:56.659 -07:00 [INF] Content root path: C:\Users\mrdie\repos\Connex\WebApp
+2023-09-27 08:19:56.661 -07:00 [DBG] Hosting started
+2023-09-27 08:19:56.796 -07:00 [DBG] Connection id "0HMTVDKQJ6SMA" accepted.
+2023-09-27 08:19:56.799 -07:00 [DBG] Connection id "0HMTVDKQJ6SMA" started.
+2023-09-27 08:19:56.857 -07:00 [DBG] Connection 0HMTVDKQJ6SMA established using the following protocol: "Tls13"
+2023-09-27 08:19:56.916 -07:00 [VRB] Connection id "0HMTVDKQJ6SMA" sending "SETTINGS" frame for stream ID 0 with length 24 and flags "NONE".
+2023-09-27 08:19:56.927 -07:00 [VRB] Connection id "0HMTVDKQJ6SMA" sending "WINDOW_UPDATE" frame for stream ID 0 with length 4 and flags 0x0.
+2023-09-27 08:19:56.929 -07:00 [VRB] Connection id "0HMTVDKQJ6SMA" received "SETTINGS" frame for stream ID 0 with length 24 and flags "NONE".
+2023-09-27 08:19:56.932 -07:00 [VRB] Connection id "0HMTVDKQJ6SMA" sending "SETTINGS" frame for stream ID 0 with length 0 and flags "ACK".
+2023-09-27 08:19:56.934 -07:00 [VRB] Connection id "0HMTVDKQJ6SMA" received "WINDOW_UPDATE" frame for stream ID 0 with length 4 and flags 0x0.
+2023-09-27 08:19:56.936 -07:00 [VRB] Connection id "0HMTVDKQJ6SMA" received "HEADERS" frame for stream ID 1 with length 449 and flags "END_STREAM, END_HEADERS, PRIORITY".
+2023-09-27 08:19:56.950 -07:00 [VRB] Connection id "0HMTVDKQJ6SMA" received "SETTINGS" frame for stream ID 0 with length 0 and flags "ACK".
+2023-09-27 08:19:56.961 -07:00 [INF] Request starting HTTP/2 GET https://localhost:7143/ - -
+2023-09-27 08:20:01.165 -07:00 [DBG] Failed to connect to the SPA Development proxy.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:44401)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|281_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.HttpConnectionWaiter`1.WaitForConnectionAsync(Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at Microsoft.AspNetCore.SpaProxy.SpaProxyLaunchManager.IsSpaProxyRunning(CancellationToken cancellationToken)
+2023-09-27 08:20:01.218 -07:00 [INF] No SPA development server running at https://localhost:44401 found.
+2023-09-27 08:20:01.423 -07:00 [DBG] Watch process 'System.Diagnostics.Process (powershell)' started.
+2023-09-27 08:20:01.450 -07:00 [INF] SPA proxy is not ready. Returning temporary landing page.
+2023-09-27 08:20:01.459 -07:00 [INF] Request finished HTTP/2 GET https://localhost:7143/ - - - 200 - text/html 4500.4117ms
+2023-09-27 08:20:01.460 -07:00 [VRB] Connection id "0HMTVDKQJ6SMA" sending "HEADERS" frame for stream ID 1 with length 100 and flags "END_HEADERS".
+2023-09-27 08:20:01.467 -07:00 [VRB] Connection id "0HMTVDKQJ6SMA" sending "DATA" frame for stream ID 1 with length 505 and flags "END_STREAM".
+2023-09-27 08:20:04.776 -07:00 [VRB] Connection id "0HMTVDKQJ6SMA" received "HEADERS" frame for stream ID 3 with length 50 and flags "END_STREAM, END_HEADERS, PRIORITY".
+2023-09-27 08:20:04.790 -07:00 [INF] Request starting HTTP/2 GET https://localhost:7143/ - -
+2023-09-27 08:20:05.537 -07:00 [DBG] Failed to connect to the SPA Development proxy.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:44401)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|281_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.HttpConnectionWaiter`1.WaitForConnectionAsync(Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at Microsoft.AspNetCore.SpaProxy.SpaProxyLaunchManager.ProbeSpaDevelopmentServerUrl(HttpClient httpClient, CancellationToken cancellationToken)
+2023-09-27 08:20:08.877 -07:00 [DBG] Failed to connect to the SPA Development proxy.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:44401)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|281_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.HttpConnectionWaiter`1.WaitForConnectionAsync(Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at Microsoft.AspNetCore.SpaProxy.SpaProxyLaunchManager.IsSpaProxyRunning(CancellationToken cancellationToken)
+2023-09-27 08:20:08.950 -07:00 [INF] SPA proxy is not ready. Returning temporary landing page.
+2023-09-27 08:20:08.955 -07:00 [VRB] Connection id "0HMTVDKQJ6SMA" sending "HEADERS" frame for stream ID 3 with length 35 and flags "END_HEADERS".
+2023-09-27 08:20:08.957 -07:00 [INF] Request finished HTTP/2 GET https://localhost:7143/ - - - 200 - text/html 4167.7393ms
+2023-09-27 08:20:08.962 -07:00 [VRB] Connection id "0HMTVDKQJ6SMA" sending "DATA" frame for stream ID 3 with length 505 and flags "END_STREAM".
+2023-09-27 08:20:08.975 -07:00 [VRB] Connection id "0HMTVDKQJ6SMA" received "WINDOW_UPDATE" frame for stream ID 0 with length 4 and flags 0x0.
+2023-09-27 08:20:10.648 -07:00 [DBG] Failed to connect to the SPA Development proxy.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:44401)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|281_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.HttpConnectionWaiter`1.WaitForConnectionAsync(Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at Microsoft.AspNetCore.SpaProxy.SpaProxyLaunchManager.ProbeSpaDevelopmentServerUrl(HttpClient httpClient, CancellationToken cancellationToken)
+2023-09-27 08:20:12.111 -07:00 [VRB] Connection id "0HMTVDKQJ6SMA" received "HEADERS" frame for stream ID 5 with length 22 and flags "END_STREAM, END_HEADERS, PRIORITY".
+2023-09-27 08:20:12.122 -07:00 [INF] Request starting HTTP/2 GET https://localhost:7143/ - -
+2023-09-27 08:20:14.211 -07:00 [INF] SPA proxy is ready. Redirecting to https://localhost:44401.
+2023-09-27 08:20:14.216 -07:00 [INF] SPA development server running at 'https://localhost:44401'
+2023-09-27 08:20:14.219 -07:00 [INF] Request finished HTTP/2 GET https://localhost:7143/ - - - 302 0 - 2097.8401ms
+2023-09-27 08:20:14.219 -07:00 [VRB] Connection id "0HMTVDKQJ6SMA" sending "HEADERS" frame for stream ID 5 with length 67 and flags "END_STREAM, END_HEADERS".
+2023-09-27 08:22:45.285 -07:00 [DBG] An additional 'IServiceProvider' was created for internal use by Entity Framework. An existing service provider was not used due to the following configuration changes: configuration changed for 'Core:ConfigureWarnings', configuration added for 'Sqlite'.
+2023-09-27 08:22:45.865 -07:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserRole<string>' as the properties are already covered by the index {'UserId', 'RoleId'}.
+2023-09-27 08:22:45.875 -07:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserToken<string>' as the properties are already covered by the index {'UserId', 'LoginProvider', 'Name'}.
+2023-09-27 08:22:46.161 -07:00 [DBG] Entity Framework Core 7.0.11 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:7.0.11' with options: MigrationsAssembly=Infrastructure 
+2023-09-27 08:22:46.179 -07:00 [DBG] Creating DbConnection.
+2023-09-27 08:22:46.201 -07:00 [DBG] Created DbConnection. (17ms).
+2023-09-27 08:22:46.216 -07:00 [DBG] Migrating using database 'main' on server 'ConnexDb.sqlite'.
+2023-09-27 08:22:46.235 -07:00 [DBG] Creating DbConnection.
+2023-09-27 08:22:46.239 -07:00 [DBG] Created DbConnection. (4ms).
+2023-09-27 08:22:46.242 -07:00 [DBG] Opening connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-27 08:22:46.255 -07:00 [DBG] Opened connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:22:46.270 -07:00 [DBG] Disposing connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-27 08:22:46.282 -07:00 [DBG] Disposed connection to database 'main' on server 'ConnexDb.sqlite' (7ms).
+2023-09-27 08:22:46.300 -07:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2023-09-27 08:22:46.312 -07:00 [DBG] Created DbCommand for 'ExecuteScalar' (7ms).
+2023-09-27 08:22:46.318 -07:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (18ms).
+2023-09-27 08:22:46.325 -07:00 [DBG] Opening connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-27 08:22:46.332 -07:00 [DBG] Opened connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:22:46.340 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-09-27 08:22:46.371 -07:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-09-27 08:22:46.380 -07:00 [DBG] Closing connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:22:46.386 -07:00 [DBG] Closed connection to database 'main' on server 'ConnexDb.sqlite' (5ms).
+2023-09-27 08:22:46.389 -07:00 [DBG] Creating DbConnection.
+2023-09-27 08:22:46.390 -07:00 [DBG] Created DbConnection. (0ms).
+2023-09-27 08:22:46.391 -07:00 [DBG] Opening connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-27 08:22:46.394 -07:00 [DBG] Opened connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:22:46.397 -07:00 [DBG] Disposing connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-27 08:22:46.399 -07:00 [DBG] Disposed connection to database 'main' on server 'ConnexDb.sqlite' (2ms).
+2023-09-27 08:22:46.401 -07:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2023-09-27 08:22:46.402 -07:00 [DBG] Created DbCommand for 'ExecuteScalar' (1ms).
+2023-09-27 08:22:46.403 -07:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (2ms).
+2023-09-27 08:22:46.404 -07:00 [DBG] Opening connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-27 08:22:46.406 -07:00 [DBG] Opened connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:22:46.407 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-09-27 08:22:46.410 -07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-09-27 08:22:46.412 -07:00 [DBG] Closing connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:22:46.417 -07:00 [DBG] Closed connection to database 'main' on server 'ConnexDb.sqlite' (5ms).
+2023-09-27 08:22:46.431 -07:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-09-27 08:22:46.434 -07:00 [DBG] Created DbCommand for 'ExecuteReader' (2ms).
+2023-09-27 08:22:46.435 -07:00 [DBG] Initialized DbCommand for 'ExecuteReader' (3ms).
+2023-09-27 08:22:46.436 -07:00 [DBG] Opening connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-27 08:22:46.437 -07:00 [DBG] Opened connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:22:46.439 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-09-27 08:22:46.442 -07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-09-27 08:22:46.453 -07:00 [DBG] Closing data reader to 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:22:46.455 -07:00 [DBG] A data reader for 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite' is being disposed after spending 6ms reading results.
+2023-09-27 08:22:46.458 -07:00 [DBG] Closing connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:22:46.461 -07:00 [DBG] Closed connection to database 'main' on server 'ConnexDb.sqlite' (3ms).
+2023-09-27 08:22:46.473 -07:00 [INF] No migrations were applied. The database is already up to date.
+2023-09-27 08:22:46.504 -07:00 [DBG] Compiling query expression: 
+'DbSet<ApplicationRole>()
+    .Any()'
+2023-09-27 08:22:46.672 -07:00 [DBG] Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<bool>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> 0
+        SELECT EXISTS (
+            SELECT 1
+            FROM AspNetRoles AS a)), 
+    null, 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, bool>, 
+    Infrastructure.Persistence.Contexts.ApplicationDbContext, 
+    False, 
+    False, 
+    True
+)
+    .Single()'
+2023-09-27 08:22:46.701 -07:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-09-27 08:22:46.708 -07:00 [DBG] Created DbCommand for 'ExecuteReader' (6ms).
+2023-09-27 08:22:46.709 -07:00 [DBG] Initialized DbCommand for 'ExecuteReader' (8ms).
+2023-09-27 08:22:46.711 -07:00 [DBG] Opening connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-27 08:22:46.714 -07:00 [DBG] Opened connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:22:46.716 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetRoles" AS "a")
+2023-09-27 08:22:46.719 -07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetRoles" AS "a")
+2023-09-27 08:22:46.724 -07:00 [DBG] Closing data reader to 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:22:46.726 -07:00 [DBG] A data reader for 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite' is being disposed after spending 4ms reading results.
+2023-09-27 08:22:46.733 -07:00 [DBG] Closing connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:22:46.737 -07:00 [DBG] Closed connection to database 'main' on server 'ConnexDb.sqlite' (3ms).
+2023-09-27 08:22:46.758 -07:00 [INF] The database already has roles seeded
+2023-09-27 08:22:46.761 -07:00 [DBG] Compiling query expression: 
+'DbSet<Page>()
+    .Any()'
+2023-09-27 08:22:46.765 -07:00 [DBG] Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<bool>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> 0
+        SELECT EXISTS (
+            SELECT 1
+            FROM Pages AS p)), 
+    null, 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, bool>, 
+    Infrastructure.Persistence.Contexts.ApplicationDbContext, 
+    False, 
+    False, 
+    True
+)
+    .Single()'
+2023-09-27 08:22:46.767 -07:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-09-27 08:22:46.768 -07:00 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2023-09-27 08:22:46.770 -07:00 [DBG] Initialized DbCommand for 'ExecuteReader' (2ms).
+2023-09-27 08:22:46.771 -07:00 [DBG] Opening connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-27 08:22:46.772 -07:00 [DBG] Opened connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:22:46.774 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Pages" AS "p")
+2023-09-27 08:22:46.778 -07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Pages" AS "p")
+2023-09-27 08:22:46.781 -07:00 [DBG] Closing data reader to 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:22:46.782 -07:00 [DBG] A data reader for 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite' is being disposed after spending 1ms reading results.
+2023-09-27 08:22:46.784 -07:00 [DBG] Closing connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:22:46.785 -07:00 [DBG] Closed connection to database 'main' on server 'ConnexDb.sqlite' (1ms).
+2023-09-27 08:22:46.791 -07:00 [INF] The database already has a page seeded
+2023-09-27 08:22:46.797 -07:00 [INF] Seeding a default page
+2023-09-27 08:22:46.835 -07:00 [DBG] 'ApplicationDbContext' generated a value for the property 'Id.Page'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-09-27 08:22:46.900 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'Page' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-09-27 08:22:46.907 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'Page' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-09-27 08:22:46.908 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'Page' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-09-27 08:22:46.910 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'Page' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-09-27 08:22:46.948 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'ApplicationUser' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-09-27 08:22:46.957 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'ApplicationUser' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-09-27 08:22:46.961 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'ApplicationUser' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-09-27 08:22:46.964 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'ApplicationUser' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-09-27 08:22:46.969 -07:00 [DBG] SaveChanges starting for 'ApplicationDbContext'.
+2023-09-27 08:22:46.973 -07:00 [DBG] DetectChanges starting for 'ApplicationDbContext'.
+2023-09-27 08:22:46.998 -07:00 [DBG] DetectChanges completed for 'ApplicationDbContext'.
+2023-09-27 08:22:47.077 -07:00 [DBG] Opening connection to database 'main' on server 'ConnexDb.sqlite'.
+2023-09-27 08:22:47.084 -07:00 [DBG] Opened connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:22:47.088 -07:00 [DBG] Beginning transaction with isolation level 'Unspecified'.
+2023-09-27 08:22:47.095 -07:00 [DBG] Began transaction with isolation level 'Serializable'.
+2023-09-27 08:22:47.099 -07:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-09-27 08:22:47.100 -07:00 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2023-09-27 08:22:47.104 -07:00 [DBG] Initialized DbCommand for 'ExecuteReader' (5ms).
+2023-09-27 08:22:47.108 -07:00 [DBG] Executing DbCommand [Parameters=[@p0='?' (Size = 36), @p1='?' (DbType = Int32), @p2='?' (Size = 36), @p3='?' (Size = 10), @p4='?', @p5='?' (DbType = Boolean), @p6='?' (Size = 5), @p7='?' (DbType = DateTime), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (DbType = Int32), @p11='?', @p12='?', @p13='?', @p14='?', @p15='?' (DbType = Boolean), @p16='?' (Size = 36), @p17='?' (Size = 4), @p18='?' (DbType = Boolean), @p19='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "ConcurrencyStamp", "DisplayName", "Email", "EmailConfirmed", "GivenName", "LastLoginDate", "LockoutEnabled", "LockoutEnd", "LoginCount", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "Surname", "TwoFactorEnabled", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19);
+2023-09-27 08:22:47.116 -07:00 [INF] Executed DbCommand (11ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (DbType = Int32), @p2='?' (Size = 36), @p3='?' (Size = 10), @p4='?', @p5='?' (DbType = Boolean), @p6='?' (Size = 5), @p7='?' (DbType = DateTime), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (DbType = Int32), @p11='?', @p12='?', @p13='?', @p14='?', @p15='?' (DbType = Boolean), @p16='?' (Size = 36), @p17='?' (Size = 4), @p18='?' (DbType = Boolean), @p19='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "ConcurrencyStamp", "DisplayName", "Email", "EmailConfirmed", "GivenName", "LastLoginDate", "LockoutEnabled", "LockoutEnd", "LoginCount", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "Surname", "TwoFactorEnabled", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19);
+2023-09-27 08:22:47.122 -07:00 [DBG] Closing data reader to 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:22:47.123 -07:00 [DBG] A data reader for 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite' is being disposed after spending 3ms reading results.
+2023-09-27 08:22:47.126 -07:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-09-27 08:22:47.127 -07:00 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2023-09-27 08:22:47.129 -07:00 [DBG] Initialized DbCommand for 'ExecuteReader' (3ms).
+2023-09-27 08:22:47.130 -07:00 [DBG] Executing DbCommand [Parameters=[@p0='?' (Size = 36), @p1='?' (DbType = Int32), @p2='?' (Size = 36), @p3='?' (Size = 9), @p4='?', @p5='?' (DbType = Boolean), @p6='?' (Size = 3), @p7='?' (DbType = DateTime), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (DbType = Int32), @p11='?', @p12='?', @p13='?', @p14='?', @p15='?' (DbType = Boolean), @p16='?' (Size = 36), @p17='?' (Size = 5), @p18='?' (DbType = Boolean), @p19='?' (Size = 14)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "ConcurrencyStamp", "DisplayName", "Email", "EmailConfirmed", "GivenName", "LastLoginDate", "LockoutEnabled", "LockoutEnd", "LoginCount", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "Surname", "TwoFactorEnabled", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19);
+2023-09-27 08:22:47.134 -07:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (DbType = Int32), @p2='?' (Size = 36), @p3='?' (Size = 9), @p4='?', @p5='?' (DbType = Boolean), @p6='?' (Size = 3), @p7='?' (DbType = DateTime), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (DbType = Int32), @p11='?', @p12='?', @p13='?', @p14='?', @p15='?' (DbType = Boolean), @p16='?' (Size = 36), @p17='?' (Size = 5), @p18='?' (DbType = Boolean), @p19='?' (Size = 14)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "ConcurrencyStamp", "DisplayName", "Email", "EmailConfirmed", "GivenName", "LastLoginDate", "LockoutEnabled", "LockoutEnd", "LoginCount", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "Surname", "TwoFactorEnabled", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19);
+2023-09-27 08:22:47.140 -07:00 [DBG] Closing data reader to 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:22:47.141 -07:00 [DBG] A data reader for 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite' is being disposed after spending 1ms reading results.
+2023-09-27 08:22:47.143 -07:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-09-27 08:22:47.144 -07:00 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2023-09-27 08:22:47.146 -07:00 [DBG] Initialized DbCommand for 'ExecuteReader' (2ms).
+2023-09-27 08:22:47.148 -07:00 [DBG] Executing DbCommand [Parameters=[@p0='?' (Size = 36), @p1='?' (DbType = Int32), @p2='?' (Size = 36), @p3='?' (Size = 10), @p4='?', @p5='?' (DbType = Boolean), @p6='?' (Size = 4), @p7='?' (DbType = DateTime), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (DbType = Int32), @p11='?', @p12='?', @p13='?', @p14='?', @p15='?' (DbType = Boolean), @p16='?' (Size = 36), @p17='?' (Size = 5), @p18='?' (DbType = Boolean), @p19='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "ConcurrencyStamp", "DisplayName", "Email", "EmailConfirmed", "GivenName", "LastLoginDate", "LockoutEnabled", "LockoutEnd", "LoginCount", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "Surname", "TwoFactorEnabled", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19);
+2023-09-27 08:22:47.152 -07:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (DbType = Int32), @p2='?' (Size = 36), @p3='?' (Size = 10), @p4='?', @p5='?' (DbType = Boolean), @p6='?' (Size = 4), @p7='?' (DbType = DateTime), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (DbType = Int32), @p11='?', @p12='?', @p13='?', @p14='?', @p15='?' (DbType = Boolean), @p16='?' (Size = 36), @p17='?' (Size = 5), @p18='?' (DbType = Boolean), @p19='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "ConcurrencyStamp", "DisplayName", "Email", "EmailConfirmed", "GivenName", "LastLoginDate", "LockoutEnabled", "LockoutEnd", "LoginCount", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "Surname", "TwoFactorEnabled", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19);
+2023-09-27 08:22:47.155 -07:00 [DBG] Closing data reader to 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:22:47.156 -07:00 [DBG] A data reader for 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite' is being disposed after spending 1ms reading results.
+2023-09-27 08:22:47.157 -07:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-09-27 08:22:47.158 -07:00 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2023-09-27 08:22:47.160 -07:00 [DBG] Initialized DbCommand for 'ExecuteReader' (2ms).
+2023-09-27 08:22:47.161 -07:00 [DBG] Executing DbCommand [Parameters=[@p0='?' (Size = 36), @p1='?' (DbType = Int32), @p2='?' (Size = 36), @p3='?' (Size = 15), @p4='?', @p5='?' (DbType = Boolean), @p6='?' (Size = 4), @p7='?' (DbType = DateTime), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (DbType = Int32), @p11='?', @p12='?', @p13='?', @p14='?', @p15='?' (DbType = Boolean), @p16='?' (Size = 36), @p17='?' (Size = 10), @p18='?' (DbType = Boolean), @p19='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "ConcurrencyStamp", "DisplayName", "Email", "EmailConfirmed", "GivenName", "LastLoginDate", "LockoutEnabled", "LockoutEnd", "LoginCount", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "Surname", "TwoFactorEnabled", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19);
+2023-09-27 08:22:47.164 -07:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (DbType = Int32), @p2='?' (Size = 36), @p3='?' (Size = 15), @p4='?', @p5='?' (DbType = Boolean), @p6='?' (Size = 4), @p7='?' (DbType = DateTime), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (DbType = Int32), @p11='?', @p12='?', @p13='?', @p14='?', @p15='?' (DbType = Boolean), @p16='?' (Size = 36), @p17='?' (Size = 10), @p18='?' (DbType = Boolean), @p19='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "ConcurrencyStamp", "DisplayName", "Email", "EmailConfirmed", "GivenName", "LastLoginDate", "LockoutEnabled", "LockoutEnd", "LoginCount", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "Surname", "TwoFactorEnabled", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19);
+2023-09-27 08:22:47.170 -07:00 [DBG] Closing data reader to 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:22:47.171 -07:00 [DBG] A data reader for 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite' is being disposed after spending 1ms reading results.
+2023-09-27 08:22:47.173 -07:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-09-27 08:22:47.174 -07:00 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2023-09-27 08:22:47.175 -07:00 [DBG] Initialized DbCommand for 'ExecuteReader' (2ms).
+2023-09-27 08:22:47.177 -07:00 [DBG] Executing DbCommand [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 13), @p2='?' (Size = 5), @p3='?', @p4='?' (DbType = DateTime), @p5='?', @p6='?', @p7='?' (DbType = DateTime), @p8='?' (DbType = Guid), @p9='?' (Size = 10), @p10='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Pages" ("Id", "Author", "ContentDirectory", "CreatedBy", "CreatedDate", "Editors", "LastModifiedBy", "LastModifiedDate", "ParentId", "Tags", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2023-09-27 08:22:47.194 -07:00 [ERR] Failed executing DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 13), @p2='?' (Size = 5), @p3='?', @p4='?' (DbType = DateTime), @p5='?', @p6='?', @p7='?' (DbType = DateTime), @p8='?' (DbType = Guid), @p9='?' (Size = 10), @p10='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Pages" ("Id", "Author", "ContentDirectory", "CreatedBy", "CreatedDate", "Editors", "LastModifiedBy", "LastModifiedDate", "ParentId", "Tags", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2023-09-27 08:22:47.204 -07:00 [DBG] Disposing transaction.
+2023-09-27 08:22:47.208 -07:00 [DBG] Closing connection to database 'main' on server 'C:\Users\mrdie\repos\Connex\WebApp\ConnexDb.sqlite'.
+2023-09-27 08:22:47.209 -07:00 [DBG] Closed connection to database 'main' on server 'ConnexDb.sqlite' (1ms).
+2023-09-27 08:22:47.265 -07:00 [ERR] An exception occurred in the database while saving changes for context type 'Infrastructure.Persistence.Contexts.ApplicationDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 19: 'UNIQUE constraint failed: Pages.Id'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 19: 'UNIQUE constraint failed: Pages.Id'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)

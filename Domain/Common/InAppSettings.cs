@@ -6,6 +6,26 @@ public class Folder
     public List<string>? AllowedTypes { get; set; }
 }
 
+public class OIDCSettings
+{
+    public string? Authority { get; set; }
+    public string? ClientId { get; set; }
+    public string? ClientSecret { get; set; }
+    public string? ResponseType { get; set; }
+}
+
+public class WSFederationSettings
+{
+    public string? MetadataAddress { get; set; }
+    public string? Wtrealm { get; set; }
+}
+
+public class Authentication
+{
+    public OIDCSettings? OIDC { get; set; }
+    public WSFederationSettings? WSFederation { get; set; }
+}
+
 public class InAppSettings
 {
     
@@ -31,6 +51,8 @@ public class InAppSettings
     public string? SqlConnectionString { get; set; }
     public string? SqliteConnectionString { get; set; }
     public bool UseSqlite { get; set; }
+    
+    public Authentication? Authentication { get; set; }
     
 }
 

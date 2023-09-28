@@ -5,7 +5,7 @@ using NSwag.Generation.Processors.Security;
 
 namespace Infrastructure.Services;
 
-public static class ConfigureServices
+public static partial class ConfigureServices
 {
     public static IServiceCollection AddWebApiServices(this IServiceCollection services)
     {

@@ -14,7 +14,7 @@ namespace Infrastructure.Services;
 /// <summary>
 /// Configuration helper for Entity Framework and SQLite.
 /// </summary>
-public static class ConfigureEntityFramework
+public static partial class ConfigureServices
 {
     /// <summary>
     /// Adds and configures Entity Framework with SQLite.

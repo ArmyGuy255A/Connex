@@ -10,6 +10,7 @@ var inAppSettings = builder.Configuration.GetSection("InAppSettings").Get<InAppS
 if (inAppSettings == null) throw new Exception("The InAppSettings section is empty. Please check your appsettings.json file.");
 
 // Add services to the container.
+
 // Setup InAppSettings for Dependency Injection
 builder.Services.Configure<InAppSettings>(builder.Configuration.GetSection("InAppSettings"));
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
@@ -18,6 +19,7 @@ builder.Services.AddControllersWithViews();
 // Add custom services to the container
 builder.Services.AddEntityFrameworkSql(inAppSettings);
 builder.Services.AddWebApiServices();
+builder.Services.AddIdentityServices(inAppSettings);
 
 // Add logging
 Log.Logger = new LoggerConfiguration()
@@ -30,7 +32,7 @@ builder.Logging.AddSerilog();
 var app = builder.Build();
 
 // Seed the Database
-await ConfigureEntityFramework.SeedDatabase(app);
+await ConfigureServices.SeedDatabase(app);
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -41,6 +43,9 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHealthChecks("/health");
 app.UseHttpsRedirection();
+
+
+
 app.UseStaticFiles();
 
 app.UseOpenApi();
@@ -50,6 +55,9 @@ app.UseSwaggerUi3(settings =>
 });
 
 app.UseRouting();
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",

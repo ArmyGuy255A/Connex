@@ -50,27 +50,45 @@ public class DbInitializer
         {
             logger.LogInformation("The database already has a page seeded");
         }
-
-        logger.LogInformation("Seeding a default page");
-
-        context.Pages.Add(new Page
+        else
         {
-            Id = Guid.Parse("00000000-0000-0000-0000-000000000010"),
-            Author = "Administrator",
-            ContentDirectory = "Home",
-            Title = "Home",
-            Tags = "Test"
-        });
+            logger.LogInformation("Seeding a default page");
+        
+            string[] pages = new string[4] {"Home", "Page1", "Page2", "Page3"};
 
-        string[] firstNames = new string[4] { "Jim", "Mike", "Karen", "Carl" };
-        string[] lastNames = new string[4] { "Smith", "Jones", "Alen", "Washington" };
-        for (int i = 0; i < 4; i++)
-        {
-            var email = $"{firstNames[i]}@sample.com";
-            context.Users.Add(new ApplicationUser(userName: email, givenName: firstNames[i], surname: lastNames[i], displayName: $"{firstNames[i]} {lastNames[i]}"));
+            for (int i = 0; i < pages.Length; i++)
+            {
+                string guid = $"00000000-0000-0000-0000-00000000000{i}";
+                context.Pages.Add(new Page
+                {
+                    Id = Guid.Parse(guid),
+                    Author = "Administrator",
+                    ContentDirectory = pages[i],
+                    Title = pages[i],
+                    Tags = "Test" + $", Tag{i}",
+                });
+            }
         }
 
-        await context.SaveChangesAsync();
+        if (context.Users.Any())
+        {
+            logger.LogInformation("The database already has users seeded");
+        }
+        else
+        {
+            string[] firstNames = new string[4] { "Jim", "Mike", "Karen", "Carl" };
+            string[] lastNames = new string[4] { "Smith", "Jones", "Alen", "Washington" };
+            for (int i = 0; i < 4; i++)
+            {
+                var email = $"{firstNames[i]}@sample.com";
+                context.Users.Add(new ApplicationUser(userName: email, givenName: firstNames[i], surname: lastNames[i], displayName: $"{firstNames[i]} {lastNames[i]}"));
+            }
+        }
+
+        if (context.ChangeTracker.HasChanges())
+        {
+            await context.SaveChangesAsync();
+        }
 
         logger.LogInformation("Finished Seeding");
     }
