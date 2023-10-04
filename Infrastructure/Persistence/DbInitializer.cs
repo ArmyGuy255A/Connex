@@ -27,7 +27,7 @@ public class DbInitializer
             logger.LogInformation("Seeding roles");
             string[] roleNames = new string[]
             {
-                "Administrator",
+                "Admin",
                 "Contributor",
                 "Reader"
             };
@@ -81,7 +81,11 @@ public class DbInitializer
             for (int i = 0; i < 4; i++)
             {
                 var email = $"{firstNames[i]}@sample.com";
-                context.Users.Add(new ApplicationUser(userName: email, givenName: firstNames[i], surname: lastNames[i], displayName: $"{firstNames[i]} {lastNames[i]}"));
+                var user = new ApplicationUser(email);
+                user.GivenName = firstNames[i];
+                user.Surname = lastNames[i];
+                user.DisplayName = $"{firstNames[i]} {lastNames[i]}";
+                context.Users.Add(user);
             }
         }
 

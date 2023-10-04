@@ -23,10 +23,10 @@ public static partial class ConfigureServices
     /// <param name="settings">Application settings.</param>
     /// <returns>The updated IServiceCollection.</returns>
     public static IServiceCollection AddEntityFrameworkSql(this IServiceCollection services,
-        InAppSettings settings)
+        AppSettings settings)
     {
         // Check for database connection string
-        if (string.IsNullOrEmpty(settings.SqliteConnectionString))
+        if (string.IsNullOrEmpty(settings.ConnectionStrings?.SqliteConnectionString))
         {
             throw new Exception("SQLite connection string is empty");
         }

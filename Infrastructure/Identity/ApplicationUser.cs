@@ -6,11 +6,8 @@ namespace Infrastructure.Identity;
 
 public class ApplicationUser : IdentityUser
 {
-    public ApplicationUser(string userName, string givenName, string surname, string displayName) : base(userName)
+    public ApplicationUser(string userName) : base(userName)
     {
-        GivenName = givenName;
-        Surname = surname;
-        DisplayName = displayName;
         LoginCount = 0;
         LastLoginDate = DateTime.Now;
     }

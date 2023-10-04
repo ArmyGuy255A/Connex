@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastru
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{B82E3995-F9E1-4984-B4F8-50B72B16A776}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp1", "BlazorApp1\BlazorApp1.csproj", "{E2CA5031-8B28-4206-A864-EA49BF9AEE4A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{B82E3995-F9E1-4984-B4F8-50B72B16A776}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B82E3995-F9E1-4984-B4F8-50B72B16A776}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B82E3995-F9E1-4984-B4F8-50B72B16A776}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2CA5031-8B28-4206-A864-EA49BF9AEE4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2CA5031-8B28-4206-A864-EA49BF9AEE4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2CA5031-8B28-4206-A864-EA49BF9AEE4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2CA5031-8B28-4206-A864-EA49BF9AEE4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

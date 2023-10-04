@@ -1,4 +1,7 @@
 ﻿using Domain.Common;
+using Infrastructure.Identity;
+using Infrastructure.Persistence.Contexts;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Infrastructure.Services;
@@ -6,16 +9,26 @@ namespace Infrastructure.Services;
 public static partial class ConfigureServices
 {
     public static IServiceCollection AddIdentityServices(this IServiceCollection services,
-        InAppSettings settings)
+        AppSettings settings)
     {
+        services.AddIdentity<ApplicationUser, ApplicationRole>(options =>
+        {
+            options.SignIn.RequireConfirmedAccount = false;
+            options.User.RequireUniqueEmail = true;
+        })
+            .AddEntityFrameworkStores<ApplicationDbContext>()
+            .AddUserManager<ApplicationUserManager<ApplicationUser>>()
+            .AddSignInManager<ApplicationSignInManager>()
+            .AddDefaultTokenProviders();
+            
         services.AddAuthentication(options => { options.DefaultScheme = "cookie"; })
             .AddCookie("cookie")
             .AddOpenIdConnect("oidc", options =>
             {
-                options.Authority = settings.Authentication?.OIDC?.Authority;
-                options.ClientId = settings.Authentication?.OIDC?.ClientId;
-                options.ClientSecret = settings.Authentication?.OIDC?.ClientSecret;
-                options.ResponseType = settings.Authentication?.OIDC?.ResponseType;
+                options.Authority = settings.Authentication?.KeyCloak?.Issuer;
+                options.ClientId = settings.Authentication?.KeyCloak?.ClientId;
+                options.ClientSecret = settings.Authentication?.KeyCloak?.ClientSecret;
+                // options.ResponseType = settings.Authentication?.KeyCloak?.;
                 options.RequireHttpsMetadata = false;
                 // ... other settings
             })

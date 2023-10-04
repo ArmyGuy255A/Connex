@@ -6,20 +6,20 @@ using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var inAppSettings = builder.Configuration.GetSection("InAppSettings").Get<InAppSettings>();
-if (inAppSettings == null) throw new Exception("The InAppSettings section is empty. Please check your appsettings.json file.");
+var AppSettings = builder.Configuration.Get<AppSettings>();
+if (AppSettings == null) throw new Exception("The AppSettings section is empty. Please check your appsettings.json file.");
 
 // Add services to the container.
 
-// Setup InAppSettings for Dependency Injection
-builder.Services.Configure<InAppSettings>(builder.Configuration.GetSection("InAppSettings"));
+// Setup AppSettings for Dependency Injection
+builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddControllersWithViews();
 
 // Add custom services to the container
-builder.Services.AddEntityFrameworkSql(inAppSettings);
+builder.Services.AddEntityFrameworkSql(AppSettings);
 builder.Services.AddWebApiServices();
-builder.Services.AddIdentityServices(inAppSettings);
+builder.Services.AddIdentityServices(AppSettings);
 
 // Add logging
 Log.Logger = new LoggerConfiguration()

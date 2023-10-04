@@ -9,9 +9,9 @@ namespace Application.Pages;
 public class PageController
 {
     private readonly string _rootDir;
-    private readonly IOptionsMonitor<InAppSettings> _settings;
+    private readonly IOptionsMonitor<AppSettings> _settings;
 
-    public PageController(string rootDir, IOptionsMonitor<InAppSettings> settings)
+    public PageController(string rootDir, IOptionsMonitor<AppSettings> settings)
     {
         _rootDir = rootDir;
         _settings = settings;

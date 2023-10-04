@@ -13,26 +13,27 @@ namespace Infrastructure.Persistence.Contexts;
 /// </summary>
 public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
 {
-    private readonly IOptionsMonitor<InAppSettings> _settings;
+    private readonly IOptionsMonitor<AppSettings> _settings;
     
-    public ApplicationDbContext(IOptionsMonitor<InAppSettings> settings, DbContextOptions options) : base(options)
+    
+    public ApplicationDbContext(IOptionsMonitor<AppSettings> settings, DbContextOptions options) : base(options)
     {
         _settings = settings;
     }
     
     protected override void OnConfiguring(DbContextOptionsBuilder options)
     {
-        if (_settings.CurrentValue.UseSqlite)
+        if (_settings.CurrentValue.DatabaseSettings.UseSqlite)
         {
             // connect to sqlite database
-            options.UseSqlite(_settings.CurrentValue.SqliteConnectionString, o => o
+            options.UseSqlite(_settings.CurrentValue.ConnectionStrings.SqliteConnectionString, o => o
                 .MigrationsAssembly("Infrastructure")
             );
         }
         else
         {
             // connect to sql server database
-            options.UseSqlServer(_settings.CurrentValue.SqlConnectionString, o => o
+            options.UseSqlServer(_settings.CurrentValue.ConnectionStrings.SqlConnectionString, o => o
                 .MigrationsAssembly("Infrastructure")
             );
         }

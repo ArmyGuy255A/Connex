@@ -26,7 +26,7 @@ public class DirectoryControllerTests
             .Build();
 
         var serviceCollection = new ServiceCollection();
-        serviceCollection.Configure<InAppSettings>(configuration.GetSection("InAppSettings"));
+        serviceCollection.Configure<AppSettings>(configuration);
         serviceCollection.AddTransient<DirectoryController>();
 
         _serviceProvider = serviceCollection.BuildServiceProvider();
@@ -45,7 +45,7 @@ public class DirectoryControllerTests
         var controller = _serviceProvider.GetRequiredService<DirectoryController>();
         var result = controller.CreateFolder("TestFolder", null);
 
-        var rootDir = _serviceProvider.GetRequiredService<IOptions<InAppSettings>>().Value.PageRootDirectory;
+        var rootDir = _serviceProvider.GetRequiredService<IOptions<AppSettings>>().Value.FolderSettings.RootDirectory;
         Assert.IsTrue(Directory.Exists(Path.Combine(rootDir, "TestFolder")));
         Assert.IsInstanceOf<OkResult>(result);
     }
@@ -56,7 +56,7 @@ public class DirectoryControllerTests
         var controller = _serviceProvider.GetRequiredService<DirectoryController>();
         var result = controller.CreateFolder("TestFolder", new[] { "Child1", "Child2" });
 
-        var rootDir = _serviceProvider.GetRequiredService<IOptions<InAppSettings>>().Value.PageRootDirectory;
+        var rootDir = _serviceProvider.GetRequiredService<IOptions<AppSettings>>().Value.FolderSettings.RootDirectory;
         Assert.IsTrue(Directory.Exists(Path.Combine(rootDir, "TestFolder")));
         Assert.IsTrue(Directory.Exists(Path.Combine(rootDir, "TestFolder", "Child1")));
         Assert.IsTrue(Directory.Exists(Path.Combine(rootDir, "TestFolder", "Child2")));
@@ -66,7 +66,7 @@ public class DirectoryControllerTests
     [Test]
     public void TestListFiles()
     {
-        var rootDir = _serviceProvider.GetRequiredService<IOptions<InAppSettings>>().Value.PageRootDirectory;
+        var rootDir = _serviceProvider.GetRequiredService<IOptions<AppSettings>>().Value.FolderSettings.RootDirectory;
 
         // Prepare a test directory and files
         var testDir = "TestFolder";
@@ -94,7 +94,7 @@ public class DirectoryControllerTests
     [Test]
     public void TestDeleteFolder()
     {
-        var rootDir = _serviceProvider.GetRequiredService<IOptions<InAppSettings>>().Value.PageRootDirectory;
+        var rootDir = _serviceProvider.GetRequiredService<IOptions<AppSettings>>().Value.FolderSettings.RootDirectory;
 
         // Prepare a test directory
         var testDir = "TestFolder";
@@ -112,7 +112,7 @@ public class DirectoryControllerTests
     [Test]
     public void TestListFolders()
     {
-        var rootDir = _serviceProvider.GetRequiredService<IOptions<InAppSettings>>().Value.PageRootDirectory;
+        var rootDir = _serviceProvider.GetRequiredService<IOptions<AppSettings>>().Value.FolderSettings.RootDirectory;
 
         // Prepare some test directories
         var testDirs = new List<string> { "TestFolder1", "TestFolder2" };
@@ -163,7 +163,7 @@ public class DirectoryControllerTests
     public void TestDeleteFile_FileExists()
     {
         // Arrange
-        string rootDir = _serviceProvider.GetRequiredService<IOptions<InAppSettings>>().Value.PageRootDirectory;
+        string rootDir = _serviceProvider.GetRequiredService<IOptions<AppSettings>>().Value.FolderSettings.RootDirectory;
         string testFile = "test.txt";
         string folderPath = Path.Combine(rootDir, "TestFolder1", "Uploads");
 
@@ -206,7 +206,7 @@ public class DirectoryControllerTests
     public void TearDown()
     {
         // Cleanup created directories after each test
-        var rootDir = _serviceProvider.GetRequiredService<IOptions<InAppSettings>>().Value.PageRootDirectory;
+        var rootDir = _serviceProvider.GetRequiredService<IOptions<AppSettings>>().Value.FolderSettings.RootDirectory;
         if (Directory.Exists(rootDir))
         {
             Directory.Delete(rootDir, recursive: true);

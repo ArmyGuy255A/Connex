@@ -11,12 +11,12 @@ namespace Application.Directories;
 public class DirectoryController
 {
     private readonly string _rootDir;
-    private readonly IOptionsMonitor<InAppSettings> _settings;
+    private readonly IOptionsMonitor<AppSettings> _settings;
 
-    public DirectoryController(IOptionsMonitor<InAppSettings> settings)
+    public DirectoryController(IOptionsMonitor<AppSettings> settings)
     {
         _settings = settings;
-        _rootDir = settings.CurrentValue.PageRootDirectory;
+        _rootDir = settings.CurrentValue.FolderSettings.RootDirectory;
     }
 
     // Creates a new folder
@@ -129,9 +129,9 @@ public class DirectoryController
     public bool AllowedFileType(string fileName, string folderName)
     {
         var extension = Path.GetExtension(fileName).TrimStart('.').ToLower();
-        if (_settings.CurrentValue.AllowedFileTypes != null)
+        if (_settings.CurrentValue.FolderSettings.AllowedFileTypes != null)
         {
-            var folder = _settings.CurrentValue.AllowedFileTypes.FirstOrDefault(f => f.FolderName == folderName);
+            var folder = _settings.CurrentValue.FolderSettings.AllowedFileTypes.FirstOrDefault(f => f.FolderName == folderName);
     
             // If folder not found in settings, or no specific types are allowed, return false
             if (folder == null || folder.AllowedTypes == null || !folder.AllowedTypes.Any())
