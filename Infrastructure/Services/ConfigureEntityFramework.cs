@@ -1,13 +1,9 @@
 ﻿using Domain.Common;
-using Infrastructure.Identity;
 using Infrastructure.Persistence;
 using Infrastructure.Persistence.Contexts;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 
 namespace Infrastructure.Services;
 
@@ -34,22 +30,9 @@ public static partial class ConfigureServices
         // Add EF Core with SQLite support
         services.AddDbContext<ApplicationDbContext>();
 
-        // // Add Identity
-        // services.AddIdentity<ApplicationUser, ApplicationRole>(options =>
-        //     {
-        //         options.SignIn.RequireConfirmedAccount = false;
-        //         options.User.RequireUniqueEmail = true;
-        //     })
-        //     .AddEntityFrameworkStores<ApplicationDbContext>()
-        //     .AddDefaultTokenProviders();
-        //
-        // // Register ApplicationDbContext for DI
-        // services.AddScoped<ApplicationDbContext>(provider =>
-        //     provider.GetService<ApplicationDbContext>() ?? throw new InvalidOperationException());
-
         return services;
     }
-    
+
     public static async Task SeedDatabase(WebApplication app)
     {
         using var scope = app.Services.CreateScope();
@@ -66,5 +49,4 @@ public static partial class ConfigureServices
             logger.LogError($"An error occurred while seeding the database. Message: {ex.Message}");
         }
     }
-
 }

@@ -16,7 +16,10 @@ public static partial class ConfigureServices
 
         services.AddHealthChecks();
         
-        services.AddRazorPages();
+        // services.AddRazorPages();
+        //
+        // services.AddServerSideBlazor();
+
 
         // Customise default API behaviour
         services.Configure<ApiBehaviorOptions>(options =>
