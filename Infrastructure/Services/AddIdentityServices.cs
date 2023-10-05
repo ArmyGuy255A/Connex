@@ -16,11 +16,14 @@ public static partial class ConfigureServices
         AppSettings settings)
     {
         // TODO: Remove IdentityUser and replace with ApplicationUser
-        services.AddDefaultIdentity<IdentityUser>(options =>
+        services.AddDefaultIdentity<ApplicationUser>(options =>
             {
                 options.SignIn.RequireConfirmedAccount = false;
                 options.User.RequireUniqueEmail = true;
             })
+            .AddRoles<ApplicationRole>()
+            .AddUserManager<ApplicationUserManager>()
+            .AddSignInManager<ApplicationSignInManager>()
             .AddEntityFrameworkStores<ApplicationDbContext>();
 
         // services.AddIdentity<ApplicationUser, ApplicationRole>(options =>

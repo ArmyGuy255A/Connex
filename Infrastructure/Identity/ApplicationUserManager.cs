@@ -5,21 +5,20 @@ using Microsoft.Extensions.Options;
 
 namespace Infrastructure.Identity;
 
-public class ApplicationUserManager<TUser> : UserManager<TUser>
-    where TUser : ApplicationUser
+public class ApplicationUserManager : UserManager<ApplicationUser>
 {
-    private readonly ILogger<ApplicationUserManager<TUser>> _logger;
+    private readonly ILogger<ApplicationUserManager> _logger;
 
-    public ApplicationUserManager(IUserStore<TUser> store, IOptions<IdentityOptions> optionsAccessor,
-        IPasswordHasher<TUser> passwordHasher, IEnumerable<IUserValidator<TUser>> userValidators,
-        IEnumerable<IPasswordValidator<TUser>> passwordValidators, ILookupNormalizer keyNormalizer,
-        IdentityErrorDescriber errors, IServiceProvider services, ILogger<ApplicationUserManager<TUser>> logger) : base(store,
+    public ApplicationUserManager(IUserStore<ApplicationUser> store, IOptions<IdentityOptions> optionsAccessor,
+        IPasswordHasher<ApplicationUser> passwordHasher, IEnumerable<IUserValidator<ApplicationUser>> userValidators,
+        IEnumerable<IPasswordValidator<ApplicationUser>> passwordValidators, ILookupNormalizer keyNormalizer,
+        IdentityErrorDescriber errors, IServiceProvider services, ILogger<ApplicationUserManager> logger) : base(store,
         optionsAccessor, passwordHasher, userValidators, passwordValidators, keyNormalizer, errors, services, logger)
     {
         _logger = logger;
     }
     
-    public override async Task<TUser> GetUserAsync(ClaimsPrincipal principal)
+    public override async Task<ApplicationUser> GetUserAsync(ClaimsPrincipal principal)
         {
             var user = await base.GetUserAsync(principal);
 
@@ -34,7 +33,7 @@ public class ApplicationUserManager<TUser> : UserManager<TUser>
             return user;
         }
 
-        public override async Task<bool> IsInRoleAsync(TUser user, string role)
+        public override async Task<bool> IsInRoleAsync(ApplicationUser user, string role)
         {
             if (null == user)
             {
@@ -83,11 +82,11 @@ public class ApplicationUserManager<TUser> : UserManager<TUser>
         //     return oldString.Equals(newString) ? oldString : newString;
         // }
 
-        public async Task<IdentityResult> UpdateUserInfoAsync(TUser user, ClaimsPrincipal principal)
+        public async Task<IdentityResult> UpdateUserInfoAsync(ApplicationUser user, ClaimsPrincipal principal)
         {
             return await UpdateUserInfoAsync(user, principal.Identities.FirstOrDefault());
         }
-        public async Task<IdentityResult> UpdateUserInfoAsync(TUser user, ClaimsIdentity identity)
+        public async Task<IdentityResult> UpdateUserInfoAsync(ApplicationUser user, ClaimsIdentity identity)
         {
 
             // // GraphUserData graphUserData = await GetGraphData(identity);
@@ -200,7 +199,7 @@ public class ApplicationUserManager<TUser> : UserManager<TUser>
         //     return null;
         // }
 
-        public bool UpdateLoginInformation(TUser user)
+        public bool UpdateLoginInformation(ApplicationUser user)
         {
             if (user.LastLoginDate.AddSeconds(30) < DateTime.UtcNow)
             {
