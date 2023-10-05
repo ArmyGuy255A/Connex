@@ -1,7 +1,7 @@
 ﻿using System.Dynamic;
 using AutoMapper;
+using BlazorApp.AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
-using WebApp.AutoMapper;
 
 namespace WebAppTests;
 

@@ -3,7 +3,6 @@ using Domain.Entities;
 using Infrastructure.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 
 namespace Infrastructure.Persistence.Contexts;
@@ -14,16 +13,16 @@ namespace Infrastructure.Persistence.Contexts;
 public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
 {
     private readonly IOptionsMonitor<AppSettings> _settings;
-    
-    
+
+
     public ApplicationDbContext(IOptionsMonitor<AppSettings> settings, DbContextOptions options) : base(options)
     {
         _settings = settings;
     }
-    
+
     protected override void OnConfiguring(DbContextOptionsBuilder options)
     {
-        if (_settings.CurrentValue.DatabaseSettings.UseSqlite)
+        if (_settings.CurrentValue.DatabaseSettings is { UseSqlite: true })
         {
             // connect to sqlite database
             options.UseSqlite(_settings.CurrentValue.ConnectionStrings.SqliteConnectionString, o => o
@@ -39,6 +38,5 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser, Applicati
         }
     }
 
-    public DbSet<Page> Pages { get; set; }
+    public DbSet<Page> Pages { get; set; } = null!;
 }
-

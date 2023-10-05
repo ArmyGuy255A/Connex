@@ -54,7 +54,7 @@ public class DbInitializer
         {
             logger.LogInformation("Seeding a default page");
         
-            string[] pages = new string[4] {"Home", "Page1", "Page2", "Page3"};
+            string[] pages = new string[] {"Home", "Page1", "Page2", "Page3"};
 
             for (int i = 0; i < pages.Length; i++)
             {
@@ -76,8 +76,8 @@ public class DbInitializer
         }
         else
         {
-            string[] firstNames = new string[4] { "Jim", "Mike", "Karen", "Carl" };
-            string[] lastNames = new string[4] { "Smith", "Jones", "Alen", "Washington" };
+            string?[] firstNames = new string?[] { "Jim", "Mike", "Karen", "Carl" };
+            string?[] lastNames = new string[] { "Smith", "Jones", "Alen", "Washington" };
             for (int i = 0; i < 4; i++)
             {
                 var email = $"{firstNames[i]}@sample.com";

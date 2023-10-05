@@ -1,11 +1,10 @@
-﻿using Infrastructure.Persistence;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 
 namespace Infrastructure.Identity;
 
 public class ApplicationRole : IdentityRole
 {
-    public ApplicationRole() : base()
+    public ApplicationRole()
     {
     }
 

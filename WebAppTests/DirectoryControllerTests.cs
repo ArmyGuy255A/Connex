@@ -1,4 +1,5 @@
 using Application.Directories;
+using BlazorApp.AutoMapper;
 using Domain.Common;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -7,7 +8,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using Moq;
-using WebApp.AutoMapper;
 
 namespace WebAppTests;
 

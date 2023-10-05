@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-namespace WebApp.AutoMapper;
+namespace BlazorApp.AutoMapper;
 
 public class FileInformationProfile : Profile
 {

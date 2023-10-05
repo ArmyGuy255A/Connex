@@ -4,7 +4,6 @@ using Infrastructure.Persistence.Contexts;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
@@ -54,11 +53,11 @@ public static partial class ConfigureServices
             })
             .AddOpenIdConnect(options =>
             {
-                options.Authority = settings.Authentication?.KeyCloak?.Issuer;
-                options.ClientId = settings.Authentication?.KeyCloak?.ClientId;
-                options.ClientSecret = settings.Authentication?.KeyCloak?.ClientSecret;
-                options.RequireHttpsMetadata = settings.Authentication!.KeyCloak!.RequireHttpsMetadata;
-                options.ResponseType = settings.Authentication.KeyCloak.ResponseType!;
+                options.Authority = settings.Authentication.KeyCloak.Issuer;
+                options.ClientId = settings.Authentication.KeyCloak.ClientId;
+                options.ClientSecret = settings.Authentication.KeyCloak.ClientSecret;
+                options.RequireHttpsMetadata = settings.Authentication.KeyCloak.RequireHttpsMetadata;
+                options.ResponseType = settings.Authentication.KeyCloak.ResponseType;
                 options.GetClaimsFromUserInfoEndpoint = true;
                 options.SaveTokens = false;
                 options.MapInboundClaims = true;
@@ -73,12 +72,12 @@ public static partial class ConfigureServices
                     OnUserInformationReceived = async context =>
                     {
                         KeycloakHelpers.MapKeyCloakRolesToRoleClaims(context);
-                    
+
                         // // Extract KeyCloak roles from claims
                         // var keyCloakRoles = context.Principal.FindAll(ClaimTypes.Role).Select(c => c.Value).ToList();
                         //
                         // // Extract email from claims
-                        // var email = context.Principal.FindFirst(ClaimTypes.Email)?.Value;
+                        // var email = context.Principal.FindFirst(ClaimTypes.Email).Value;
                         //
                         // // Use UserManager and SignInManager services
                         // var userManager = context.HttpContext.RequestServices
@@ -98,7 +97,7 @@ public static partial class ConfigureServices
                         //     await userManager.CreateAsync(user);
                         //
                         //     // Add KeyCloak roles or fallback roles
-                        //     if (keyCloakRoles.Contains(settings.Authentication.KeyCloak.AdminRole ?? "admin"))
+                        //     if (keyCloakRoles.Contains(settings.Authentication.KeyCloak.AdminRole  "admin"))
                         //     {
                         //         await userManager.AddToRoleAsync(user, "Admin"); // 'Admin' is an ASP.NET Identity role
                         //     }
@@ -124,15 +123,15 @@ public static partial class ConfigureServices
             })
             .AddWsFederation("wsfed", options =>
             {
-                // https://learn.microsoft.com/en-us/aspnet/core/security/authentication/ws-federation?view=aspnetcore-7.0#add-ws-federation-as-an-external-login-provider-for-aspnet-core-identity
+                // https://learn.microsoft.com/en-us/aspnet/core/security/authentication/ws-federationview=aspnetcore-7.0#add-ws-federation-as-an-external-login-provider-for-aspnet-core-identity
                 // MetadataAddress represents the Active Directory instance used to authenticate users.
                 // options.MetadataAddress = "https://<ADFS FQDN or AAD tenant>/FederationMetadata/2007-06/FederationMetadata.xml";
-                options.MetadataAddress = settings.Authentication?.WSFederation?.MetadataAddress;
+                options.MetadataAddress = settings.Authentication.WsFederation.MetadataAddress;
 
                 // Wtrealm is the app's identifier in the Active Directory instance.
                 // For ADFS, use the relying party's identifier, its WS-Federation Passive protocol URL:
                 // options.Wtrealm = "https://localhost:44307/";
-                options.Wtrealm = settings.Authentication?.WSFederation?.Wtrealm;
+                options.Wtrealm = settings.Authentication.WsFederation.WtRealm;
 
                 // For AAD, use the Application ID URI from the app registration's Overview blade:
                 // options.Wtrealm = "api://bbd35166-7c13-49f3-8041-9551f2847b69";

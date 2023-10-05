@@ -30,6 +30,7 @@
 
 
     <ItemGroup>
+      <ProjectReference Include="..\BlazorApp\BlazorApp.csproj" />
       <ProjectReference Include="..\WebApp\WebApp.csproj" />
     </ItemGroup>
 

@@ -18,11 +18,11 @@ public static partial class ConfigureServices
     /// <param name="services">The IServiceCollection to add services to.</param>
     /// <param name="settings">Application settings.</param>
     /// <returns>The updated IServiceCollection.</returns>
-    public static IServiceCollection AddEntityFrameworkSql(this IServiceCollection services,
+    public static IServiceCollection AddEntityFramework(this IServiceCollection services,
         AppSettings settings)
     {
         // Check for database connection string
-        if (string.IsNullOrEmpty(settings.ConnectionStrings?.SqliteConnectionString))
+        if (string.IsNullOrEmpty(settings.ConnectionStrings.SqliteConnectionString))
         {
             throw new Exception("SQLite connection string is empty");
         }
@@ -30,7 +30,7 @@ public static partial class ConfigureServices
         // Add EF Core with SQLite support
         services.AddDbContext<ApplicationDbContext>();
         
-        services.AddDatabaseDeveloperPageExceptionFilter();
+        // services.AddDatabaseDeveloperPageExceptionFilter();
 
         return services;
     }
@@ -48,7 +48,7 @@ public static partial class ConfigureServices
         catch (Exception ex)
         {
             var logger = services.GetRequiredService<ILogger<DbInitializer>>();
-            logger.LogError($"An error occurred while seeding the database. Message: {ex.Message}");
+            logger.LogError("An error occurred while seeding the database. Message: {ExMessage}", ex.Message);
         }
     }
 }

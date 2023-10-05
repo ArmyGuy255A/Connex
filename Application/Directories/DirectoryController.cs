@@ -16,7 +16,7 @@ public class DirectoryController
     public DirectoryController(IOptionsMonitor<AppSettings> settings)
     {
         _settings = settings;
-        _rootDir = settings.CurrentValue.FolderSettings.RootDirectory;
+        _rootDir = settings.CurrentValue.FolderSettings?.RootDirectory ?? string.Empty;
     }
 
     // Creates a new folder
@@ -34,7 +34,7 @@ public class DirectoryController
     {
         var dirPath = Path.Combine(_rootDir, name);
         
-        if (null == childFolders?.Length || childFolders.Length == 0)
+        if (childFolders?.Length is null or 0)
         {
             return CreateFolder(dirPath);
         }
@@ -129,7 +129,7 @@ public class DirectoryController
     public bool AllowedFileType(string fileName, string folderName)
     {
         var extension = Path.GetExtension(fileName).TrimStart('.').ToLower();
-        if (_settings.CurrentValue.FolderSettings.AllowedFileTypes != null)
+        if (_settings.CurrentValue.FolderSettings?.AllowedFileTypes != null)
         {
             var folder = _settings.CurrentValue.FolderSettings.AllowedFileTypes.FirstOrDefault(f => f.FolderName == folderName);
     

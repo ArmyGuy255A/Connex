@@ -18,7 +18,7 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddControllersWithViews();
 
 // Add Infrastructure Services here
-builder.Services.AddEntityFrameworkSql(appSettings);
+builder.Services.AddEntityFramework(appSettings);
 builder.Services.AddWebApiServices();
 builder.Services.AddIdentityServices(appSettings);
 
@@ -32,6 +32,14 @@ builder.Services
 
 // Add Application services here
 builder.Services.AddSingleton<WeatherForecastService>();
+
+// Add logging
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Verbose()
+    .WriteTo.Console()
+    .WriteTo.File("Logs/log.txt", rollingInterval: RollingInterval.Day)
+    .CreateLogger();
+builder.Logging.AddSerilog();
 
 var app = builder.Build();
 
