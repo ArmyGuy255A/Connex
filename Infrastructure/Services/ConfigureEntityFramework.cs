@@ -29,6 +29,8 @@ public static partial class ConfigureServices
 
         // Add EF Core with SQLite support
         services.AddDbContext<ApplicationDbContext>();
+        
+        services.AddDatabaseDeveloperPageExceptionFilter();
 
         return services;
     }

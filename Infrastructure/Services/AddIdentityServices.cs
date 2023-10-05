@@ -1,10 +1,10 @@
-﻿using System.Security.Claims;
-using Domain.Common;
+﻿using Domain.Common;
 using Infrastructure.Identity;
 using Infrastructure.Persistence.Contexts;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,6 +16,14 @@ public static partial class ConfigureServices
     public static IServiceCollection AddIdentityServices(this IServiceCollection services,
         AppSettings settings)
     {
+        // TODO: Remove IdentityUser and replace with ApplicationUser
+        services.AddDefaultIdentity<IdentityUser>(options =>
+            {
+                options.SignIn.RequireConfirmedAccount = false;
+                options.User.RequireUniqueEmail = true;
+            })
+            .AddEntityFrameworkStores<ApplicationDbContext>();
+
         // services.AddIdentity<ApplicationUser, ApplicationRole>(options =>
         //     {
         //         options.SignIn.RequireConfirmedAccount = false;
@@ -65,39 +73,39 @@ public static partial class ConfigureServices
                     OnUserInformationReceived = async context =>
                     {
                         KeycloakHelpers.MapKeyCloakRolesToRoleClaims(context);
-
-                        // Extract KeyCloak roles from claims
-                        var keyCloakRoles = context.Principal.FindAll(ClaimTypes.Role).Select(c => c.Value).ToList();
-
-                        // Extract email from claims
-                        var email = context.Principal.FindFirst(ClaimTypes.Email)?.Value;
-
-                        // Use UserManager and SignInManager services
-                        var userManager = context.HttpContext.RequestServices
-                            .GetRequiredService<UserManager<ApplicationUser>>();
-                        var signInManager = context.HttpContext.RequestServices
-                            .GetRequiredService<SignInManager<ApplicationUser>>();
-
-                        // Check if user already exists
-                        var user = await userManager.FindByEmailAsync(email);
-                        if (user == null)
-                        {
-                            // Create user if they don't exist
-                            user = new ApplicationUser(email);
-                            user.Email = email;
-                            user.EmailConfirmed = true;
-
-                            await userManager.CreateAsync(user);
-
-                            // Add KeyCloak roles or fallback roles
-                            if (keyCloakRoles.Contains(settings.Authentication.KeyCloak.AdminRole ?? "admin"))
-                            {
-                                await userManager.AddToRoleAsync(user, "Admin"); // 'Admin' is an ASP.NET Identity role
-                            }
-                        }
-
-                        // Sign the user in
-                        await signInManager.SignInAsync(user, isPersistent: false);
+                    
+                        // // Extract KeyCloak roles from claims
+                        // var keyCloakRoles = context.Principal.FindAll(ClaimTypes.Role).Select(c => c.Value).ToList();
+                        //
+                        // // Extract email from claims
+                        // var email = context.Principal.FindFirst(ClaimTypes.Email)?.Value;
+                        //
+                        // // Use UserManager and SignInManager services
+                        // var userManager = context.HttpContext.RequestServices
+                        //     .GetRequiredService<UserManager<ApplicationUser>>();
+                        // var signInManager = context.HttpContext.RequestServices
+                        //     .GetRequiredService<SignInManager<ApplicationUser>>();
+                        //
+                        // // Check if user already exists
+                        // var user = await userManager.FindByEmailAsync(email);
+                        // if (user == null)
+                        // {
+                        //     // Create user if they don't exist
+                        //     user = new ApplicationUser(email);
+                        //     user.Email = email;
+                        //     user.EmailConfirmed = true;
+                        //
+                        //     await userManager.CreateAsync(user);
+                        //
+                        //     // Add KeyCloak roles or fallback roles
+                        //     if (keyCloakRoles.Contains(settings.Authentication.KeyCloak.AdminRole ?? "admin"))
+                        //     {
+                        //         await userManager.AddToRoleAsync(user, "Admin"); // 'Admin' is an ASP.NET Identity role
+                        //     }
+                        // }
+                        //
+                        // // Sign the user in
+                        // await signInManager.SignInAsync(user, isPersistent: false);
                     },
                     OnTicketReceived = context =>
                     {
@@ -131,7 +139,7 @@ public static partial class ConfigureServices
 
                 // ... other settings
             });
-        
+
         // services.AddAuthorization();
 
 
