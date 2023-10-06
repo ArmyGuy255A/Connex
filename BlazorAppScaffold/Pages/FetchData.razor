@@ -1,5 +1,5 @@
 ﻿@page "/fetchdata"
-@using BlazorApp.Data
+@using BlazorAppScaffold.Data
 @inject WeatherForecastService ForecastService
 
 <PageTitle>Weather forecast</PageTitle>
@@ -46,4 +46,5 @@ else
     {
         forecasts = await ForecastService.GetForecastAsync(DateOnly.FromDateTime(DateTime.Now));
     }
+
 }
