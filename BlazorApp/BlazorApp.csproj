@@ -7,6 +7,7 @@
         <UserSecretsId>aspnet-BlazorApp-2928222D-A93C-4B85-B13B-776BDB0D3767</UserSecretsId>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
         <RootNamespace>BlazorApp</RootNamespace>
+        <IsPackable>false</IsPackable>
     </PropertyGroup>
 
     <ItemGroup>
@@ -39,6 +40,7 @@
     <ItemGroup>
       <ProjectReference Include="..\Application\Application.csproj" />
       <ProjectReference Include="..\Domain\Domain.csproj" />
+      <ProjectReference Include="..\FirstClassLibrary\FirstClassLibrary.csproj" />
       <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
     </ItemGroup>
 
