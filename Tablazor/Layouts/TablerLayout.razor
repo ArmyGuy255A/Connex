@@ -1,0 +1,34 @@
+﻿@inject IJSRuntime JavaScript
+
+@using Tablazor.Components
+@using Microsoft.JSInterop
+
+@inherits LayoutComponentBase
+
+<div class="page">
+  <TablerNavbarHeader />
+  <TablerNavbar />
+  <TablerPageWrapper />
+
+</div>
+
+@code
+{
+  protected override void OnInitialized()
+  {
+    base.OnInitialized();
+    Console.WriteLine("Hello world");
+  }
+  
+  private bool firstRender = true;
+  
+  protected override async Task OnAfterRenderAsync(bool firstRender)
+  {
+    if (this.firstRender)
+    {
+      await JavaScript.InvokeVoidAsync("initializeTooltips");
+      this.firstRender = false;
+    }
+  }
+
+}

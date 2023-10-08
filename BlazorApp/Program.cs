@@ -5,6 +5,7 @@ using Infrastructure.Services;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Serilog;
+using Tablazor;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -40,6 +41,9 @@ Log.Logger = new LoggerConfiguration()
     .WriteTo.File("Logs/log.txt", rollingInterval: RollingInterval.Day)
     .CreateLogger();
 builder.Logging.AddSerilog();
+
+// Add Tablazor JS Interop
+builder.Services.AddScoped<TablazorJsInterop>();
 
 var app = builder.Build();
 

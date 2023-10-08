@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "@tabler/icons-webfont": "^2.38.0",
+    "sass": "^1.69.0"
+  }
+}

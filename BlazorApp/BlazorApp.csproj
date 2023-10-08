@@ -40,8 +40,8 @@
     <ItemGroup>
       <ProjectReference Include="..\Application\Application.csproj" />
       <ProjectReference Include="..\Domain\Domain.csproj" />
-      <ProjectReference Include="..\FirstClassLibrary\FirstClassLibrary.csproj" />
       <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
+      <ProjectReference Include="..\Tablazor\Tablazor.csproj" />
     </ItemGroup>
 
 </Project>

@@ -3,43 +3,57 @@
 
 <PageTitle>Index</PageTitle>
 
-<h1>Hello, world!</h1>
+@* <h1>Hello, world!</h1> *@
+@* *@
+@* Welcome to your new app. *@
+@* *@
+@* <button type="button" class="btn" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top"> *@
+@*   Tooltip on top *@
+@* </button> *@
+@* *@
+@* <a href="#" class="btn btn-ghost-primary">Primary</a> *@
+@* <a href="#" class="btn btn-ghost-secondary">Secondary</a> *@
+@* <a href="#" class="btn btn-ghost-success">Success</a> *@
+@* <a href="#" class="btn btn-ghost-warning">Warning</a> *@
+@* <a href="#" class="btn btn-ghost-danger">Danger</a> *@
+@* <a href="#" class="btn btn-ghost-info">Info</a> *@
+@* <a href="#" class="btn btn-ghost-dark">Dark</a> *@
+@* <a href="#" class="btn btn-ghost-light">Light</a> *@
+@* *@
+@* <Modal Title="Hello World" Show="false"> *@
+@*   <p> *@
+@*     This is my first modal dialog *@
+@*   </p> *@
+@* </Modal> *@
+@* *@
+@* *@
+@* <SurveyPrompt Title="How is Bla zor working for you?"/> *@
 
-Welcome to your new app.
+<TablerButton href="/swagger" InDivElement="false">
+  Swagger
+</TablerButton>
+<TablerButton BootStyle="primary" BootType="ghost">
+  Hello
+</TablerButton>
 
-<button type="button" class="btn" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
-  Tooltip on top
-</button>
+<TablerButton BootStyle="warning" BootType="pill">
+  Hello
+</TablerButton>
 
-<a href="#" class="btn btn-ghost-primary">Primary</a>
-<a href="#" class="btn btn-ghost-secondary">Secondary</a>
-<a href="#" class="btn btn-ghost-success">Success</a>
-<a href="#" class="btn btn-ghost-warning">Warning</a>
-<a href="#" class="btn btn-ghost-danger">Danger</a>
-<a href="#" class="btn btn-ghost-info">Info</a>
-<a href="#" class="btn btn-ghost-dark">Dark</a>
-<a href="#" class="btn btn-ghost-light">Light</a>
-
-<Modal Title="Hello World" Show="false">
-  <p>
-    This is my first modal dialog
-  </p>
-</Modal>
-
-
-<SurveyPrompt Title="How is Bla zor working for you?"/>
-
+<TablerButton BootStyle="secondary" BootType="outline">
+  Hello
+</TablerButton>
 
 
 @code {
-  private bool firstRender = true;
-
-  protected override async Task OnAfterRenderAsync(bool firstRender)
-  {
-    if (this.firstRender)
-    {
-      await JavaScript.InvokeVoidAsync("initializeTooltips");
-      this.firstRender = false;
-    }
-  }
+  // private bool firstRender = true;
+  //
+  // protected override async Task OnAfterRenderAsync(bool firstRender)
+  // {
+  //   if (this.firstRender)
+  //   {
+  //     await JavaScript.InvokeVoidAsync("initializeTooltips");
+  //     this.firstRender = false;
+  //   }
+  // }
 }

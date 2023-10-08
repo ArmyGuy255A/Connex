@@ -1,5 +1,78 @@
-﻿<h3>TablerButton</h3>
+﻿@inherits TablerComponent
+
+@if (InDivElement)
+{
+    <div class="col-6 col-sm-4 col-md-2 col-xl py-3">
+        <a href="#" class="@Class w-100" @onclick="OnClick">
+            @ChildContent
+        </a>
+    </div>
+}
+else
+{
+    <a href="@href" class="@Class w-100" @onclick="OnClick">
+        @ChildContent
+    </a>
+}
 
 @code {
+
+    [Parameter]
+    public bool InDivElement { get; set; } = true;
     
+    /// <summary>
+    /// Possible values: primary, seconday, success, warning, danger, info, dark, light
+    /// </summary>
+    [Parameter]
+    public string? BootStyle { get; set; }
+    
+    /// <summary>
+    /// Possible values: pill, square, ghost, outline
+    /// </summary>
+    [Parameter]
+    public string? BootType { get; set; }
+    
+    /// <summary>
+    /// Width of the button
+    /// </summary>
+    [Parameter]
+    public int Width { get; set; } = 100;
+    
+    [Parameter]
+    public string href { get; set; } = "#";
+
+    [Parameter]
+    public EventCallback<MouseEventArgs> OnClick { get; set; }
+
+    public override void Initialize()
+    {
+        AddClass("btn");
+
+        // Treat pill and square differently
+        if (BootType?.ToLower() == "pill" || BootType?.ToLower() == "square")
+            AddClass($"btn-{BootType.ToLower()}");
+        
+            // Add the style as a separate class
+            if (!string.IsNullOrWhiteSpace(BootStyle))
+                AddClass($"btn-{BootStyle.ToLower()}");
+                
+                
+        if (BootType?.ToLower() != "pill" && BootType?.ToLower() != "square")
+        {
+            var type = "btn";
+            
+            if (!string.IsNullOrWhiteSpace(BootType))
+                type += $"-{BootType.ToLower()}";
+            
+            if (!string.IsNullOrWhiteSpace(BootStyle))
+                type += $"-{BootStyle.ToLower()}";
+            
+            if (type.Length > 3)
+                AddClass(type);
+        }
+
+        
+        AddClass($"w-{Width}");
+
+    }
 }

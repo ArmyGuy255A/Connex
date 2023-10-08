@@ -1,3 +1,0 @@
-﻿# FirstClassLibrary
-
-asdf
