@@ -1,20 +1,62 @@
-﻿@inherits LayoutComponentBase
+﻿@using Tablazor
+@inherits LayoutComponentBase
+@inject TablazorJsInterop JsInterop
+
 
 <PageTitle>BlazorApp</PageTitle>
 
-<div class="page">
-    <div class="sidebar">
-        <NavMenu/>
-    </div>
+<TablerPage>
+    <TablerNavbarHeader ShowNotifications="false">
+        <AuthorizeView>
+            <Authorized>
+                <TablerButton BootType="outline" href="/admin">Admin</TablerButton>
+                <TablerButton BootType="outline" href="/swagger">Swagger</TablerButton>
+            </Authorized>
+            <NotAuthorized>
+                <TablerButton BootType="ghost" href="/login">Login</TablerButton>
+            </NotAuthorized>
+        </AuthorizeView>
+    </TablerNavbarHeader>
+    <AuthorizeView>
+        <Authorized>
+            <TablerNavbar />
+        </Authorized>
+    </AuthorizeView>
+    <TablerPageWrapper Title="MainLayout" Pretitle="Current Location:">
+        @Body
+    </TablerPageWrapper>
+</TablerPage>
 
-    <main>
-        <div class="top-row px-4 auth">
-            <LoginDisplay/>
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
-        </div>
+@code
+{
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        Console.WriteLine("Hello world");
+    }
+  
+    private bool firstRender = true;
+    
+    // private string title = "MainLayout";
+  
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (this.firstRender)
+        {
+    // await JavaScript.InvokeVoidAsync("initializeTooltips");
+    // await JsInterop.Prompt("Hello World");
+            await JsInterop.Print();
+            await JsInterop.InitializeTooltips();
+            await JsInterop.InitializeDropdowns();
 
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
-</div>
+      
+            this.firstRender = false;
+      
+            //TODO: This is not refreshing the current page title
+            // title = await JsInterop.GetPageTitle();
+
+        }
+
+    }
+
+}

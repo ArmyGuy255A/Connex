@@ -1,0 +1,20 @@
+﻿@inherits TablerComponent
+
+<div class="@Class">
+    @ChildContent
+</div>
+
+@code {
+    [Parameter]
+    public bool Centered { get; set; } = false;
+    
+    public override void Initialize()
+    {
+        base.Initialize();
+        AddClass("page");
+        
+        if (Centered)
+            AddClasses("page-center");
+    }
+
+}

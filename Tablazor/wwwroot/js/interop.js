@@ -22,3 +22,7 @@ export function initializeDropdowns() {
 export function print() {
     console.log('Hello from interop.js');
 }
+
+export function getPageTitle() {
+    return document.title;
+}

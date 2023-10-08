@@ -1,0 +1,39 @@
+﻿@using Tablazor
+@inherits LayoutComponentBase
+@inject TablazorJsInterop JsInterop
+
+
+<PageTitle>BlazorApp</PageTitle>
+
+
+<TablerPage Centered="true">
+    @Body
+</TablerPage>
+
+
+@code
+{
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        Console.WriteLine("Hello world");
+    }
+
+    private bool firstRender = true;
+    
+    private string title = "layout";
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (this.firstRender)
+        {
+            await JsInterop.Print();
+            await JsInterop.InitializeTooltips();
+            await JsInterop.InitializeDropdowns();
+            title = await JsInterop.GetPageTitle();
+
+            this.firstRender = false;
+        }
+    }
+
+}

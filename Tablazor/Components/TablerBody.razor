@@ -1,0 +1,12 @@
+﻿@inherits TablerComponent
+
+<body class="@Class">
+    @ChildContent
+</body>
+
+@code {
+    public override void Initialize()
+    {
+        AddClass("test");
+    }
+}

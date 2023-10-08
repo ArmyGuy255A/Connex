@@ -29,6 +29,12 @@ public class TablazorJsInterop
         var module = await moduleTask.Value;
         return await module.InvokeAsync<string>("showPrompt", message);
     }
+    
+    public async ValueTask<string> GetPageTitle()
+    {
+        var module = await moduleTask.Value;
+        return await module.InvokeAsync<string>("getPageTitle");
+    }
 
     public async ValueTask Print()
     {

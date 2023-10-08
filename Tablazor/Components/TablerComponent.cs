@@ -66,6 +66,7 @@ namespace Tablazor.Components
         /// Adds a single class to the component if it's not already present.
         /// </summary>
         /// <param name="className">The class name to add.</param>
+        
         public void AddClass(string className)
         {
             ClassSet.Add(className);
