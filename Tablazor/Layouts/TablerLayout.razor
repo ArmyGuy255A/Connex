@@ -1,4 +1,5 @@
-﻿@inject IJSRuntime JavaScript
+﻿@* @inject IJSRuntime JavaScript *@
+@inject TablazorJsInterop JsInterop
 
 @using Tablazor.Components
 @using Microsoft.JSInterop
@@ -26,8 +27,14 @@
   {
     if (this.firstRender)
     {
-      await JavaScript.InvokeVoidAsync("initializeTooltips");
+      // await JavaScript.InvokeVoidAsync("initializeTooltips");
+      // await JsInterop.Prompt("Hello World");
+      await JsInterop.Print();
+      await JsInterop.InitializeTooltips();
+      await JsInterop.InitializeDropdowns();
+      
       this.firstRender = false;
+      
     }
   }
 

@@ -9,7 +9,7 @@ public class TablazorJsInterop
     public TablazorJsInterop(IJSRuntime jsRuntime)
     {
         moduleTask = new(() => jsRuntime.InvokeAsync<IJSObjectReference>(
-            "import", "./_content/Tablazor/interop.js").AsTask());
+            "import", "./_content/Tablazor/js/interop.js").AsTask());
     }
     
     public async ValueTask InitializeTooltips()
@@ -23,13 +23,18 @@ public class TablazorJsInterop
         var module = await moduleTask.Value;
         await module.InvokeVoidAsync("initializeDropdowns");
     }
+    
+    public async ValueTask<string> Prompt(string message)
+    {
+        var module = await moduleTask.Value;
+        return await module.InvokeAsync<string>("showPrompt", message);
+    }
 
-    // public async ValueTask<string> Prompt(string message)
-    // {
-    //     var module = await moduleTask.Value;
-    //     return await module.InvokeAsync<string>("showPrompt", message);
-    // }
-
+    public async ValueTask Print()
+    {
+        var module = await moduleTask.Value;
+        await module.InvokeVoidAsync("print");
+    }
     public async ValueTask DisposeAsync()
     {
         if (moduleTask.IsValueCreated)

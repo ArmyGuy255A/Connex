@@ -1,5 +1,5 @@
-﻿window.initializeTooltips = () => {
-    $(function () {
-        $('[data-bs-toggle="tooltip"]').tooltip();
-    });
-};
+﻿// window.initializeTooltips = () => {
+//     $(function () {
+//         $('[data-bs-toggle="tooltip"]').tooltip();
+//     });
+// };
