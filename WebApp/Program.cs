@@ -32,6 +32,7 @@ var app = builder.Build();
 
 // Seed the Database
 await ConfigureServices.SeedDatabase(app);
+await ConfigureServices.SeedUsers(app);
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

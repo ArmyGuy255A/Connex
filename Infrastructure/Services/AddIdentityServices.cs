@@ -1,5 +1,6 @@
 ﻿using Domain.Common;
 using Infrastructure.Identity;
+using Infrastructure.Persistence;
 using Infrastructure.Persistence.Contexts;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
@@ -7,6 +8,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 namespace Infrastructure.Services;
 
@@ -25,6 +27,9 @@ public static partial class ConfigureServices
             .AddUserManager<ApplicationUserManager>()
             .AddSignInManager<ApplicationSignInManager>()
             .AddEntityFrameworkStores<ApplicationDbContext>();
+        
+        // Make an admin user
+        
 
         // services.AddIdentity<ApplicationUser, ApplicationRole>(options =>
         //     {
@@ -146,5 +151,24 @@ public static partial class ConfigureServices
 
 
         return services;
+    }
+    
+    public static async Task SeedUsers(WebApplication app)
+    {
+        using var scope = app.Services.CreateScope();
+        var services = scope.ServiceProvider;
+        try
+        {
+            var context = services.GetRequiredService<ApplicationDbContext>();
+            var userManager = services.GetRequiredService <ApplicationUserManager>();
+            var roleManager = services.GetRequiredService <RoleManager<ApplicationRole>>();
+
+            await DbInitializer.InitializeUsersAsync(context, services, userManager, roleManager);
+        }
+        catch (Exception ex)
+        {
+            var logger = services.GetRequiredService<ILogger<DbInitializer>>();
+            logger.LogError("An error occurred while seeding the database. Message: {ExMessage}", ex.Message);
+        }
     }
 }

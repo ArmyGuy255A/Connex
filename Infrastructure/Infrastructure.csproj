@@ -10,7 +10,6 @@
     <ItemGroup>
       <Folder Include="Authentication\" />
       <Folder Include="Files\" />
-      <Folder Include="Persistence\Migrations\" />
     </ItemGroup>
 
     <ItemGroup>

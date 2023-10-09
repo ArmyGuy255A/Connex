@@ -1,4 +1,9 @@
 ﻿@page "/login"
+@using Microsoft.AspNetCore.Identity
+@using Infrastructure.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject NavigationManager NavigationManager
+
 @layout PageLayout
 
 <PageTitle>Login</PageTitle>
@@ -14,10 +19,15 @@
     <div class="card card-md">
         <div class="card-body">
             <h2 class="h2 text-center mb-4">Login to your account</h2>
-            <form action="./" method="post" autocomplete="on" novalidate="">
+            @if (!string.IsNullOrEmpty(loginModel.Message))
+            {
+                <h3 class="h3 text-center text-warning">@loginModel.Message</h3>                
+            }
+            
+            <form autocomplete="on" class="needs-validation" onsubmit="@HandleLogin">
                 <div class="mb-3">
                     <label class="form-label">Email address</label>
-                    <input type="email" class="form-control" placeholder="your@email.com" autocomplete="off">
+                    <InputText id="username" @bind-Value="@loginModel.UserName" type="email" class="form-control" placeholder="your@email.com" autocomplete="on"/>
                 </div>
                 <div class="mb-2">
                     <label class="form-label">
@@ -27,7 +37,7 @@
                         </span>
                     </label>
                     <div class="input-group input-group-flat">
-                        <input type="password" class="form-control" placeholder="Your password" autocomplete="off">
+                        <InputText type="password" id="password" class="form-control" @bind-Value="loginModel.Password" placeholder="Your password" autocomplete="off"/>
                         <span class="input-group-text">
                             <a href="#" class="link-secondary" data-bs-toggle="tooltip" aria-label="Show password" data-bs-original-title="Show password">
                                 <!-- Download SVG icon from http://tabler-icons.io/i/eye -->
@@ -70,5 +80,39 @@
 </div>
 
 @code {
+    private LoginModel loginModel = new LoginModel();
 
+    private async Task HandleLogin()
+    {
+        if (string.IsNullOrEmpty(loginModel.UserName))
+        {
+            loginModel.Message = "Missing Username";
+            return;
+        }
+        
+        if (string.IsNullOrEmpty(loginModel.Password))
+        {
+            loginModel.Message = "Missing Password";
+            return;
+        }
+        
+        var result = await SignInManager.PasswordSignInAsync(loginModel.UserName, loginModel.Password, false, false);
+        if (result.Succeeded)
+        {
+            NavigationManager.NavigateTo("/");
+        }
+        else
+        {
+            // Handle login failure
+            Console.Write($"Invalid Login UserName: {loginModel.UserName}");
+            loginModel.Message = "Invalid Login";
+        }
+    }
+
+    public class LoginModel
+    {
+        public string UserName { get; set; }
+        public string Password { get; set; }
+        public string Message { get; set; }
+    }
 }

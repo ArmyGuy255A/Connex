@@ -1,7 +1,9 @@
 ﻿using Domain.Common;
+using Infrastructure.Identity;
 using Infrastructure.Persistence;
 using Infrastructure.Persistence.Contexts;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
@@ -43,7 +45,7 @@ public static partial class ConfigureServices
         {
             var context = services.GetRequiredService<ApplicationDbContext>();
 
-            await DbInitializer.InitializeAsync(context, services);
+            await DbInitializer.InitializeDataAsync(context, services);
         }
         catch (Exception ex)
         {

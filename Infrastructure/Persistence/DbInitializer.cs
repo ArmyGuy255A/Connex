@@ -1,6 +1,7 @@
 ﻿using Domain.Entities;
 using Infrastructure.Identity;
 using Infrastructure.Persistence.Contexts;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -9,7 +10,7 @@ namespace Infrastructure.Persistence;
 
 public class DbInitializer
 {
-    public static async Task InitializeAsync(ApplicationDbContext context, IServiceProvider serviceProvider)
+    public static async Task InitializeDataAsync(ApplicationDbContext context, IServiceProvider serviceProvider)
     {
         // Get a logger
         var logger = serviceProvider.GetRequiredService<ILogger<DbInitializer>>();
@@ -85,6 +86,7 @@ public class DbInitializer
                 user.GivenName = firstNames[i];
                 user.Surname = lastNames[i];
                 user.DisplayName = $"{firstNames[i]} {lastNames[i]}";
+                
                 context.Users.Add(user);
             }
         }
@@ -95,5 +97,34 @@ public class DbInitializer
         }
 
         logger.LogInformation("Finished Seeding");
+    }
+
+    public static async Task InitializeUsersAsync(ApplicationDbContext context, IServiceProvider serviceProvider, ApplicationUserManager userManager, RoleManager<ApplicationRole> roleManager)
+    {
+        
+        // Check if any users are in the "Administrator" role
+        var administrators = await userManager.GetUsersInRoleAsync("Administrator");
+        if (administrators.Any())
+            return;
+        
+        var adminUser = await userManager.FindByEmailAsync("admin@connex.com");
+
+                
+        
+        if (null == adminUser)
+        {
+            adminUser = new ApplicationUser ("admin@connex.com")
+            {
+                GivenName = "Admin",
+                Surname = "User",
+                DisplayName = "Administrator"
+            };
+
+            await userManager.CreateAsync(adminUser, "admin");
+            
+        }
+        
+        await userManager.AddToRoleAsync(adminUser, "Administrator");
+        
     }
 }
