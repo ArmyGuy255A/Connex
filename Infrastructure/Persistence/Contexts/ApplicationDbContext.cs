@@ -11,7 +11,7 @@ namespace Infrastructure.Persistence.Contexts;
 /// <summary>
 /// Entity Framework DB Context.
 /// </summary>
-public class ApplicationDbContext : IdentityDbContext<IdentityUser, IdentityRole, string>
+public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
 {
     private readonly IOptionsMonitor<AppSettings> _settings;
 

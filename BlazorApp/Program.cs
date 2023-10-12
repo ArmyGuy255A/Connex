@@ -30,7 +30,7 @@ builder.Services.AddServerSideBlazor();
 
 // Add an auth state provider
 builder.Services
-    .AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<IdentityUser>>();
+    .AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<ApplicationUser>>();
 
 // Add Application services here
 builder.Services.AddSingleton<WeatherForecastService>();

@@ -71,7 +71,7 @@ public class DbInitializer
     }
 
     public static async Task InitializeUsersAsync(ApplicationDbContext context, IServiceProvider serviceProvider,
-        UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager)
+        UserManager<ApplicationUser> userManager, RoleManager<ApplicationRole> roleManager)
     {
         // Get a logger
         var logger = serviceProvider.GetRequiredService<ILogger<DbInitializer>>();

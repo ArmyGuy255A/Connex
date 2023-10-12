@@ -17,13 +17,13 @@ public static partial class ConfigureServices
     public static IServiceCollection AddIdentityServices(this IServiceCollection services,
         AppSettings settings)
     {
-        services.AddDefaultIdentity<IdentityUser>(options => 
+        services.AddDefaultIdentity<ApplicationUser>(options => 
             {
                 options.SignIn.RequireConfirmedAccount = false;
                 // options.Tokens.AuthenticatorTokenProvider = "";  // Disable 2FA
                 // options.User.RequireUniqueEmail = true;
             })
-            .AddRoles<IdentityRole>()
+            .AddRoles<ApplicationRole>()
             .AddEntityFrameworkStores<ApplicationDbContext>();
         
         // services.AddDefaultIdentity<ApplicationUser>(options =>
@@ -37,12 +37,12 @@ public static partial class ConfigureServices
         //     .AddSignInManager<ApplicationSignInManager>()
         //     .AddEntityFrameworkStores<ApplicationDbContext>();
 
-        services.Configure<CookiePolicyOptions>(options =>
-        {
-            options.Secure = CookieSecurePolicy.None;
-            options.CheckConsentNeeded = _ => false;
-            options.MinimumSameSitePolicy = SameSiteMode.Lax;
-        });
+        // services.Configure<CookiePolicyOptions>(options =>
+        // {
+        //     options.Secure = CookieSecurePolicy.None;
+        //     options.CheckConsentNeeded = _ => false;
+        //     options.MinimumSameSitePolicy = SameSiteMode.Lax;
+        // });
 
         // services.AddAuthentication(options =>
         //     {
@@ -154,8 +154,8 @@ public static partial class ConfigureServices
         try
         {
             var context = services.GetRequiredService<ApplicationDbContext>();
-            var userManager = services.GetRequiredService <UserManager<IdentityUser>>();
-            var roleManager = services.GetRequiredService <RoleManager<IdentityRole>>();
+            var userManager = services.GetRequiredService <UserManager<ApplicationUser>>();
+            var roleManager = services.GetRequiredService <RoleManager<ApplicationRole>>();
 
             await DbInitializer.InitializeUsersAsync(context, services, userManager, roleManager);
         }
