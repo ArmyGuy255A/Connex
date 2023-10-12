@@ -16,6 +16,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tablazor", "Tablazor\Tablaz
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TablazorTests", "TablazorTests\TablazorTests.csproj", "{60738948-9E52-4263-B86A-6BE96D64C235}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorAuthSample", "BlazorAuthSample\BlazorAuthSample.csproj", "{8EC89FD6-B4E0-4A83-A4FB-225A1C25B499}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,5 +56,9 @@ Global
 		{60738948-9E52-4263-B86A-6BE96D64C235}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60738948-9E52-4263-B86A-6BE96D64C235}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60738948-9E52-4263-B86A-6BE96D64C235}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EC89FD6-B4E0-4A83-A4FB-225A1C25B499}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EC89FD6-B4E0-4A83-A4FB-225A1C25B499}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EC89FD6-B4E0-4A83-A4FB-225A1C25B499}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EC89FD6-B4E0-4A83-A4FB-225A1C25B499}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

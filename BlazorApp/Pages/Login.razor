@@ -1,7 +1,8 @@
 ﻿@page "/login"
-@using Microsoft.AspNetCore.Identity
 @using Infrastructure.Identity
-@inject SignInManager<ApplicationUser> SignInManager
+@using Microsoft.AspNetCore.Identity
+@* @inject ApplicationSignInManager SignInManager *@
+@inject SignInManager<IdentityUser> SignInManager
 @inject NavigationManager NavigationManager
 
 @layout PageLayout
@@ -21,9 +22,9 @@
             <h2 class="h2 text-center mb-4">Login to your account</h2>
             @if (!string.IsNullOrEmpty(loginModel.Message))
             {
-                <h3 class="h3 text-center text-warning">@loginModel.Message</h3>                
+                <h3 class="h3 text-center text-warning">@loginModel.Message</h3>
             }
-            
+
             <form autocomplete="on" class="needs-validation" onsubmit="@HandleLogin">
                 <div class="mb-3">
                     <label class="form-label">Email address</label>
@@ -64,7 +65,7 @@
             <div class="row">
                 <div class="col">
                     <TablerButton InDivElement="false" href="/login/keycloak">
-                        <img src="images/keycloak_icon_512px.svg" class="icon" width="25" height="25" />
+                        <img src="images/keycloak_icon_512px.svg" class="icon" width="25" height="25"/>
                         Login with KeyCloak
                     </TablerButton>
                 </div>
@@ -84,28 +85,36 @@
 
     private async Task HandleLogin()
     {
-        if (string.IsNullOrEmpty(loginModel.UserName))
+        try
         {
-            loginModel.Message = "Missing Username";
-            return;
+            if (string.IsNullOrEmpty(loginModel.UserName))
+            {
+                loginModel.Message = "Missing Username";
+                return;
+            }
+
+            if (string.IsNullOrEmpty(loginModel.Password))
+            {
+                loginModel.Message = "Missing Password";
+                return;
+            }
+
+            var result = await SignInManager.PasswordSignInAsync(loginModel.UserName, loginModel.Password, true, false);
+            if (result.Succeeded)
+            {
+                // SignInManager.SignInAsync()
+                NavigationManager.NavigateTo("/");
+            }
+            else
+            {
+                // Handle login failure
+                loginModel.Message = "Login Error";
+            }
         }
-        
-        if (string.IsNullOrEmpty(loginModel.Password))
+        catch (Exception ex)
         {
-            loginModel.Message = "Missing Password";
-            return;
-        }
-        
-        var result = await SignInManager.PasswordSignInAsync(loginModel.UserName, loginModel.Password, false, false);
-        if (result.Succeeded)
-        {
-            NavigationManager.NavigateTo("/");
-        }
-        else
-        {
-            // Handle login failure
-            Console.Write($"Invalid Login UserName: {loginModel.UserName}");
-            loginModel.Message = "Invalid Login";
+            // Log the exception or handle it as appropriate
+            loginModel.Message = $"An error occurred: {ex.Message}";
         }
     }
 
@@ -115,4 +124,5 @@
         public string Password { get; set; }
         public string Message { get; set; }
     }
+
 }

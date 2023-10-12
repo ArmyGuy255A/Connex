@@ -1,7 +1,11 @@
 ﻿@using Tablazor
+@using Infrastructure.Identity
+@using Microsoft.AspNetCore.Identity
 @inherits LayoutComponentBase
 @inject TablazorJsInterop JsInterop
-
+@inject UserManager<IdentityUser> UserManager
+@* @inject ApplicationUserManager UserManager *@
+@inject AuthenticationStateProvider AuthenticationStateProvider
 
 <PageTitle>BlazorApp</PageTitle>
 
@@ -13,7 +17,7 @@
                 <TablerButton BootType="outline" href="/swagger">Swagger</TablerButton>
             </Authorized>
             <NotAuthorized>
-                <TablerButton BootType="ghost" href="/login">Login</TablerButton>
+                <TablerButton BootType="ghost" href="Identity/Account/Login">Login</TablerButton>
             </NotAuthorized>
         </AuthorizeView>
     </TablerNavbarHeader>
@@ -29,10 +33,14 @@
 
 @code
 {
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        base.OnInitialized();
+        
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
         Console.WriteLine("Hello world");
+        
+        await base.OnInitializedAsync();
     }
   
     private bool firstRender = true;

@@ -34,14 +34,39 @@ public class ApplicationSignInManager : SignInManager<ApplicationUser>
             return result;
         }
 
-        public override Task SignInAsync(ApplicationUser user, bool isPersistent, string authenticationMethod = null)
+        public override async Task SignInAsync(ApplicationUser user, bool isPersistent, string authenticationMethod = null)
         {
-            return base.SignInAsync(user, isPersistent, authenticationMethod);
+            await base.SignInAsync(user, isPersistent, authenticationMethod);
         }
-
-        public override Task SignInAsync(ApplicationUser user, AuthenticationProperties authenticationProperties, string authenticationMethod = null)
+        
+        public override async Task<SignInResult> PasswordSignInAsync(string userName, string password,
+            bool isPersistent, bool lockoutOnFailure)
         {
-            return base.SignInAsync(user, authenticationProperties, authenticationMethod);
+            var user = await UserManager.FindByNameAsync(userName);
+            if (user == null)
+            {
+                return SignInResult.Failed;
+            }
+
+            return await PasswordSignInAsync(user, password, isPersistent, lockoutOnFailure);
+        }
+        
+        public override async Task<SignInResult> PasswordSignInAsync(ApplicationUser user, string password,
+            bool isPersistent, bool lockoutOnFailure)
+        {
+            if (user == null)
+            {
+                throw new ArgumentNullException(nameof(user));
+            }
+
+            var attempt = await CheckPasswordSignInAsync(user, password, lockoutOnFailure);
+
+            if (attempt.Succeeded)
+            {
+                await SignInAsync(user, true);
+            }
+
+            return attempt.Succeeded ? SignInResult.Success : SignInResult.Failed;
         }
 
         public override bool IsSignedIn(ClaimsPrincipal principal)

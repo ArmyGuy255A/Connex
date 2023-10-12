@@ -18,35 +18,6 @@ public class DbInitializer
         // Perform any missing migrations.
         await context.Database.MigrateAsync();
 
-        //If there are any roles, the database has already been seeded.
-        if (context.Roles.Any())
-        {
-            logger.LogInformation("The database already has roles seeded");
-        }
-        else
-        {
-            logger.LogInformation("Seeding roles");
-            string[] roleNames = new string[]
-            {
-                "Admin",
-                "Contributor",
-                "Reader"
-            };
-        
-            // Create and seed the new roles
-            ApplicationRole[] roles = new ApplicationRole[roleNames.Length];
-        
-            for (int i = 0; i < roles.Length; i++)
-            {
-                context.Roles.Add(new ApplicationRole
-                {
-                    Id = Guid.NewGuid().ToString(), Name = roleNames[i], NormalizedName = roleNames[i].ToUpper()
-                });
-            }
-        
-            await context.SaveChangesAsync();
-        }
-
         if (context.Pages.Any())
         {
             logger.LogInformation("The database already has a page seeded");
@@ -54,8 +25,8 @@ public class DbInitializer
         else
         {
             logger.LogInformation("Seeding a default page");
-        
-            string[] pages = new string[] {"Home", "Page1", "Page2", "Page3"};
+
+            string[] pages = new string[] { "Home", "Page1", "Page2", "Page3" };
 
             for (int i = 0; i < pages.Length; i++)
             {
@@ -86,7 +57,7 @@ public class DbInitializer
                 user.GivenName = firstNames[i];
                 user.Surname = lastNames[i];
                 user.DisplayName = $"{firstNames[i]} {lastNames[i]}";
-                
+
                 context.Users.Add(user);
             }
         }
@@ -96,35 +67,86 @@ public class DbInitializer
             await context.SaveChangesAsync();
         }
 
-        logger.LogInformation("Finished Seeding");
+        logger.LogInformation("Finished Seeding Data");
     }
 
-    public static async Task InitializeUsersAsync(ApplicationDbContext context, IServiceProvider serviceProvider, ApplicationUserManager userManager, RoleManager<ApplicationRole> roleManager)
+    public static async Task InitializeUsersAsync(ApplicationDbContext context, IServiceProvider serviceProvider,
+        UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager)
     {
+        // Get a logger
+        var logger = serviceProvider.GetRequiredService<ILogger<DbInitializer>>();
         
+        //If there are any roles, the database has already been seeded.
+        if (context.Roles.Any())
+        {
+            logger.LogInformation("The database already has roles seeded");
+        }
+        else
+        {
+            logger.LogInformation("Seeding roles");
+            string[] roleNames = new string[]
+            {
+                "Admin",
+                "Contributor",
+                "Reader"
+            };
+
+            // Create and seed the new roles
+            ApplicationRole[] roles = new ApplicationRole[roleNames.Length];
+
+            for (int i = 0; i < roles.Length; i++)
+            {
+                await roleManager.CreateAsync(new ApplicationRole
+                {
+                    Id = Guid.NewGuid().ToString(), Name = roleNames[i], NormalizedName = roleNames[i].ToUpper()
+                });
+            }
+
+            await context.SaveChangesAsync();
+        }
+
         // Check if any users are in the "Administrator" role
-        var administrators = await userManager.GetUsersInRoleAsync("Administrator");
+        var administrators = await userManager.GetUsersInRoleAsync("Admin");
         if (administrators.Any())
             return;
-        
+
         var adminUser = await userManager.FindByEmailAsync("admin@connex.com");
 
-                
-        
+        try
+        {
+            await userManager.DeleteAsync(adminUser);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            // throw;
+        }
+        await context.SaveChangesAsync();
+        adminUser = null;
+
         if (null == adminUser)
         {
-            adminUser = new ApplicationUser ("admin@connex.com")
+            adminUser = new ApplicationUser("admin@connex.com")
             {
                 GivenName = "Admin",
                 Surname = "User",
-                DisplayName = "Administrator"
+                DisplayName = "Administrator",
+                TwoFactorEnabled = false
             };
 
-            await userManager.CreateAsync(adminUser, "admin");
-            
+            var result = await userManager.CreateAsync(adminUser, "Password!!11");
+            if (!result.Succeeded)
+            {
+                logger.LogError("Failed to create admin user");
+                return;
+            }
         }
-        
-        await userManager.AddToRoleAsync(adminUser, "Administrator");
-        
+
+        await userManager.AddToRoleAsync(adminUser, "Admin");
+            await context.SaveChangesAsync();
+
+       
+
+        logger.LogInformation("Finished Seeding Admin User");
     }
 }

@@ -7,6 +7,7 @@ public class ApplicationUser : IdentityUser
 {
     public ApplicationUser(string userName) : base(userName)
     {
+        base.Email = userName;
         LoginCount = 0;
         LastLoginDate = DateTime.Now;
     }

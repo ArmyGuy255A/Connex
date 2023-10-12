@@ -1,6 +1,7 @@
 using BlazorApp.Areas.Identity;
 using BlazorApp.Data;
 using Domain.Common;
+using Infrastructure.Identity;
 using Infrastructure.Services;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -50,6 +51,9 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    // Seed the Database
+    await ConfigureServices.SeedDatabase(app);
+    await ConfigureServices.SeedUsers(app);
     app.UseMigrationsEndPoint();
 }
 else

@@ -1,6 +1,7 @@
 ﻿using Domain.Common;
 using Domain.Entities;
 using Infrastructure.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
@@ -10,7 +11,7 @@ namespace Infrastructure.Persistence.Contexts;
 /// <summary>
 /// Entity Framework DB Context.
 /// </summary>
-public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
+public class ApplicationDbContext : IdentityDbContext<IdentityUser, IdentityRole, string>
 {
     private readonly IOptionsMonitor<AppSettings> _settings;
 
