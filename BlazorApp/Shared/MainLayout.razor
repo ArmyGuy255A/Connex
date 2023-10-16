@@ -16,10 +16,32 @@
             <Authorized>
                 <TablerButton BootType="outline" href="/admin">Admin</TablerButton>
                 <TablerButton BootType="outline" href="/swagger">Swagger</TablerButton>
-                <a href="Identity/Account/Manage">Hello, @context.User.Identity?.Name!</a>
-                        <form method="post" action="Identity/Account/Logout">
-                            <button type="submit" class="nav-link btn btn-link">Log out</button>
+                @* <a href="Identity/Account/Manage">Hello, @context.User.Identity?.Name!</a> *@
+                @*         <form method="post" action="Identity/Account/Logout"> *@
+                @*             <button type="submit" class="nav-link btn btn-link">Log out</button> *@
+                @*         </form> *@
+
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
+                        @* <span class="avatar avatar-sm" style="background-image: none"></span> *@
+                        <div class="d-none d-xl-block ps-2">
+                            <div>@context.User.Identity?.Name</div>
+                            <div class="mt-1 small text-secondary">Placeholder</div>
+                        </div>
+                    </a>
+
+
+                    <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                        @* <a href="#" class="dropdown-item">Status</a> *@
+                        <a href="/Identity/Account/Manage" class="dropdown-item">Profile</a>
+                        @* <a href="#" class="dropdown-item">Feedback</a> *@
+                        <div class="dropdown-divider"></div>
+                        @* <a href="./settings.html" class="dropdown-item">Settings</a> *@
+                        <form method="post" action="/Identity/Account/Logout">
+                            <button type="submit" class="dropdown-item">Log out</button>
                         </form>
+                    </div>
+                </div>
             </Authorized>
             <NotAuthorized>
                 <TablerButton BootType="ghost" href="/Identity/Account/Login">Login</TablerButton>
@@ -28,7 +50,7 @@
     </TablerNavbarHeader>
     <AuthorizeView>
         <Authorized>
-            <TablerNavbar />
+            <TablerNavbar/>
         </Authorized>
     </AuthorizeView>
     <TablerPageWrapper Title="MainLayout" Pretitle="Current Location:">
@@ -40,18 +62,17 @@
 {
     protected override async Task OnInitializedAsync()
     {
-        
         var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
         var user = authState.User;
         Console.WriteLine("Hello world");
-        
+
         await base.OnInitializedAsync();
     }
-  
+
     private bool firstRender = true;
-    
+
     // private string title = "MainLayout";
-  
+
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (this.firstRender)
@@ -62,14 +83,12 @@
             await JsInterop.InitializeTooltips();
             await JsInterop.InitializeDropdowns();
 
-      
+
             this.firstRender = false;
-      
-            //TODO: This is not refreshing the current page title
-            // title = await JsInterop.GetPageTitle();
 
+    //TODO: This is not refreshing the current page title
+    // title = await JsInterop.GetPageTitle();
         }
-
     }
 
 }

@@ -18,25 +18,25 @@ public static partial class ConfigureServices
     public static IServiceCollection AddIdentityServices(this IServiceCollection services,
         AppSettings settings)
     {
-        services.AddDefaultIdentity<ApplicationUser>(options => 
-            {
-                options.SignIn.RequireConfirmedAccount = false;
-                // options.Tokens.AuthenticatorTokenProvider = "";  // Disable 2FA
-                // options.User.RequireUniqueEmail = true;
-            })
-            .AddRoles<ApplicationRole>()
-            .AddEntityFrameworkStores<ApplicationDbContext>();
-        
-        // services.AddDefaultIdentity<ApplicationUser>(options =>
+        // services.AddDefaultIdentity<ApplicationUser>(options => 
         //     {
         //         options.SignIn.RequireConfirmedAccount = false;
-        //         options.Tokens.AuthenticatorTokenProvider = "";  // Disable 2FA
-        //         options.User.RequireUniqueEmail = true;
+        //         // options.Tokens.AuthenticatorTokenProvider = "";  // Disable 2FA
+        //         // options.User.RequireUniqueEmail = true;
         //     })
         //     .AddRoles<ApplicationRole>()
-        //     .AddUserManager<ApplicationUserManager>()
-        //     .AddSignInManager<ApplicationSignInManager>()
         //     .AddEntityFrameworkStores<ApplicationDbContext>();
+        
+        services.AddDefaultIdentity<ApplicationUser>(options =>
+            {
+                options.SignIn.RequireConfirmedAccount = false;
+                options.Tokens.AuthenticatorTokenProvider = "";  // Disable 2FA
+                options.User.RequireUniqueEmail = true;
+            })
+            .AddRoles<ApplicationRole>()
+            .AddUserManager<ApplicationUserManager>()
+            .AddSignInManager<ApplicationSignInManager>()
+            .AddEntityFrameworkStores<ApplicationDbContext>();
 
         // services.Configure<CookiePolicyOptions>(options =>
         // {
