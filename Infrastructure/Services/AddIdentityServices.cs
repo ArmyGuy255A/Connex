@@ -1,4 +1,5 @@
 ﻿using Domain.Common;
+using Domain.Entities;
 using Infrastructure.Identity;
 using Infrastructure.Persistence;
 using Infrastructure.Persistence.Contexts;
@@ -54,7 +55,7 @@ public static partial class ConfigureServices
         //     {
         //         options.LoginPath = "/Login";
         //         options.LogoutPath = "/Logout";
-        //     })
+        //     });
         //     .AddOpenIdConnect(options =>
         //     {
         //         options.Authority = settings.Authentication.KeyCloak.Issuer;

@@ -1,6 +1,7 @@
 ﻿@using Tablazor
 @using Infrastructure.Identity
 @using Microsoft.AspNetCore.Identity
+@using Domain.Entities
 @inherits LayoutComponentBase
 @inject TablazorJsInterop JsInterop
 @inject UserManager<ApplicationUser> UserManager
@@ -15,9 +16,13 @@
             <Authorized>
                 <TablerButton BootType="outline" href="/admin">Admin</TablerButton>
                 <TablerButton BootType="outline" href="/swagger">Swagger</TablerButton>
+                <a href="Identity/Account/Manage">Hello, @context.User.Identity?.Name!</a>
+                        <form method="post" action="Identity/Account/Logout">
+                            <button type="submit" class="nav-link btn btn-link">Log out</button>
+                        </form>
             </Authorized>
             <NotAuthorized>
-                <TablerButton BootType="ghost" href="Identity/Account/Login">Login</TablerButton>
+                <TablerButton BootType="ghost" href="/Identity/Account/Login">Login</TablerButton>
             </NotAuthorized>
         </AuthorizeView>
     </TablerNavbarHeader>

@@ -1,4 +1,5 @@
 ﻿using System.Security.Claims;
+using Domain.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;

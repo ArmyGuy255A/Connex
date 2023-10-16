@@ -1,12 +1,15 @@
 using BlazorApp.Areas.Identity;
 using BlazorApp.Data;
 using Domain.Common;
+using Domain.Entities;
 using Infrastructure.Identity;
 using Infrastructure.Services;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Serilog;
 using Tablazor;
+using Microsoft.EntityFrameworkCore;
+using Infrastructure.Persistence.Contexts;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -45,6 +48,7 @@ builder.Logging.AddSerilog();
 
 // Add Tablazor JS Interop
 builder.Services.AddScoped<TablazorJsInterop>();
+builder.Services.AddScoped<AuthenticationService>();
 
 var app = builder.Build();
 
@@ -65,6 +69,8 @@ else
 
 // This is used for Docker health checks
 app.UseHealthChecks("/health");
+
+app.UseCors("AllowAllOrigins");
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

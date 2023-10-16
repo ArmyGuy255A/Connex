@@ -1,9 +1,18 @@
-﻿@page "/login"
+﻿@page "/Login"
 @using Infrastructure.Identity
 @using Microsoft.AspNetCore.Identity
+@using Domain.Entities
+@using Infrastructure.Services
+@using Tablazor
+@using System.Security.Claims
+@using Tablazor.Pages
 @* @inject ApplicationSignInManager SignInManager *@
-@inject SignInManager<IdentityUser> SignInManager
+@inject SignInManager<ApplicationUser> SignInManager
 @inject NavigationManager NavigationManager
+@* @inject TablazorJsInterop JsInterop *@
+@* @inject IHttpClientFactory ClientFactory *@
+@inject AuthenticationService AuthenticationService
+@inherits OwningComponentBase
 
 @layout PageLayout
 
@@ -25,7 +34,7 @@
                 <h3 class="h3 text-center text-warning">@loginModel.Message</h3>
             }
 
-            <form autocomplete="on" class="needs-validation" onsubmit="@HandleLogin">
+            <form autocomplete="on" class="needs-validation">
                 <div class="mb-3">
                     <label class="form-label">Email address</label>
                     <InputText id="username" @bind-Value="@loginModel.UserName" type="email" class="form-control" placeholder="your@email.com" autocomplete="on"/>
@@ -56,7 +65,7 @@
                     </label>
                 </div>
                 <div class="form-footer">
-                    <button type="submit" class="btn btn-primary w-100">Sign in</button>
+                    <button type="submit" class="btn btn-primary w-100" @onclick="SignIn">Sign in</button>
                 </div>
             </form>
         </div>
@@ -82,41 +91,142 @@
 
 @code {
     private LoginModel loginModel = new LoginModel();
+    public string userIdentifier = "Admin";
+    
+    private bool shouldRender;
+    protected override bool ShouldRender() => shouldRender;
+    
+    private AuthenticationService? _authService { get; set; }
 
-    private async Task HandleLogin()
+    protected override async Task OnInitializedAsync()
     {
-        try
-        {
-            if (string.IsNullOrEmpty(loginModel.UserName))
-            {
-                loginModel.Message = "Missing Username";
-                return;
-            }
+        _authService = ScopedServices.GetRequiredService<AuthenticationService>();
+        
 
-            if (string.IsNullOrEmpty(loginModel.Password))
-            {
-                loginModel.Message = "Missing Password";
-                return;
-            }
-
-            var result = await SignInManager.PasswordSignInAsync(loginModel.UserName, loginModel.Password, true, false);
-            if (result.Succeeded)
-            {
-                // SignInManager.SignInAsync()
-                NavigationManager.NavigateTo("/");
-            }
-            else
-            {
-                // Handle login failure
-                loginModel.Message = "Login Error";
-            }
-        }
-        catch (Exception ex)
+        // message = await ExampleService.ExampleMethod(AuthenticationStateProvider);
+    }
+    
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
         {
-            // Log the exception or handle it as appropriate
-            loginModel.Message = $"An error occurred: {ex.Message}";
+            Console.WriteLine("Hmmm");
         }
     }
+
+    private void SignIn()
+    {
+        var signInManager = ScopedServices.GetRequiredService<SignInManager<ApplicationUser>>();
+        shouldRender = false;
+        var r = signInManager.PasswordSignInAsync(loginModel.UserName, loginModel.Password, isPersistent: true, lockoutOnFailure: false);
+        Thread.Sleep(2000);
+
+        var result = _authService.Login(loginModel.UserName, loginModel.Password);
+        result = _authService.Login(loginModel.UserName, loginModel.Password);
+        // var currentUser = AuthenticationService.CurrentUser;
+        //
+        // var identity = new ClaimsIdentity(
+        //     new[]
+        //     {
+        //         new Claim(ClaimTypes.Name, userIdentifier),
+        //     },
+        //     "Custom Authentication");
+        //
+        // var newUser = new ClaimsPrincipal(identity);
+        //
+        // AuthenticationService.CurrentUser = newUser;
+        
+        shouldRender = true;
+
+    }
+    
+    // private async Task HandleLogin()
+    // {
+    //     shouldRender = false;
+    //     try
+    //     {
+    // // Create the login model
+    //         var loginModelToSend = new LoginModel
+    //         {
+    //             UserName = loginModel.UserName,
+    //             Password = loginModel.Password
+    //         };
+    //
+    // // Perform the API call
+    //         var httpClient = ClientFactory.CreateClient();
+    //
+    //         var response = await httpClient.PostAsJsonAsync("http://localhost:5041/api/Account/Login", loginModelToSend);
+    //
+    // // Check the response
+    //         if (response.IsSuccessStatusCode)
+    //         {
+    // // Navigate to the home page or do other tasks
+    //             NavigationManager.NavigateTo("/");
+    //         }
+    //         else
+    //         {
+    //             loginModel.Message = "Login failed. Please try again.";
+    //         }
+    //     }
+    //     catch (Exception ex)
+    //     {
+    //         loginModel.Message = $"An error occurred: {ex.Message}";
+    //         // shouldRender = true;
+    //     }
+    //     shouldRender = true;
+    // }
+
+
+    // private async Task HandleLogin()
+    // {
+    //     try
+    //     {
+    //         try
+    //         {
+    //             var result = await JsInterop.PostLoginData( "http://localhost:5041/api/Account/Login", loginModel.UserName, loginModel.Password);
+    //         
+    //             // Handle the result
+    //         }
+    //         catch (Exception ex)
+    //         {
+    //             loginModel.Message = $"An error occurred: {ex.Message}";
+    //         }
+    //         
+    //         // if (SignInManager.Context.Response.HasStarted)
+    //         // {
+    //         //     // Log or handle the fact that the response has already started.
+    //         //     return;
+    //         // }
+    //         // if (string.IsNullOrEmpty(loginModel.UserName))
+    //         // {
+    //         //     loginModel.Message = "Missing Username";
+    //         //     return;
+    //         // }
+    //         //
+    //         // if (string.IsNullOrEmpty(loginModel.Password))
+    //         // {
+    //         //     loginModel.Message = "Missing Password";
+    //         //     return;
+    //         // }
+    //         //
+    //         // var result = await SignInManager.PasswordSignInAsync(loginModel.UserName, loginModel.Password, true, false);
+    //         // if (result.Succeeded)
+    //         // {
+    //         //     // SignInManager.SignInAsync()
+    //         //     NavigationManager.NavigateTo("/");
+    //         // }
+    //         // else
+    //         // {
+    //         //     // Handle login failure
+    //         //     loginModel.Message = "Login Error";
+    //         // }
+    //     }
+    //     catch (Exception ex)
+    //     {
+    //         // Log the exception or handle it as appropriate
+    //         loginModel.Message = $"An error occurred: {ex.Message}";
+    //     }
+    // }
 
     public class LoginModel
     {

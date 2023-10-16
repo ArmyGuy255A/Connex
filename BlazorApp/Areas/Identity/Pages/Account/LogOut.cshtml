@@ -1,4 +1,5 @@
 ﻿@page
+@using Domain.Entities
 @using Infrastructure.Identity
 @using Microsoft.AspNetCore.Authentication
 @using Microsoft.AspNetCore.Authentication.Cookies
@@ -15,7 +16,8 @@
             await SignInManager.SignOutAsync();
         }
         
-        await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+        // await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+        await HttpContext.SignOutAsync("Identity.Application");
 
 
         return Redirect("~/");

@@ -26,3 +26,15 @@ export function print() {
 export function getPageTitle() {
     return document.title;
 }
+
+export function postLoginData(url, userName, password) {
+    const data = { userName: userName, password: password };
+    return fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        credentials: 'include',  // Important for ASP.NET Core and CORS
+        body: JSON.stringify(data)
+    }).then(response => response.json());
+}

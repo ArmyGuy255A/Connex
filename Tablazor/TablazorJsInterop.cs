@@ -35,6 +35,23 @@ public class TablazorJsInterop
         var module = await moduleTask.Value;
         return await module.InvokeAsync<string>("getPageTitle");
     }
+    
+    public async ValueTask<string> PostLoginData(string apiUrl, string userName, string password)
+    {
+        var module = await moduleTask.Value;
+        var response = "";
+        try
+        {
+            response = await module.InvokeAsync<string>("postLoginData", apiUrl, userName, password);
+
+        }
+        catch (Exception ex)
+        {
+            throw;
+        }
+        // return await module.InvokeAsync<string>("postLoginData");
+        return response;
+    }
 
     public async ValueTask Print()
     {
